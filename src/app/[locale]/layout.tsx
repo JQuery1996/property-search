@@ -4,13 +4,16 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { ReactNode } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
+import { TLOCALE } from "@/types";
+import { ConfigProvider } from "antd";
 
 export default async function LocaleLayout({
   children,
   params: { locale },
 }: {
   children: ReactNode;
-  params: { locale: string };
+  params: { locale: TLOCALE };
 }) {
   // Ensure that the incoming `locale` is valid
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,13 +24,17 @@ export default async function LocaleLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
+  const direction = getDirectionFromLocale(locale);
+  const antdLocale = getAntdLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={direction}>
       <body>
         <AntdRegistry>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <ConfigProvider locale={antdLocale} direction={direction}>
+              {children}
+            </ConfigProvider>
           </NextIntlClientProvider>
         </AntdRegistry>
       </body>
