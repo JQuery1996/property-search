@@ -7,6 +7,9 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
 import { TLOCALE } from "@/types";
 import { ConfigProvider } from "antd";
+import { ClientLayout } from "./ClientLayout";
+import "./globals.css";
+import { themeConfig } from "@/theme";
 
 export default async function LocaleLayout({
   children,
@@ -32,8 +35,12 @@ export default async function LocaleLayout({
       <body>
         <AntdRegistry>
           <NextIntlClientProvider messages={messages}>
-            <ConfigProvider locale={antdLocale} direction={direction}>
-              {children}
+            <ConfigProvider
+              locale={antdLocale}
+              direction={direction}
+              theme={themeConfig}
+            >
+              <ClientLayout>{children}</ClientLayout>
             </ConfigProvider>
           </NextIntlClientProvider>
         </AntdRegistry>

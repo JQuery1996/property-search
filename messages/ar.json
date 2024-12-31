@@ -5,5 +5,21 @@
   },
   "NotFoundPage": {
     "title": "Page not found"
+  },
+  "Layout": {
+    "Header": {
+      "Items": {
+        "home": "الرئيسية",
+        "categories": "التصنيفات",
+        "developers": "المطورون",
+        "contact": "اتصل بنا"
+      }
+    }
+  },
+  "Common": {
+    "Welcome": {
+      "title": "Welcome to <span>Property</span> Search.",
+      "description": "We are pleased to see you again at  <span>Property Search</span> where you can find your future dream home at competitive prices."
+    }
   }
 }
