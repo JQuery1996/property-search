@@ -35,7 +35,7 @@ export function ClientLayout({ children }: TClientLayout) {
             key: item,
             label: translate(item),
           }))}
-          style={{ flex: 1, minWidth: 0 }}
+          style={{ flex: 1, minWidth: 0, border: "none" }}
         />
       </Header>
       <Content>

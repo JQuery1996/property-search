@@ -1,0 +1,34 @@
+.uploadContainer {
+    width: 100%;
+    height: 240px;
+    border-radius: 8px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-weight: 300 !important;
+}
+
+.filePreview {
+    font-weight: bold !important;
+}
+
+.formItem {
+    position: absolute !important;
+    bottom: -27px !important;
+    left: calc(50% - 24px) !important;
+    margin: 0 !important;
+}
+
+.removeButton {
+    position: absolute !important;
+    top: 2% !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    inset-inline-start: 2% !important;
+}

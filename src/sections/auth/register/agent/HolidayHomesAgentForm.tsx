@@ -1,20 +1,23 @@
 "use client";
-import { Button, Checkbox, Flex, Form, Input } from "antd";
+import { Button, Flex, Form, Input } from "antd";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import PhoneInput from "antd-phone-input";
-import { CustomText } from "@/components";
-import { useTranslations } from "next-intl";
+import { CustomText, CustomUpload } from "@/components";
 import { Link } from "@/i18n/routing";
 import { PAGES } from "@/constants";
 
-export function ClientRegisterForm() {
+export function HolidayHomesAgentForm() {
   const [form] = Form.useForm();
   const translate = useTranslations("Form");
+  function handleRemoveFile() {
+    form.resetFields(["file"]);
+  }
   return (
     <Form
       form={form}
       layout="vertical"
-      name="clientRegisterForm"
+      name="HolidayHomesAgentForm"
       autoComplete="off"
       requiredMark="optional"
     >
@@ -40,7 +43,6 @@ export function ClientRegisterForm() {
           }
         />
       </Form.Item>
-
       <Form.Item
         label={translate("phoneNumber")}
         name="phoneNumber"
@@ -127,24 +129,10 @@ export function ClientRegisterForm() {
           }
         />
       </Form.Item>
-      <Flex vertical gap={4}>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox style={{ textWrap: "nowrap" }}>
-            {translate("rememberMe")}
-          </Checkbox>
-        </Form.Item>
-        <Form.Item name="terms" valuePropName="checked" noStyle>
-          <Checkbox style={{ textWrap: "nowrap" }}>
-            <CustomText type="primary">{translate("agree_terms")}</CustomText>
-          </Checkbox>
-        </Form.Item>
-        <Form.Item name="follow" valuePropName="checked" noStyle>
-          <Checkbox style={{ textWrap: "wrap" }}>
-            {translate("allowFastHome")}
-          </Checkbox>
-        </Form.Item>
-      </Flex>
-
+      <CustomUpload
+        placeholder={translate("tradeLicense")}
+        onRemoveAction={handleRemoveFile}
+      />
       <Flex
         vertical
         justify="center"
@@ -157,7 +145,7 @@ export function ClientRegisterForm() {
       >
         <Form.Item style={{ width: "100%" }}>
           <Button block size="large" htmlType="submit">
-            {translate("createAnAccount")}
+            {translate("signUp")}
           </Button>
         </Form.Item>
         <CustomText>

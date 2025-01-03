@@ -24,5 +24,32 @@
   },
   "LoginPage": {
     "action": "welcome back."
+  },
+  "RegisterPage": {
+    "Client": {
+      "action": "Create your account!"
+    },
+    "Agent": {
+      "action": "Sign up as an Agent!",
+      "holidayHomesAgent": "Holiday Homes Agent",
+      "realEstateAgent": "Real Estate Agent"
+    }
+  },
+  "Form": {
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "rememberMe": "Remember me",
+    "agree_terms": "I agree to the Membership Terms",
+    "allowFastHome": "I allow Fast home to contact me via e-mail, SMS, etc for marketing and promotional purposes.",
+    "createAnAccount": "Create an Account",
+    "alreadyMember": "Already a member? <span>Login</span> now!",
+    "tradeLicense": "Trade License",
+    "signUp": "Sign Up"
+  },
+  "Actions": {
+    "remove": "Remove"
   }
 }
