@@ -21,6 +21,7 @@ export default function LoginPage() {
           height={769}
           alt="login image"
           style={{ marginLeft: "-250px" }}
+          priority
         />
       </Col>
     </Row>

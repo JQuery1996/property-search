@@ -70,6 +70,7 @@ export function HolidayHomesAgentForm() {
               height={20}
             />
           }
+          autoComplete="username"
         />
       </Form.Item>
       <Form.Item
@@ -93,6 +94,7 @@ export function HolidayHomesAgentForm() {
               height={20}
             />
           }
+          autoComplete="new-password"
         />
       </Form.Item>
       <Form.Item
@@ -127,6 +129,7 @@ export function HolidayHomesAgentForm() {
               height={20}
             />
           }
+          autoComplete="new-password"
         />
       </Form.Item>
       <CustomUpload

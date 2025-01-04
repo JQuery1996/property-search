@@ -68,6 +68,7 @@ export function ClientRegisterForm() {
               height={20}
             />
           }
+          autoComplete="username"
         />
       </Form.Item>
       <Form.Item
@@ -91,6 +92,7 @@ export function ClientRegisterForm() {
               height={20}
             />
           }
+          autoComplete="new-password"
         />
       </Form.Item>
       <Form.Item
@@ -125,6 +127,7 @@ export function ClientRegisterForm() {
               height={20}
             />
           }
+          autoComplete="new-password"
         />
       </Form.Item>
       <Flex vertical gap={4}>

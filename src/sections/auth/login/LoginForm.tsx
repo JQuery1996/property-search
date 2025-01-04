@@ -29,7 +29,11 @@ export function LoginForm() {
           },
         ]}
       >
-        <PhoneInput enableSearch placeholder="Phone Number" />
+        <PhoneInput
+          enableSearch
+          placeholder="Phone Number"
+          autoComplete="username"
+        />
       </Form.Item>
       <Form.Item
         label="Password"
@@ -41,6 +45,7 @@ export function LoginForm() {
           prefix={<LockOutlined />}
           type="password"
           placeholder="Password"
+          autoComplete="current-password"
         />
       </Form.Item>
       <Form.Item>
