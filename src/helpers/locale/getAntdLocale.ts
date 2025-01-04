@@ -4,7 +4,13 @@ import arEG from "antd/locale/ar_EG";
 
 export function getAntdLocale(locale: TLOCALE) {
   const antdLocales = {
-    ar: arEG,
+    ar: {
+      ...arEG,
+      Form: {
+        ...arEG.Form,
+        optional: "(إختياري)",
+      },
+    },
     en: enUS,
   };
   return antdLocales[locale];
