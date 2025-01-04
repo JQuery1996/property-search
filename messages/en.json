@@ -47,9 +47,11 @@
     "createAnAccount": "Create an Account",
     "alreadyMember": "Already a member? <span>Login</span> now!",
     "tradeLicense": "Trade License",
-    "signUp": "Sign Up"
-  },
-  "Actions": {
-    "remove": "Remove"
+    "signUp": "Sign Up",
+    "remove": "Remove",
+    "Validations": {
+      "acceptedExtensions": "You can only upload these types:",
+      "fileSizeLessThan": "File must smaller than"
+    }
   }
 }

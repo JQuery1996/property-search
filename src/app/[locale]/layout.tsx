@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
 import { TLOCALE } from "@/types";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, App } from "antd";
 import { ClientLayout } from "./ClientLayout";
 import "./globals.css";
 import { themeConfig } from "@/theme";
@@ -40,7 +40,9 @@ export default async function LocaleLayout({
               direction={direction}
               theme={themeConfig}
             >
-              <ClientLayout>{children}</ClientLayout>
+              <App>
+                <ClientLayout>{children}</ClientLayout>
+              </App>
             </ConfigProvider>
           </NextIntlClientProvider>
         </AntdRegistry>

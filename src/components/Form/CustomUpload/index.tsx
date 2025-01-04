@@ -1,4 +1,4 @@
-import { Button, Form, Tooltip, Upload } from "antd";
+import { App, Button, Form, Tooltip, Upload } from "antd";
 import { useState } from "react";
 import { colors } from "@/theme/colors";
 import Image from "next/image";
@@ -10,9 +10,17 @@ import styles from "./style.module.css";
 type TCustomUpload = {
   placeholder: string;
   onRemoveAction: () => void;
+  acceptedExtensions: string[];
+  maxSize: number;
 };
-export function CustomUpload({ placeholder, onRemoveAction }: TCustomUpload) {
-  const translate = useTranslations("Actions");
+export function CustomUpload({
+  placeholder,
+  onRemoveAction,
+  acceptedExtensions = ["png", "jpg", "jpeg", "pdf"],
+  maxSize = 2,
+}: TCustomUpload) {
+  const translate = useTranslations("Form");
+  const { message } = App.useApp();
   const [preview, setPreview] = useState<{
     type: "file" | "image";
     content: string | ArrayBuffer | null | undefined;
@@ -46,6 +54,29 @@ export function CustomUpload({ placeholder, onRemoveAction }: TCustomUpload) {
     setPreview({ type: null!, content: null });
     onRemoveAction();
   }
+  function handleBeforeUpload(file: File) {
+    const isAllowedExtension = acceptedExtensions.some((ext) =>
+      file.type.includes(ext),
+    );
+    if (!isAllowedExtension) {
+      message.error(
+        translate("Validations.acceptedExtensions") +
+          " " +
+          acceptedExtensions.join(", "),
+      );
+      return Upload.LIST_IGNORE;
+    }
+    const isLtMaxSize = file.size / 1024 / 1024 < maxSize;
+    if (!isLtMaxSize) {
+      message.error(
+        translate("Validations.fileSizeLessThan") + " " + `${maxSize}MB!`,
+      );
+      return Upload.LIST_IGNORE;
+    }
+
+    return false;
+  }
+
   return (
     <div
       className={styles.uploadContainer}
@@ -71,10 +102,11 @@ export function CustomUpload({ placeholder, onRemoveAction }: TCustomUpload) {
         className={styles.formItem}
       >
         <Upload
-          beforeUpload={() => false} // Prevent automatic upload
+          beforeUpload={handleBeforeUpload} // Prevent automatic upload
           maxCount={1} // Restrict to one file
           showUploadList={false} // Disable preview and progress UI
           onChange={handleFileChange} // Handle file change
+          accept={acceptedExtensions.map((ext) => `.${ext}`).join(",")}
         >
           <Image
             alt="upload file"
