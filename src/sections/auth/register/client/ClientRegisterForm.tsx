@@ -34,7 +34,7 @@ export function ClientRegisterForm() {
             <Image
               src="/images/icons/account_circle.svg"
               alt="Account Icon"
-              width={20} // Adjust the size as needed
+              width={20}
               height={20}
             />
           }
@@ -64,7 +64,7 @@ export function ClientRegisterForm() {
             <Image
               src="/images/icons/mail.svg"
               alt="Mail Icon"
-              width={20} // Adjust the size as needed
+              width={20}
               height={20}
             />
           }
@@ -88,7 +88,7 @@ export function ClientRegisterForm() {
             <Image
               src="/images/icons/key.svg"
               alt="Mail Icon"
-              width={20} // Adjust the size as needed
+              width={20}
               height={20}
             />
           }
@@ -123,7 +123,7 @@ export function ClientRegisterForm() {
             <Image
               src="/images/icons/key.svg"
               alt="Mail Icon"
-              width={20} // Adjust the size as needed
+              width={20}
               height={20}
             />
           }

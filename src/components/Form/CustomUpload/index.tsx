@@ -10,8 +10,8 @@ import styles from "./style.module.css";
 type TCustomUpload = {
   placeholder: string;
   onRemoveAction: () => void;
-  acceptedExtensions: string[];
-  maxSize: number;
+  acceptedExtensions?: string[];
+  maxSize?: number;
 };
 export function CustomUpload({
   placeholder,
@@ -100,6 +100,12 @@ export function CustomUpload({
         valuePropName="fileList"
         getValueFromEvent={normFile}
         className={styles.formItem}
+        rules={[
+          {
+            required: true,
+            message: "File is required!",
+          },
+        ]}
       >
         <Upload
           beforeUpload={handleBeforeUpload} // Prevent automatic upload
