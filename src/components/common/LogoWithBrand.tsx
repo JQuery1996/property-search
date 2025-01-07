@@ -6,9 +6,9 @@ import { APP } from "@/constants";
 
 export function LogoWithBrand() {
   return (
-    <Flex justify="center" gap={4}>
+    <Flex justify="center" gap={8}>
       <Logo style={{ width: "30px", height: "30px" }} />
-      <Title level={4} style={{ margin: 0 }}>
+      <Title level={4} style={{ margin: 0, fontWeight: 400 }}>
         {APP.name}
       </Title>
     </Flex>
