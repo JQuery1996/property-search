@@ -1,3 +1,4 @@
+"use client";
 import { App, Button, Form, Tooltip, Upload } from "antd";
 import { useState } from "react";
 import { colors } from "@/theme/colors";

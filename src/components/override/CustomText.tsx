@@ -1,10 +1,15 @@
+"use client"; // Mark this as a client component
+
 import React from "react";
 import { Typography, theme } from "antd";
 import type { TextProps as AntdTextProps } from "antd/es/typography/Text";
 
-// Custom type definition
+const { Text: AntdText } = Typography;
+const { useToken } = theme;
+
+// Extend the original TextProps to include the `primary` type
 interface CustomTextProps extends Omit<AntdTextProps, "type"> {
-  type?: "primary" | "secondary" | "success" | "danger" | "warning";
+  type?: "primary" | "secondary" | "success" | "warning" | "danger";
 }
 
 export const CustomText: React.FC<CustomTextProps> = ({
@@ -12,14 +17,10 @@ export const CustomText: React.FC<CustomTextProps> = ({
   style,
   ...props
 }) => {
-  const { token } = theme.useToken();
+  const { token } = useToken();
 
-  // Compute custom styles based on the type
-  const customStyle =
-    type === "primary" ? { color: token.colorPrimary, ...style } : style;
+  // Map the `primary` type to the primary color from the theme
+  const textColor = type === "primary" ? token.colorPrimary : undefined;
 
-  // Fallback to the original type when it’s not "primary"
-  const antdType = type !== "primary" ? type : undefined;
-
-  return <Typography.Text {...props} type={antdType} style={customStyle} />;
+  return <AntdText {...props} style={{ color: textColor, ...style }} />;
 };

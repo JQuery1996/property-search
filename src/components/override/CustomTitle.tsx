@@ -1,6 +1,11 @@
+"use client"; // Mark this as a client component
+
 import React from "react";
 import { Typography, theme } from "antd";
 import type { TitleProps as AntdTitleProps } from "antd/es/typography/Title";
+
+const { Title: AntdTitle } = Typography;
+const { useToken } = theme;
 
 // Custom type definition
 interface CustomTitleProps extends Omit<AntdTitleProps, "type"> {
@@ -12,7 +17,7 @@ export const CustomTitle: React.FC<CustomTitleProps> = ({
   style,
   ...props
 }) => {
-  const { token } = theme.useToken();
+  const { token } = useToken();
 
   // Compute custom styles based on the type
   const customStyle =
@@ -22,5 +27,5 @@ export const CustomTitle: React.FC<CustomTitleProps> = ({
         ? { color: token.colorTextSecondary, ...style }
         : style;
 
-  return <Typography.Title {...props} style={customStyle} />;
+  return <AntdTitle {...props} style={customStyle} />;
 };

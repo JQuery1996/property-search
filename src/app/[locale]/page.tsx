@@ -1,9 +1,5 @@
-import { Button } from "antd";
+import { Banner } from "@/sections";
 
 export default function Home() {
-  return (
-    <div>
-      <Button>antd button</Button>
-    </div>
-  );
+  return <Banner />;
 }

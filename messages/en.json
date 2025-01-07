@@ -1,7 +1,14 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "Banner": {
+      "greeting": "Greetings, you're now in Property Search.",
+      "vision": "Bringing Your Dream Home Vision to Life.",
+      "description": "Lorem ipsum dolor sit amet consectetur. Est quisque elementum aliquam a.",
+      "publishProperty": "Public a Property"
+    },
+    "Filter": {
+      "searchProperty": "Search a Property"
+    }
   },
   "NotFoundPage": {
     "title": "Page not found"
