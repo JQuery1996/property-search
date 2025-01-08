@@ -3,6 +3,7 @@
 import React from "react";
 import { Typography, theme } from "antd";
 import type { TitleProps as AntdTitleProps } from "antd/es/typography/Title";
+import { BaseType } from "antd/es/typography/Base";
 
 const { Title: AntdTitle } = Typography;
 const { useToken } = theme;
@@ -27,5 +28,11 @@ export const CustomTitle: React.FC<CustomTitleProps> = ({
         ? { color: token.colorTextSecondary, ...style }
         : style;
 
-  return <AntdTitle {...props} style={customStyle} />;
+  return (
+    <AntdTitle
+      type={type !== "primary" ? (type as BaseType) : undefined} // Pass `type` only if not "primary"
+      {...props}
+      style={customStyle}
+    />
+  );
 };

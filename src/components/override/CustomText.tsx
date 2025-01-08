@@ -19,8 +19,15 @@ export const CustomText: React.FC<CustomTextProps> = ({
 }) => {
   const { token } = useToken();
 
-  // Map the `primary` type to the primary color from the theme
-  const textColor = type === "primary" ? token.colorPrimary : undefined;
+  // Compute custom styles based on the type
+  const customStyle =
+    type === "primary" ? { color: token.colorPrimary, ...style } : style;
 
-  return <AntdText {...props} style={{ color: textColor, ...style }} />;
+  return (
+    <AntdText
+      type={type !== "primary" ? type : undefined} // Pass `type` only if not "primary"
+      {...props}
+      style={customStyle}
+    />
+  );
 };

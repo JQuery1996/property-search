@@ -16,6 +16,7 @@ export const colors = {
   },
   grey: {
     light: "#818181",
+    main: "#8C8A8B",
     dark: "#4D4D4D",
   },
 };
@@ -27,4 +28,5 @@ export const colorTokens: Partial<AliasToken> = {
   colorBgContainer: colors.white.main, // Use white for containers
   colorText: colors.pink.darker, // Use light grey for text
   colorTextSecondary: colors.grey.light, // Use grey-pink for secondary text
+  colorTextPlaceholder: colors.grey.main,
 };
