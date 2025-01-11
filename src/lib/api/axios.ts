@@ -7,3 +7,12 @@ export const axiosInstance = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+// Add interceptors if needed
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error("API Error:", error);
+    return Promise.reject(error);
+  },
+);

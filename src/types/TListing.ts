@@ -1,4 +1,4 @@
-export type TProperty = {
+export type TListing = {
   id: number;
   title: string;
   description: string;

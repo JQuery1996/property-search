@@ -1,10 +1,10 @@
 import { Button, Card, Carousel, Flex, Tooltip } from "antd";
-import { TProperty } from "@/types";
+import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
 import { CustomText, Label } from "@/components";
 import Image from "next/image";
 
-export function VerticalCard({ property }: { property: TProperty }) {
+export function VerticalCard({ listing }: { listing: TListing }) {
   const borderRadius = 5;
   return (
     <Card
@@ -18,9 +18,16 @@ export function VerticalCard({ property }: { property: TProperty }) {
         },
       }}
       cover={
-        <div style={{ borderRadius, overflow: "hidden", position: "relative" }}>
+        <div
+          style={{
+            borderRadius,
+            overflow: "hidden",
+            position: "relative",
+            height: 160,
+          }}
+        >
           <Carousel autoplay={true} dots={false}>
-            {property.image_urls.map((url, index) => (
+            {listing.image_urls.map((url, index) => (
               <img
                 key={index}
                 src={url}
@@ -84,10 +91,10 @@ export function VerticalCard({ property }: { property: TProperty }) {
       }
     >
       <Meta
-        title={<Tooltip title={property.title}>{property.title}</Tooltip>}
+        title={<Tooltip title={listing.title}>{listing.title}</Tooltip>}
         description={
           <CustomText style={{ fontWeight: "bold" }}>
-            {property.price_value} {property.price_currency}
+            {listing.price_value} {listing.price_currency}
           </CustomText>
         }
       />
@@ -102,7 +109,7 @@ export function VerticalCard({ property }: { property: TProperty }) {
             />
           }
           text={
-            <CustomText type="secondary">{property.bedrooms ?? "-"}</CustomText>
+            <CustomText type="secondary">{listing.bedrooms ?? "-"}</CustomText>
           }
         />
         <Label
@@ -115,9 +122,7 @@ export function VerticalCard({ property }: { property: TProperty }) {
             />
           }
           text={
-            <CustomText type="secondary">
-              {property.bathrooms ?? "-"}
-            </CustomText>
+            <CustomText type="secondary">{listing.bathrooms ?? "-"}</CustomText>
           }
         />
         <Label
@@ -131,7 +136,7 @@ export function VerticalCard({ property }: { property: TProperty }) {
           }
           text={
             <CustomText type="secondary">
-              {property.size_value} {property.size_unit}
+              {listing.size_value} {listing.size_unit}
             </CustomText>
           }
         />
@@ -168,7 +173,7 @@ export function VerticalCard({ property }: { property: TProperty }) {
           }
           text={
             <CustomText type="secondary">
-              {property.added_date.toString()}
+              {listing.added_date.toString()}
             </CustomText>
           }
         />

@@ -1,6 +1,8 @@
 import { Banner, RecentAdditions } from "@/sections";
+import { getListings } from "@/app/api";
 
-export default function Home() {
+export default async function Home() {
+  const { data } = await getListings({ page: 1, per_page: 10 });
   return (
     <>
       <Banner />
@@ -13,7 +15,7 @@ export default function Home() {
           alignContent: "center",
         }}
       >
-        <RecentAdditions />
+        <RecentAdditions listings={data} />
       </div>
     </>
   );
