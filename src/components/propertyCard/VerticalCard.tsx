@@ -1,12 +1,14 @@
 "use client";
-import { Button, Card, Flex, Tooltip } from "antd";
+import { Button, Card, Divider, Flex, Tooltip } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
-import { CustomText, Label } from "@/components";
+import { CustomText, CustomTitle, Label } from "@/components";
 import Image from "next/image";
 import Slider from "react-slick";
+import { useTranslations } from "next-intl";
 
 export function VerticalCard({ listing }: { listing: TListing }) {
+  const translate = useTranslations("listing");
   const borderRadius = 5;
   return (
     <Card
@@ -96,6 +98,10 @@ export function VerticalCard({ listing }: { listing: TListing }) {
         </div>
       }
     >
+      <CustomTitle level={5}>
+        {translate("source")} : {listing.source}
+      </CustomTitle>
+      <Divider style={{ margin: "10px 0" }} />
       <Meta
         title={<Tooltip title={listing.title}>{listing.title}</Tooltip>}
         description={
@@ -104,6 +110,18 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           </CustomText>
         }
       />
+      <Flex gap={4} align="center">
+        <Image
+          src="/images/icons/location.svg"
+          width={16}
+          height={16}
+          priority
+          alt="location"
+        />
+        <CustomText ellipsis type="secondary" style={{ margin: "10px 0" }}>
+          {listing.location}
+        </CustomText>
+      </Flex>
       <Flex gap={25} style={{ margin: "10px 0" }}>
         <Label
           icon={

@@ -60,5 +60,8 @@
       "acceptedExtensions": "You can only upload these types:",
       "fileSizeLessThan": "File must smaller than"
     }
+  },
+  "listing": {
+    "source": "Source"
   }
 }
