@@ -2,6 +2,7 @@ import { axiosInstance } from "@/lib";
 import { LISTINGS_URL } from "@/constants";
 import { TFilter, TListing } from "@/types";
 import { flattenFilters } from "@/helpers";
+import logger from "@/lib/logger/logger";
 
 interface TListingsResponse {
   data: TListing[];
@@ -19,7 +20,7 @@ export async function getListings(
     const { data } = response.data.data;
     return { data };
   } catch (error) {
-    console.log(error);
+    logger.error("Failed to fetch Listings", { error });
     return { data: [] };
   }
 }
