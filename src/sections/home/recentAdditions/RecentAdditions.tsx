@@ -1,5 +1,6 @@
+"use client";
 import { Button, Col, Flex, Row } from "antd";
-import { CustomTitle, VerticalCard } from "@/components";
+import { CustomTitle, HorizontalCard, VerticalCard } from "@/components";
 import styles from "./style.module.css";
 import Image from "next/image";
 import { TListing } from "@/types";
@@ -44,7 +45,7 @@ export function RecentAdditions({ listings }: TRecentAdditions) {
       </div>
       <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
         {listings.map((listing) => (
-          <Col key={listing.id} xs={24} md={12} xl={6} xxl={6}>
+          <Col key={listing.id} xs={24} md={12} lg={8} xl={6}>
             <VerticalCard listing={listing} />
           </Col>
         ))}

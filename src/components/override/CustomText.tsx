@@ -27,7 +27,7 @@ export const CustomText: React.FC<CustomTextProps> = ({
     <AntdText
       type={type !== "primary" ? type : undefined} // Pass `type` only if not "primary"
       {...props}
-      style={customStyle}
+      style={{ margin: 0, ...customStyle }}
     />
   );
 };

@@ -1,0 +1,17 @@
+.success {
+    background-color: #D6FFE0 !important;
+    border-color: #D6FFE0 !important;
+    color: #000 !important; /* Dark green for text */
+}
+
+.success:hover {
+    background-color: #b0f5c8 !important; /* Slightly darker on hover */
+    border-color: #b0f5c8 !important;
+    color: #000 !important;
+}
+
+.success:focus {
+    background-color: #c2f4d4 !important; /* Focus color */
+    border-color: #c2f4d4 !important;
+    color: #000 !important;
+}

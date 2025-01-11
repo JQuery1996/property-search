@@ -32,7 +32,7 @@ export const CustomTitle: React.FC<CustomTitleProps> = ({
     <AntdTitle
       type={type !== "primary" ? (type as BaseType) : undefined} // Pass `type` only if not "primary"
       {...props}
-      style={customStyle}
+      style={{ margin: 0, ...customStyle }}
     />
   );
 };

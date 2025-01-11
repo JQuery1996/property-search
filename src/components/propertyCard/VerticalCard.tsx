@@ -1,8 +1,10 @@
-import { Button, Card, Carousel, Flex, Tooltip } from "antd";
+"use client";
+import { Button, Card, Flex, Tooltip } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
 import { CustomText, Label } from "@/components";
 import Image from "next/image";
+import Slider from "react-slick";
 
 export function VerticalCard({ listing }: { listing: TListing }) {
   const borderRadius = 5;
@@ -23,24 +25,28 @@ export function VerticalCard({ listing }: { listing: TListing }) {
             borderRadius,
             overflow: "hidden",
             position: "relative",
-            height: 160,
+            height: 200,
           }}
         >
-          <Carousel autoplay={true} dots={false}>
+          <Slider autoplay infinite speed={1000}>
             {listing.image_urls.map((url, index) => (
-              <img
-                key={index}
-                src={url}
-                alt="property-image"
-                style={{
-                  width: "100%",
-                  height: "160px",
-                  objectFit: "fill",
-                  display: "block", // Ensures the image doesn't exceed its container
-                }}
-              />
+              <div key={index}>
+                <Image
+                  src={url} // Use the URL from the map function
+                  alt="property-image"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: 200,
+                    objectFit: "fill",
+                  }}
+                  objectFit="fill"
+                />
+              </div>
             ))}
-          </Carousel>
+          </Slider>
           <div
             style={{
               position: "absolute",
