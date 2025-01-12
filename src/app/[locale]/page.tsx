@@ -1,4 +1,9 @@
-import { Banner, PropertyCategory, RecentAdditions } from "@/sections";
+import {
+  Banner,
+  OurApplication,
+  PropertyCategory,
+  RecentAdditions,
+} from "@/sections";
 import { DevelopmentProjects } from "@/sections/home/developmentProjects/DevelopmentProjects";
 
 export default async function Home() {
@@ -28,6 +33,8 @@ export default async function Home() {
       >
         <DevelopmentProjects />
       </div>
+
+      <OurApplication />
     </>
   );
 }

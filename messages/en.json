@@ -15,7 +15,16 @@
     },
     "developmentProjects": {
       "title": "Featured Property",
-      "description": "Development Projects"
+      "developmentProjects": "Development Projects"
+    },
+    "ourApplication": {
+      "title": "Our Application",
+      "description": "Open the Gateway to Property Discoveries by Installing Our Aplication on Your Mobile Device",
+      "miniDescription": "Lorem ipsum dolor sit amet consectetur. Integer sagittis quis urna eu cras tellus sed posuere magna.",
+      "downloadOnThe": "Download on the",
+      "appleStore": "Apple Store",
+      "getItOn": "Get It On",
+      "googlePlay": "Google Play"
     }
   },
   "NotFoundPage": {
