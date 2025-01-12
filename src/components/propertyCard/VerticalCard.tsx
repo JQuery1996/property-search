@@ -184,7 +184,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
             />
           }
         >
-          Contact Us
+          {translate("contactUs")}
         </Button>
         <Label
           icon={

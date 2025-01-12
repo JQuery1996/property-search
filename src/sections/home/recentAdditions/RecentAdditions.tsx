@@ -1,18 +1,20 @@
 "use client";
 import { Button, Col, Flex, Row } from "antd";
-import { CustomTitle, HorizontalCard, VerticalCard } from "@/components";
+import { CustomTitle, VerticalCard } from "@/components";
 import styles from "./style.module.css";
 import Image from "next/image";
 import { TListing } from "@/types";
+import { useTranslations } from "next-intl";
 
 type TRecentAdditions = {
   listings: TListing[];
 };
 export function RecentAdditions({ listings }: TRecentAdditions) {
+  const translate = useTranslations("HomePage.RecentAdditions");
   return (
     <Flex vertical gap={4} style={{ width: "87%" }}>
       <CustomTitle type="primary" level={4} className={styles.noMargin}>
-        Recent Additions
+        {translate("title")}
       </CustomTitle>
       <div
         style={{
@@ -23,7 +25,7 @@ export function RecentAdditions({ listings }: TRecentAdditions) {
         }}
       >
         <CustomTitle level={3} className={styles.noMargin}>
-          Find Properties that Suits You
+          {translate("findPropertiesThatSuitsYou")}
         </CustomTitle>
         <Button
           type="text"

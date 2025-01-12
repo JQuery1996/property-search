@@ -8,6 +8,10 @@
     },
     "Filter": {
       "searchProperty": "Search a Property"
+    },
+    "RecentAdditions": {
+      "title": "Recent Additions",
+      "findPropertiesThatSuitsYou": "Find Properties that Suits You"
     }
   },
   "NotFoundPage": {
@@ -62,6 +66,7 @@
     }
   },
   "listing": {
-    "source": "Source"
+    "source": "Source",
+    "contactUs": "Contact Us"
   }
 }
