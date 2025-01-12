@@ -8,7 +8,7 @@ import Slider from "react-slick";
 import { useTranslations } from "next-intl";
 
 export function VerticalCard({ listing }: { listing: TListing }) {
-  const translate = useTranslations("listing");
+  const translate = useTranslations();
   const borderRadius = 5;
   return (
     <Card
@@ -99,7 +99,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
       }
     >
       <CustomTitle level={5}>
-        {translate("source")} : {listing.source}
+        {translate("listing.source")} : {listing.source}
       </CustomTitle>
       <Divider style={{ margin: "10px 0" }} />
       <Meta
@@ -184,7 +184,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
             />
           }
         >
-          {translate("contactUs")}
+          {translate("Common.contactUs")}
         </Button>
         <Label
           icon={

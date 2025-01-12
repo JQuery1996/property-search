@@ -3,3 +3,12 @@ body {
     margin: 0;
     padding: 0;
 }
+.line-clamp {
+  height: 63px; /* Adjust based on your line-height and font-size */
+  line-height: 1.5; /* Match your text's line-height */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,8 +1,7 @@
-import { Banner, RecentAdditions } from "@/sections";
-import { getListings } from "@/app/api";
+import { Banner, PropertyCategory, RecentAdditions } from "@/sections";
+import { DevelopmentProjects } from "@/sections/home/developmentProjects/DevelopmentProjects";
 
 export default async function Home() {
-  const { data } = await getListings({ page: 1, per_page: 12 });
   return (
     <>
       <Banner />
@@ -15,7 +14,19 @@ export default async function Home() {
           alignContent: "center",
         }}
       >
-        <RecentAdditions listings={data} />
+        <RecentAdditions />
+      </div>
+      <PropertyCategory />
+      <div
+        style={{
+          marginTop: 60,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+        }}
+      >
+        <DevelopmentProjects />
       </div>
     </>
   );

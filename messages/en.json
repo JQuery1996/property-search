@@ -12,6 +12,10 @@
     "RecentAdditions": {
       "title": "Recent Additions",
       "findPropertiesThatSuitsYou": "Find Properties that Suits You"
+    },
+    "developmentProjects": {
+      "title": "Featured Property",
+      "description": "Development Projects"
     }
   },
   "NotFoundPage": {
@@ -31,7 +35,8 @@
     "Welcome": {
       "title": "Welcome to <span>Property</span> Search.",
       "description": "We are pleased to see you again at  <span>Property Search</span> where you can find your future dream home at competitive prices."
-    }
+    },
+    "contactUs": "Contact Us"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -66,7 +71,9 @@
     }
   },
   "listing": {
-    "source": "Source",
-    "contactUs": "Contact Us"
+    "source": "Source"
+  },
+  "developers": {
+    "verify": "verify"
   }
 }
