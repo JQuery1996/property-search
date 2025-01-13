@@ -12,3 +12,14 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.truncated-text-6 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6; /* Limits text to 6 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Adjust line height */
+  max-height: 9em; /* 6 lines * line-height */
+  word-break: break-word;
+}

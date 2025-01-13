@@ -5,3 +5,4 @@ export * from "./TFilter";
 export * from "./TPaginationMetaData";
 export * from "./TCategory";
 export * from "./TDevelopmentProperty";
+export * from "./TTestimonial";

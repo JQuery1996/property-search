@@ -25,6 +25,10 @@
       "appleStore": "Apple Store",
       "getItOn": "Get It On",
       "googlePlay": "Google Play"
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "Happy Homeowners Share<space></space> Their Stories"
     }
   },
   "NotFoundPage": {

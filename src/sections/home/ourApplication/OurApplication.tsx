@@ -10,7 +10,6 @@ export function OurApplication() {
   const translate = useTranslations("HomePage.ourApplication");
   return (
     <Row
-      gutter={[16, 16]}
       style={{
         backgroundColor: token.colorPrimary,
         padding: "40px 80px",
@@ -28,6 +27,7 @@ export function OurApplication() {
             flexDirection: "column",
             justifyContent: "center",
             height: "100%",
+            overflow: "hidden",
           }}
         >
           <CustomText style={{ color: "white" }}>
@@ -116,6 +116,7 @@ export function OurApplication() {
             height: "100%",
             display: "flex",
             justifyContent: "end",
+            overflow: "hidden",
           }}
         >
           <Image

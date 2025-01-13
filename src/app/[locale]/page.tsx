@@ -1,10 +1,11 @@
 import {
   Banner,
+  DevelopmentProjects,
   OurApplication,
   PropertyCategory,
   RecentAdditions,
+  Testimonials,
 } from "@/sections";
-import { DevelopmentProjects } from "@/sections/home/developmentProjects/DevelopmentProjects";
 
 export default async function Home() {
   return (
@@ -35,6 +36,7 @@ export default async function Home() {
       </div>
 
       <OurApplication />
+      <Testimonials />
     </>
   );
 }
