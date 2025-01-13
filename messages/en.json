@@ -7,7 +7,50 @@
       "publishProperty": "Public a Property"
     },
     "Filter": {
-      "searchProperty": "Search a Property"
+      "searchProperty": "Search a Property",
+      "propertyFilter": "Property Filter",
+      "apply": "Apply",
+      "clearAll": "Clear All",
+      "rent": "Rent",
+      "buy": "Buy",
+      "propertyTypeCategory": "Property Type Category",
+      "propertyType": "Property Type",
+      "PropertyTypesCategories": {
+        "commercial": "Commercial Properties",
+        "residential": "Residential Properties",
+        "hospital": "Hospitality Properties",
+        "land": "Land Properties"
+      },
+      "PropertyTypes": {
+        "office": "Office",
+        "shop": "Shop",
+        "retail": "Retail",
+        "businessCenter": "Business Center",
+        "officeSpace": "Office Space",
+        "warehouse": "Warehouse",
+        "factor": "Factor",
+        "laborCamp": "Labour Camp",
+        "commercialVilla": "Commercial Villa",
+        "showroom": "Showroom",
+        "bulkSaleUnit": "Bulk Sale Unit",
+        "bulkUnit": "Bulk Unit",
+
+        "apartment": "Apartment",
+        "villa": "Villa",
+        "townHouse": "TownHouse",
+        "duplex": "Duplex",
+        "penthouse": "Penthouse",
+        "bungalow": "Bungalow",
+        "residentialPlot": "Residential Plot",
+        "residentialBuilding": "Residential Building",
+        "compound": "Compound",
+
+        "hotelAndApartment": "Hotel & Hotel Apartment",
+        "hotelApartment": "Hotel Apartment",
+
+        "land": "Land",
+        "farm": "Farm"
+      }
     },
     "RecentAdditions": {
       "title": "Recent Additions",

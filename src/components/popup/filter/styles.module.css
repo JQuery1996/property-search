@@ -1,0 +1,75 @@
+.applyBtn{
+    width: 75%;
+    height: 2.5rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    display: block !important;
+    background-color:  #E54F8E !important;
+    border-radius: 8px;
+    margin: 6px 55px;
+    border: none !important;
+}
+.clearBtn{
+    width: 75%;
+    height: 2.5rem !important;
+    font-weight: bold !important;
+    color: black !important;
+    text-align: center !important;
+    display: block !important;
+    background: none !important;
+    border-radius: 8px;
+    margin: 0 55px 0 55px;
+    border: 2px solid #0F0A0C !important;
+}
+
+.propertyStyle{
+    display: flex !important;
+    gap: 8px;
+    text-align: center;
+    justify-content: center ;
+}
+.propertyStyleOption{
+    flex: 1;
+    border-radius: 6px !important;
+    background-color: #8C8A8B;
+    height: 2.3rem !important;
+    padding-top: 5px !important;
+}
+
+
+.propertyTypeOption{
+    height: auto !important;
+    border-radius: 4px !important;
+    /*background-color: #FFFAFC !important;*/
+    padding: 8px 12px !important;
+}
+
+.propertyType{
+    display: flex !important;
+    gap: 8px;
+    text-align: center;
+    justify-content: start;
+    flex-flow: wrap;
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+        background-color: #FFDCEB !important;
+        font-weight: bold !important;
+        color: #0F0A0C !important;
+        text-align: left;
+    }
+}
+
+.propertyType .ant-radio-button-wrapper-checked{
+    background-color: #c2f4d4!important;
+}
+
+.ant-radio-button-wrapper::before{
+    height: auto !important;
+    content: none !important;
+}
+
+.filterItemTitle {
+    font-weight: 700;
+    font-size: 16px;
+    color: #0F0A0C;
+}
