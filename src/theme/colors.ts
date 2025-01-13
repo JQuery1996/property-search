@@ -30,4 +30,5 @@ export const colorTokens: Partial<AliasToken> = {
   colorTextSecondary: colors.grey.light, // Use grey-pink for secondary text
   colorTextPlaceholder: colors.grey.main,
   pinkLight: colors.pink.light,
+  greyPink: colors.greyPink.main,
 };

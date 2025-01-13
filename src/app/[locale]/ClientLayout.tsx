@@ -1,7 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import { App, ConfigProvider, Layout, Menu, theme } from "antd";
-import { Content, Footer, Header } from "antd/es/layout/layout";
+import { Content, Header } from "antd/es/layout/layout";
 import { useTranslations } from "next-intl";
 import { MENU_ITEMS } from "@/constants";
 import { LogoWithBrand } from "@/components";
@@ -13,6 +13,7 @@ import { useResponsive } from "antd-style";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
+import { AppFooter } from "@/sections";
 
 type TClientLayout = {
   children: ReactNode;
@@ -74,9 +75,7 @@ export function ClientLayout({ children }: TClientLayout) {
               {children}
             </div>
           </Content>
-          {/*<Footer style={{ textAlign: "center" }}>*/}
-          {/*  Ant Design ©{new Date().getFullYear()} Created by Ant UED*/}
-          {/*</Footer>*/}
+          <AppFooter />
         </Layout>
       </App>
     </ConfigProvider>

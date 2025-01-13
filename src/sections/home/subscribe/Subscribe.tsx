@@ -1,5 +1,5 @@
 "use client";
-import { Button, Col, Flex, Input, Row, theme } from "antd";
+import { Button, Col, Input, Row, theme } from "antd";
 import { CustomText, CustomTitle } from "@/components";
 import { useTranslations } from "next-intl";
 
