@@ -4,3 +4,4 @@ export * from "./propertyCategory";
 export * from "./ourApplication";
 export * from "./testimonials";
 export * from "./developmentProjects";
+export * from "./subscribe";

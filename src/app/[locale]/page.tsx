@@ -4,6 +4,7 @@ import {
   OurApplication,
   PropertyCategory,
   RecentAdditions,
+  Subscribe,
   Testimonials,
 } from "@/sections";
 
@@ -37,6 +38,7 @@ export default async function Home() {
 
       <OurApplication />
       <Testimonials />
+      <Subscribe />
     </>
   );
 }

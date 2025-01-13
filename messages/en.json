@@ -29,6 +29,11 @@
     "testimonials": {
       "title": "Testimonials",
       "description": "Happy Homeowners Share<space></space> Their Stories"
+    },
+    "subscribe": {
+      "title": "Join us",
+      "description": "Get Property Insights and <space></space>Listings Directly to Your Email",
+      "subDescription": "Subscribe us to get newsleter about property information."
     }
   },
   "NotFoundPage": {
