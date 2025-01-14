@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import { AppFooter } from "@/sections";
+import { usePathname } from "@/i18n/routing";
 
 type TClientLayout = {
   children: ReactNode;
@@ -22,6 +23,8 @@ export function ClientLayout({ children }: TClientLayout) {
   const {
     token: { colorBgContainer, borderRadiusLG, colorBgBase },
   } = theme.useToken();
+
+  const pathname = usePathname(); // Get the current path
 
   const translate = useTranslations("Layout.Header.Items");
   const locale = useLocale() as TLOCALE;
@@ -75,7 +78,8 @@ export function ClientLayout({ children }: TClientLayout) {
               {children}
             </div>
           </Content>
-          <AppFooter />
+          {/* Footer shouldn't be appeared in authentication pages[login, register, reset password, verification, etc...]*/}
+          {!pathname.includes("auth") && <AppFooter />}
         </Layout>
       </App>
     </ConfigProvider>

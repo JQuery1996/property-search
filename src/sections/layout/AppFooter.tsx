@@ -1,5 +1,5 @@
 "use client";
-import { theme, Layout, Row, Col, Flex, Link as AntdLink, Button } from "antd";
+import { theme, Layout, Row, Col, Flex, Button } from "antd";
 import { CustomText, CustomTitle, Logo } from "@/components";
 import { APP } from "@/constants";
 import { Link } from "@/i18n/routing";
