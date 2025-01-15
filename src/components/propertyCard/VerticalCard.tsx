@@ -44,7 +44,6 @@ export function VerticalCard({ listing }: { listing: TListing }) {
                     height: 200,
                     objectFit: "fill",
                   }}
-                  objectFit="fill"
                 />
               </div>
             ))}
