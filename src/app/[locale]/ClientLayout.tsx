@@ -75,6 +75,7 @@ export function ClientLayout({ children }: TClientLayout) {
                 borderRadius: borderRadiusLG,
               }}
             >
+              {/* Wrap children in Suspense */}
               {children}
             </div>
           </Content>

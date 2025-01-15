@@ -3,7 +3,7 @@
 
 import RootLayout from "./layout"; // Import the root layout
 
-export default function NotFound() {
+export default function _notFound() {
   return (
     <RootLayout>
       <div>

@@ -10,7 +10,7 @@ interface TListingsResponse {
 }
 
 export async function getListings(
-  searchParams: ISearchParams = {},
+  searchParams: ISearchParams,
 ): Promise<TListingsResponse> {
   try {
     const flattenedSearchParams = flattenFilters(searchParams);
