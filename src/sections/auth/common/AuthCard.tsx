@@ -1,8 +1,6 @@
 "use client";
 import { Card, Col, Flex, Row } from "antd";
 import { CustomTitle, Welcome } from "@/components";
-import { useTranslations } from "next-intl";
-import { LoginForm } from "@/sections";
 import { ReactNode } from "react";
 
 type TAuthCard = {

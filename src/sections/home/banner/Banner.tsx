@@ -15,9 +15,11 @@ export function Banner() {
       <Image
         src="/images/home/banner.png"
         alt="home page banner"
-        fill
-        style={{ objectFit: "cover" }}
-        priority
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ objectFit: "cover", width: "100%", height: "100%" }}
+        objectFit="cover"
       />
       <Flex
         style={{

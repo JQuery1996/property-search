@@ -2,7 +2,6 @@
 import { Flex } from "antd";
 import { useTranslations } from "next-intl";
 import { CustomText, CustomTitle } from "@/components";
-import { useMediaQuery } from "@/hooks";
 
 export function Welcome() {
   const translate = useTranslations("Common.Welcome");

@@ -1,6 +1,6 @@
 import { axiosInstance } from "@/lib";
 import { DEVELOPERS_URL } from "@/constants";
-import { TDevelopmentProperty, TFilter } from "@/types";
+import { TDevelopmentProperty, ISearchParams } from "@/types";
 import { flattenFilters } from "@/helpers";
 import logger from "@/lib/logger/logger";
 
@@ -9,11 +9,11 @@ interface TDevelopersResponse {
 }
 
 export async function getDevelopers(
-  filters: TFilter = {},
+  filters: ISearchParams = {},
 ): Promise<TDevelopersResponse> {
   try {
-    const flattenedFilters = flattenFilters(filters);
-    const queryParameters = new URLSearchParams(flattenedFilters).toString();
+    const flattenSearchParams = flattenFilters(filters);
+    const queryParameters = new URLSearchParams(flattenSearchParams).toString();
     const response = await axiosInstance.get(
       `${DEVELOPERS_URL}?${queryParameters}`,
     );

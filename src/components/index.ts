@@ -6,3 +6,4 @@ export * from "./propertyCard";
 export * from "./Category";
 export * from "./developerCard";
 export * from "./testimonial";
+export * from "./skeletons";

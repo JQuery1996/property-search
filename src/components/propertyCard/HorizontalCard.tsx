@@ -29,7 +29,10 @@ export function HorizontalCard({ listing }: { listing: TListing }) {
             <Carousel autoplay={true} dots={false}>
               {listing.image_urls.map((url, index) => (
                 <div key={index}>
-                  <img
+                  <Image
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     src={url}
                     alt="property-image"
                     style={{
@@ -39,6 +42,7 @@ export function HorizontalCard({ listing }: { listing: TListing }) {
                       minHeight: "220px !important",
                       height: "220px !important",
                     }}
+                    objectFit="fill"
                   />
                 </div>
               ))}

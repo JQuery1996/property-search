@@ -36,6 +36,10 @@
       "subDescription": "Subscribe us to get newsleter about property information."
     }
   },
+  "PropertiesPage": {
+    "filterResults": "Filter Results",
+    "foundItems": "{count, plural, one {Found # item} other {Found # items}}"
+  },
   "NotFoundPage": {
     "title": "Page not found"
   },

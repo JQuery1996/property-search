@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Button, Card, Divider, Flex } from "antd";
+import { Button, Card, Flex } from "antd";
 import Image from "next/image";
 import { TDevelopmentProperty, TLOCALE } from "@/types";
 import { useLocale } from "use-intl";
