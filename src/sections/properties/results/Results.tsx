@@ -1,7 +1,7 @@
 "use server";
-import { getListings } from "@/app/api";
-import { ResultsUI } from "@/sections/properties/results/ResultsUI";
+import { ResultsUI } from "./ResultsUI";
 import { ISearchParams } from "@/types";
+import { getListings } from "@/app/services";
 
 export async function Results({
   searchParams,

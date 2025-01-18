@@ -1,6 +1,6 @@
 "use server";
 import { Banner } from "./Banner";
-import { filterLists } from "@/app/api";
+import { filterLists } from "@/app/services";
 
 export async function BannerWrapper() {
   // Fetch filter settings with caching

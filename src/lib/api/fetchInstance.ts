@@ -1,7 +1,7 @@
 // utils/fetchInstance.ts
 import { BASE_URL } from "@/constants";
-import logger from "@/lib/logger/logger";
-import { TFetchOptions } from "@/types"; // Import your logger
+import { TFetchOptions } from "@/types";
+import { logger } from "@/lib"; // Import your logger
 
 type Interceptor = (options: TFetchOptions) => TFetchOptions;
 

@@ -1,7 +1,7 @@
+"use server";
 import { DEVELOPERS_URL } from "@/constants";
 import { TFetchOptions, TDevelopmentProperty } from "@/types";
-import { fetchInstance } from "@/lib"; // Import fetchInstance
-import logger from "@/lib/logger/logger";
+import { fetchInstance, logger } from "@/lib"; // Import fetchInstance
 
 interface TDevelopersResponse {
   data: TDevelopmentProperty[];

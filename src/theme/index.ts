@@ -1,6 +1,5 @@
 import { colorTokens } from "./colors";
 import { menuTheme } from "./menu";
-import { buttonTheme } from "./button";
 import { ThemeConfig } from "antd/es/config-provider/context";
 
 export const themeConfig: ThemeConfig = {
@@ -9,6 +8,6 @@ export const themeConfig: ThemeConfig = {
   },
   components: {
     ...menuTheme,
-    ...buttonTheme,
+    // ...buttonTheme,
   },
 };

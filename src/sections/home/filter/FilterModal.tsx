@@ -31,6 +31,7 @@ type TFilterModal = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   filterSettings: TFilterSettings;
+  bedrooms: 3;
 };
 
 export function FilterModal({
@@ -150,6 +151,7 @@ export function FilterModal({
       FilterConstants.PROPERTY_PURPOSES[0].value,
     [FilterFormNames.PRICE_RANGE]: [0, 1_000_000],
   };
+
   function handlePropertyTypeCategoryChange() {
     form.setFieldsValue({ [FilterFormNames.PROPERTY_TYPE]: [] });
   }
@@ -471,7 +473,7 @@ export function FilterModal({
             {Array.from({ length: 8 }).map((_, index) => (
               <Radio.Button
                 key={1 + index}
-                value={1 + index}
+                value={(1 + index).toString()}
                 style={{
                   margin: 3,
                   borderRadius: 20,
@@ -498,7 +500,7 @@ export function FilterModal({
             {Array.from({ length: 8 }).map((_, index) => (
               <Radio.Button
                 key={1 + index}
-                value={1 + index}
+                value={(1 + index).toString()}
                 style={{
                   margin: 3,
                   borderRadius: 20,

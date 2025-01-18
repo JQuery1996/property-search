@@ -1,3 +1,4 @@
+"use server";
 import { fetchInstance } from "@/lib";
 import { TFetchOptions, TFilterSettings } from "@/types";
 import { FILTER_LISTS } from "@/constants";

@@ -1,7 +1,7 @@
+"use server";
 import { LISTINGS_URL } from "@/constants";
 import { TFetchOptions, TListing, TPaginationMetadata } from "@/types";
-import { fetchInstance } from "@/lib"; // Import FetchOptions
-import logger from "@/lib/logger/logger";
+import { fetchInstance, logger } from "@/lib"; // Import FetchOptions
 
 interface TListingsResponse {
   data: TListing[];

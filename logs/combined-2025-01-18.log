@@ -38,3 +38,255 @@
 {"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 10:22:02"}
 {"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:22:03"}
 {"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 10:22:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:53:14"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:54:32"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:54:32"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:54:32"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:54:32"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:55:21"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:55:21"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:55:22"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 10:55:22"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:55:36"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:56:14"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:56:14"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:56:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:56:53"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:58:45"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:58:46"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:58:58"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:59:52"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:59:53"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 10:59:53"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:00:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:00:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:00:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:00:14"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:02:02"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:02:06"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:02:37"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:02:37"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:02:42"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:10"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:20"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:03:20"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:20"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:03:20"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:34"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:03:53"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:03"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:03"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:04:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:04"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:04"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:04:14"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:19"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:29"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:04:29"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:04:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:05:55"}
+{"error":{},"level":"error","message":"Engine api","service":"user-service","timestamp":"2025-01-18 11:15:13"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:15:13"}
+{"error":{},"level":"error","message":"Engine api","service":"user-service","timestamp":"2025-01-18 11:15:13"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:15:13"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:15:59"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:16:03"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:16:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:16:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:16:09"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:17:52"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:17:54"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:18:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:18:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:18:02"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:19:48"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:19:49"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:20:22"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:20:23"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:20:32"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:20:32"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:20:32"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:20:33"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:20:33"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:20:33"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:20:50"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:21:35"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:21:35"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:21:45"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:21:45"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:21:45"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:22:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:22:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:03"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:18"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:22:40"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:40"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:22:41"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:41"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:22:48"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:23:19"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:23:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:23:20"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:23:20"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:24:42"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:26:00"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:26:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:26:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:26:10"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:26:24"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:26:55"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:26:55"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:26:56"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:27:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:27:14"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:27:26"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:27:36"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:27:36"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:37:59"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:38:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:38:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:38:09"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:43:02"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:43:19"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:43:20"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:43:20"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:43:51"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:45:35"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:45:35"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:45:55"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:46:05"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:46:44"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:46:45"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:46:55"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:47:21"}
+{"error":{},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:47:33"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:47:43"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:47:43"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:48:26"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:48:27"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:50:25"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:50:26"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:50:26"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:13"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:14"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:53:14"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:28"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:29"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:53:29"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:55"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:53:56"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:54:08"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:54:08"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:55:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:55:03"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:55:03"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:55:25"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine api:","service":"user-service","timestamp":"2025-01-18 11:55:25"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:56:06"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:56:11"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:56:11"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:26"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:26"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:42"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:42"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:45"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:45"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:47"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:47"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:50"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:50"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 11:59:54"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 11:59:54"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:00:33"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:00:33"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:00:35"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:00:35"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:00:38"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:00:38"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:00:56"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:00:56"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:01:25"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:01:25"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:02:08"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:02:08"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:03:27"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:03:27"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:03:42"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:03:42"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:04:04"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:04:04"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:04:10"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:04:10"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:04:14"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:04:14"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:04:18"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:04:18"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:21:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:21:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:21:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:35:21"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:35:21"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:54:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:54:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:54:09"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:57:46"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:57:46"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:57:58"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:57:58"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:57:58"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:58:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 12:58:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 12:58:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:20:18"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:20:18"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:20:18"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:27:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:27:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:27:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:27:35"}
+{"error":{"cause":{"code":"ENOTFOUND","errno":-3008,"hostname":"engine.propertysearch.website","syscall":"getaddrinfo"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:28:39"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:00"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:00"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:29:00"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:29:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:33:26"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:33:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:33:51"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:33:51"}
+{"error":{},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:34:40"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:36:17"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:36:27"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:36:27"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:36:27"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:37:26"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:38:17"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:38:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:38:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:38:44"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:39:40"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:40:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:40:02"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:41:28"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:46:48"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:47:47"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:47:47"}
+{"error":{},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:48:08"}
+{"error":{},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:48:08"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Engine API error:","service":"user-service","timestamp":"2025-01-18 13:53:30"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:54:35"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:54:35"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"API Error:","service":"user-service","timestamp":"2025-01-18 13:55:10"}
+{"error":{"cause":{"code":"UND_ERR_CONNECT_TIMEOUT","message":"Connect Timeout Error","name":"ConnectTimeoutError"}},"level":"error","message":"Failed to fetch Listings","service":"user-service","timestamp":"2025-01-18 13:55:10"}

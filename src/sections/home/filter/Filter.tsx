@@ -1,6 +1,5 @@
 "use client";
 import { Button, Flex, Input, theme, Modal, Badge } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
@@ -10,9 +9,10 @@ import "regenerator-runtime/runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import { PAGES } from "@/constants";
 import { FilterModal } from "./FilterModal";
 import { TFilterSettings } from "@/types";
+import { flattenFilters } from "@/helpers";
+import { PAGES } from "@/constants";
 
 const { useToken } = theme;
 
@@ -23,11 +23,14 @@ export function Filter({
 }) {
   const { token } = useToken();
   const translate = useTranslations("HomePage.Filter");
-  const router = useRouter();
+  const { push } = useRouter();
   const searchParams = useSearchParams();
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState(
+    searchParams.get("city") || "",
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const [searchLoading, setSearchLoading] = useState(false);
   const {
     transcript,
     listening,
@@ -77,11 +80,34 @@ export function Filter({
   };
 
   // Handle search submission
-  const handleSearch = () => {
-    const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set("city", encodeURIComponent(searchValue.trim()));
-    newSearchParams.delete("page");
-    router.push(`${PAGES.PROPERTIES}?${newSearchParams.toString()}`);
+  const handleSearch = async (value: string) => {
+    setSearchLoading(true);
+    // Step 1: Call the Engine API to fetch filters
+    const response = await fetch(
+      `/api/searchEngine?query_text=${encodeURIComponent(value)}`,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        cache: "force-cache", // Cache the response indefinitely
+      },
+    );
+
+    const engineFilters = await response.json();
+
+    // Step 2: Flatten the filters to remove null/undefined values
+    const flattenedFilters = flattenFilters(engineFilters);
+
+    console.log({ engineFilters, flattenedFilters });
+    // Step 3: Create a new URLSearchParams object
+    const newSearchParams = new URLSearchParams(flattenedFilters);
+
+    // Step 4: Push the new URL with the flattened filters
+    push(`${PAGES.PROPERTIES}?${newSearchParams.toString()}`);
+
+    setSearchLoading(false);
   };
 
   function handleFilterOpen() {
@@ -110,18 +136,13 @@ export function Filter({
         }}
         gap={12}
       >
-        <Input
+        <Input.Search
           size="large"
           placeholder={translate("searchProperty")}
-          suffix={
-            <SearchOutlined
-              style={{ cursor: "pointer" }}
-              onClick={handleSearch}
-            />
-          }
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          onPressEnter={handleSearch}
+          onSearch={handleSearch}
+          loading={searchLoading}
         />
         <Badge
           count={countQueryParams()}
@@ -142,6 +163,9 @@ export function Filter({
                 alt="filter icon"
               />
             }
+            styles={{
+              icon: { width: 32, height: 40 },
+            }}
             onClick={handleFilterOpen}
           />
         </Badge>

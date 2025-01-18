@@ -1,7 +1,6 @@
 "use server";
 import { RecentAdditionsUI } from "./RecentAdditionsUI";
-import { getListings } from "@/app/api";
-import { FilterConstants } from "@/constants";
+import { getListings } from "@/app/services";
 
 export async function RecentAdditions() {
   const { data } = await getListings({
