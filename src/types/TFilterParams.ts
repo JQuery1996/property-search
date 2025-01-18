@@ -1,0 +1,22 @@
+export type TFilterParams = {
+  is_mine: boolean;
+  order_by: string;
+  order_dir: string;
+  language: string;
+  saved_items: string[] | number[];
+  completion_status: string;
+  property_purpose: string;
+  property_type: string;
+  price_period: string[];
+  source: string;
+  city: string;
+  bedrooms: string | number;
+  bathrooms: string | number;
+  amenities: string[];
+  min_size: string | number;
+  max_size: string | number;
+  min_yearly_price: string | number;
+  max_yearly_price: string | number;
+  per_page: string | number;
+  company_type: string;
+};

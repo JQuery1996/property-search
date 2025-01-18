@@ -6,3 +6,5 @@ export * from "./TPaginationMetaData";
 export * from "./TCategory";
 export * from "./TDevelopmentProperty";
 export * from "./TTestimonial";
+export * from "./TFilterSettings";
+export * from "./TFetchOptions";

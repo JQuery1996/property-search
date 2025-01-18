@@ -1,5 +1,5 @@
 import {
-  Banner,
+  BannerWrapper,
   DevelopmentProjects,
   OurApplication,
   PropertyCategory,
@@ -11,7 +11,7 @@ import {
 export default async function Home() {
   return (
     <>
-      <Banner />
+      <BannerWrapper />
       <div
         style={{
           marginTop: 60,

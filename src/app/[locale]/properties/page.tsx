@@ -1,4 +1,4 @@
-import { Banner, Results } from "@/sections";
+import { BannerWrapper, Results } from "@/sections";
 import { ISearchParams } from "@/types";
 import { Suspense } from "react";
 import { PropertiesSkeleton } from "@/components";
@@ -10,7 +10,7 @@ export default function Properties({
 }) {
   return (
     <>
-      <Banner />
+      <BannerWrapper />
       <div
         style={{
           marginTop: 60,

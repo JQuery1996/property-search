@@ -5,8 +5,13 @@ import { Button, Flex } from "antd";
 import { useMediaQuery } from "@/hooks";
 import { Filter } from "../filter";
 import { useTranslations } from "next-intl";
+import { TFilterSettings } from "@/types";
 
-export function Banner() {
+export function Banner({
+  filterSettings,
+}: {
+  filterSettings: TFilterSettings;
+}) {
   const { lessThan } = useMediaQuery();
   const translate = useTranslations("HomePage.Banner");
   const isSmall = lessThan("sm");
@@ -19,7 +24,7 @@ export function Banner() {
         height={0}
         sizes="100vw"
         style={{ objectFit: "cover", width: "100%", height: "100%" }}
-        objectFit="cover"
+        priority
       />
       <Flex
         style={{
@@ -73,7 +78,7 @@ export function Banner() {
           alignContent: "center",
         }}
       >
-        <Filter />
+        <Filter filterSettings={filterSettings} />
       </div>
     </div>
   );

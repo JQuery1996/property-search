@@ -1,15 +1,32 @@
 "use client";
-import { Button, Card, Divider, Flex, Tooltip } from "antd";
+import { Button, Card, Divider, Flex, Tooltip, Skeleton } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
 import { CustomText, CustomTitle, Label } from "@/components";
 import Image from "next/image";
 import Slider from "react-slick";
 import { useTranslations } from "next-intl";
+import styles from "./styles.module.css";
+import { useState } from "react"; // Import useState for state management
 
 export function VerticalCard({ listing }: { listing: TListing }) {
   const translate = useTranslations();
   const borderRadius = 5;
+
+  // State to track loading status of each image
+  const [imageLoadingStates, setImageLoadingStates] = useState<boolean[]>(
+    listing.image_urls.map(() => true), // Initialize all images as loading
+  );
+
+  // Function to handle image load
+  const handleImageLoad = (index: number) => {
+    setImageLoadingStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = false; // Mark this image as loaded
+      return newStates;
+    });
+  };
+
   return (
     <Card
       hoverable
@@ -33,6 +50,20 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           <Slider autoplay infinite speed={1000}>
             {listing.image_urls.map((url, index) => (
               <div key={index}>
+                {/* Skeleton placeholder while image is loading */}
+                {imageLoadingStates[index] && (
+                  <div className={styles.skeletonImageWrapper}>
+                    <Skeleton.Image
+                      active
+                      style={{
+                        width: "100%",
+                        height: 200,
+                      }}
+                    />
+                  </div>
+                )}
+
+                {/* Image component (always rendered but hidden while loading) */}
                 <Image
                   src={url} // Use the URL from the map function
                   alt="property-image"
@@ -43,11 +74,18 @@ export function VerticalCard({ listing }: { listing: TListing }) {
                     width: "100%",
                     height: 200,
                     objectFit: "fill",
+                    visibility: imageLoadingStates[index]
+                      ? "hidden"
+                      : "visible", // Hide image while loading
                   }}
+                  onLoad={() => handleImageLoad(index)} // Hide skeleton when image is loaded
+                  loading="lazy" // Enable lazy loading
                 />
               </div>
             ))}
           </Slider>
+
+          {/* Share and Bookmark Icons */}
           <div
             style={{
               position: "absolute",
@@ -62,6 +100,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
               alignItems: "center",
               alignContent: "center",
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", // Add shadow
+              zIndex: 2, // Ensure icons are above the image and skeleton
             }}
           >
             <Image
@@ -85,6 +124,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
               alignItems: "center",
               alignContent: "center",
               boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", // Add shadow
+              zIndex: 2, // Ensure icons are above the image and skeleton
             }}
           >
             <Image

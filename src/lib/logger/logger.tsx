@@ -26,13 +26,13 @@ const logger = createLogger({
   ],
 });
 
-// If in development, log to the console as well
-if (process.env.NODE_ENV !== "production") {
-  logger.add(
-    new transports.Console({
-      format: format.combine(format.colorize(), format.simple()),
-    }),
-  );
-}
+// // If in development, log to the console as well
+// if (process.env.NODE_ENV !== "production") {
+//   logger.add(
+//     new transports.Console({
+//       format: format.combine(format.colorize(), format.simple()),
+//     }),
+//   );
+// }
 
 export default logger;

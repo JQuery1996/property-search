@@ -1,7 +1,6 @@
-import { axiosInstance } from "@/lib";
 import { DEVELOPERS_URL } from "@/constants";
-import { ISearchParams, TDevelopmentProperty } from "@/types";
-import { flattenFilters } from "@/helpers";
+import { TFetchOptions, TDevelopmentProperty } from "@/types";
+import { fetchInstance } from "@/lib"; // Import fetchInstance
 import logger from "@/lib/logger/logger";
 
 interface TDevelopersResponse {
@@ -9,18 +8,22 @@ interface TDevelopersResponse {
 }
 
 export async function getDevelopers(
-  filters: ISearchParams,
+  options?: TFetchOptions, // Accept only the options parameter
 ): Promise<TDevelopersResponse> {
   try {
-    const flattenSearchParams = flattenFilters(filters);
-    const queryParameters = new URLSearchParams(flattenSearchParams).toString();
-    const response = await axiosInstance.get(
-      `${DEVELOPERS_URL}?${queryParameters}`,
-    );
-    const { data } = response.data.data;
+    // Use fetchInstance to fetch developers
+    const response = await fetchInstance<{
+      data: TDevelopmentProperty[];
+      [key: string]: any;
+    }>(DEVELOPERS_URL, {
+      ...options, // Spread all options (including params, headers, caching, etc.)
+    });
+
+    // Extract data from the response
+    const { data } = response;
     return { data };
   } catch (error) {
     logger.error("Failed to fetch developers", { error });
-    return { data: [] };
+    return { data: [] }; // Return an empty array if something goes wrong
   }
 }

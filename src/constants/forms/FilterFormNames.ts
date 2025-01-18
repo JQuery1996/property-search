@@ -1,0 +1,17 @@
+export const FilterFormNames = {
+  PROPERTY_PURPOSE: "property_purpose",
+  PROPERTY_TYPE_CATEGORY: "property_type_category",
+  PROPERTY_TYPE: "property_type",
+  PRICE_PERIOD: "price_period",
+  AMENITIES: "amenities",
+  PRICE_RANGE: "price_range",
+  COMPLETION_STATUS: "completion_status",
+  BEDROOMS: "bedrooms",
+  BATHROOMS: "bathrooms",
+  MIN_SIZE: "min_size",
+  MAX_SIZE: "max_size",
+  SOURCE: "source",
+  CITY: "city",
+  MIN_YEARLY_PRICE: "min_yearly_price",
+  MAX_YEARLY_PRICE: "max_yearly_price",
+};

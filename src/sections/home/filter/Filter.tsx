@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, Input, theme, Modal } from "antd";
+import { Button, Flex, Input, theme, Modal, Badge } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -11,17 +11,23 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { PAGES } from "@/constants";
+import { FilterModal } from "./FilterModal";
+import { TFilterSettings } from "@/types";
 
 const { useToken } = theme;
 
-export function Filter() {
+export function Filter({
+  filterSettings,
+}: {
+  filterSettings: TFilterSettings;
+}) {
   const { token } = useToken();
   const translate = useTranslations("HomePage.Filter");
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchValue, setSearchValue] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const {
     transcript,
     listening,
@@ -35,6 +41,25 @@ export function Filter() {
       console.warn("Speech recognition is not supported in this browser.");
     }
   }, [browserSupportsSpeechRecognition]);
+
+  // Update searchValue only when the modal closes
+  useEffect(() => {
+    if (!listening && isModalOpen) {
+      // Add a small delay before closing the modal to ensure the transcript is captured
+      const timeoutId = setTimeout(() => {
+        setSearchValue(transcript.trim()); // Update searchValue with the final transcript
+        setIsModalOpen(false);
+      }, 500); // Adjust the delay as needed
+
+      return () => clearTimeout(timeoutId); // Cleanup timeout
+    }
+  }, [listening, isModalOpen, transcript]);
+
+  // Set the default value of the search input to the "city" query parameter
+  useEffect(() => {
+    const city = searchParams.get("city") || "";
+    setSearchValue(city);
+  }, [searchParams]);
 
   // Start or stop recording
   const toggleRecording = () => {
@@ -59,25 +84,21 @@ export function Filter() {
     router.push(`${PAGES.PROPERTIES}?${newSearchParams.toString()}`);
   };
 
-  // Update searchValue only when the modal closes
-  useEffect(() => {
-    if (!listening && isModalOpen) {
-      // Add a small delay before closing the modal to ensure the transcript is captured
-      const timeoutId = setTimeout(() => {
-        setSearchValue(transcript.trim()); // Update searchValue with the final transcript
-        setIsModalOpen(false);
-      }, 500); // Adjust the delay as needed
-
-      return () => clearTimeout(timeoutId); // Cleanup timeout
-    }
-  }, [listening, isModalOpen, transcript]);
-
-  // Set the default value of the search input to the "city" query parameter
-  useEffect(() => {
-    const city = searchParams.get("city") || "";
-    setSearchValue(city);
-  }, [searchParams]);
-
+  function handleFilterOpen() {
+    setIsFilterModalOpen(true);
+  }
+  // Count the number of query parameters
+  const countQueryParams = () => {
+    const params = new URLSearchParams(searchParams);
+    let count = 0;
+    params.forEach((value, key) => {
+      if (!["page", "per_page"].includes(key)) {
+        // Exclude 'page' parameter from the count
+        count++;
+      }
+    });
+    return count;
+  };
   return (
     <>
       <Flex
@@ -102,11 +123,28 @@ export function Filter() {
           onChange={(e) => setSearchValue(e.target.value)}
           onPressEnter={handleSearch}
         />
-        <Button
-          type="text"
-          style={{ width: "32px", height: "40px" }}
-          icon={<Image fill src="/images/icons/filter.svg" alt="filter icon" />}
-        />
+        <Badge
+          count={countQueryParams()}
+          color="white"
+          size="small"
+          style={{ color: "black", fontWeight: "bold" }}
+        >
+          <Button
+            type="text"
+            style={{ width: "32px", height: "40px" }}
+            icon={
+              <Image
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "100%" }}
+                src="/images/icons/filter.svg"
+                alt="filter icon"
+              />
+            }
+            onClick={handleFilterOpen}
+          />
+        </Badge>
         <Button
           type="text"
           style={{ width: "32px", height: "40px" }}
@@ -162,6 +200,11 @@ export function Filter() {
           </p>
         </div>
       </Modal>
+      <FilterModal
+        isOpen={isFilterModalOpen}
+        setIsOpen={setIsFilterModalOpen}
+        filterSettings={filterSettings}
+      />
 
       {/* CSS for pulsating animation */}
       <style jsx>{`

@@ -1,5 +1,5 @@
 export interface ISearchParams {
-  page?: string; // Current page number
-  per_page?: string; // Number of items per page
-  [key: string]: string | number | boolean | undefined; // Other filters
+  page?: string | number; // Current page number
+  per_page?: string | number; // Number of items per page
+  [key: string]: any; // Other filters
 }

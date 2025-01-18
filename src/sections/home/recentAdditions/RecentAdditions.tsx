@@ -1,8 +1,14 @@
 "use server";
 import { RecentAdditionsUI } from "./RecentAdditionsUI";
 import { getListings } from "@/app/api";
+import { FilterConstants } from "@/constants";
 
 export async function RecentAdditions() {
-  const { data } = await getListings({ page: "1", per_page: "12" });
+  const { data } = await getListings({
+    params: {
+      order_by: "added_date",
+    }, // Pass searchParams directly inside params
+    next: { revalidate: 3600 }, // Revalidate every hour (3600 seconds)
+  });
   return <RecentAdditionsUI listings={data} />;
 }

@@ -1,7 +1,6 @@
-import { axiosInstance } from "@/lib";
 import { LISTINGS_URL } from "@/constants";
-import { ISearchParams, TListing, TPaginationMetadata } from "@/types";
-import { flattenFilters } from "@/helpers";
+import { TFetchOptions, TListing, TPaginationMetadata } from "@/types";
+import { fetchInstance } from "@/lib"; // Import FetchOptions
 import logger from "@/lib/logger/logger";
 
 interface TListingsResponse {
@@ -10,18 +9,20 @@ interface TListingsResponse {
 }
 
 export async function getListings(
-  searchParams: ISearchParams,
+  options?: TFetchOptions, // Accept only the options parameter
 ): Promise<TListingsResponse> {
   try {
-    const flattenedSearchParams = flattenFilters(searchParams);
-    const queryParameters = new URLSearchParams(
-      flattenedSearchParams,
-    ).toString();
-    const response = await axiosInstance.get(
-      `${LISTINGS_URL}?${queryParameters}`,
-    );
-    const { data, ...rest } = response.data.data;
-    return { data, pagination: rest };
+    // Use fetchInstance to fetch listings
+    const response = await fetchInstance<{
+      data: TListing[];
+      [key: string]: any;
+    }>(LISTINGS_URL, {
+      ...options, // Spread all options (including params, headers, caching, etc.)
+    });
+
+    // Extract data and pagination from the response
+    const { data, ...rest } = response;
+    return { data, pagination: rest as TPaginationMetadata };
   } catch (error) {
     logger.error("Failed to fetch Listings", { error });
     return {
@@ -32,7 +33,7 @@ export async function getListings(
         total: 0,
         current_page: 0,
         per_page: 0,
-      },
+      } as TPaginationMetadata,
     };
   }
 }

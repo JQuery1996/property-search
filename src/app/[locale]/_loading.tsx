@@ -1,7 +1,7 @@
 // app/loading.tsx
 import { Spin } from "antd";
 
-export default function Loading() {
+export default function _loading() {
   return (
     <div
       style={{
