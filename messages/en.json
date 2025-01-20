@@ -47,7 +47,8 @@
     "Header": {
       "Items": {
         "home": "Home",
-        "categories": "Categories",
+        "properties": "Properties",
+        "holidayHomes": "Holiday Homes",
         "developers": "Developers",
         "contact": "Contact"
       }

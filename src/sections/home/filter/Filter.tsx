@@ -2,7 +2,7 @@
 import { Button, Flex, Input, theme, Modal, Badge } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import "regenerator-runtime/runtime";
@@ -40,6 +40,9 @@ export function Filter({
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
+
+  const pathname = usePathname();
+  const isHolidayHomesPage = pathname.includes(PAGES.HOLIDAY_HOMES);
 
   // Ensure Speech Recognition is supported
   useEffect(() => {
@@ -114,7 +117,9 @@ export function Filter({
     const newSearchParams = new URLSearchParams(flattenedFilters);
 
     // Step 4: Push the new URL with the flattened filters
-    push(`${PAGES.PROPERTIES}?${newSearchParams.toString()}`);
+    push(
+      `${isHolidayHomesPage ? PAGES.HOLIDAY_HOMES : PAGES.PROPERTIES}?${newSearchParams.toString()}`,
+    );
 
     setSearchLoading(false);
   };

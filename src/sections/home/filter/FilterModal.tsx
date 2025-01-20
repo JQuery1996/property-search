@@ -23,7 +23,7 @@ import { FilterConstants, FilterFormNames, PAGES } from "@/constants";
 import { useTranslations } from "next-intl";
 import { TFilterParams } from "@/types/TFilterParams";
 import { flattenFilters } from "@/helpers";
-import { useRouter } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 const { useToken } = theme;
 
@@ -43,6 +43,10 @@ export function FilterModal({
   const translate = useTranslations("Form");
   const { push } = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+
+  const isHolidayHomesPage = pathname.includes(PAGES.HOLIDAY_HOMES);
+
   // Function to initialize form values from query parameters
   const initializeFormValues = () => {
     const initialValues: any = {};
@@ -184,7 +188,9 @@ export function FilterModal({
     // Convert the flattened filters to a query string
     const queryString = new URLSearchParams(flattenedFilters).toString();
 
-    push(`${PAGES.PROPERTIES}?${queryString}`);
+    push(
+      `${isHolidayHomesPage ? PAGES.HOLIDAY_HOMES : PAGES.PROPERTIES}?${queryString}`,
+    );
     handleCancel();
   }
   return (
@@ -248,159 +254,164 @@ export function FilterModal({
         </Form.Item>
 
         {/* Property type single-select radio button */}
-        <Form.Item
-          name={FilterFormNames.PROPERTY_TYPE_CATEGORY}
-          label={
-            <CustomText style={{ fontWeight: 500 }}>
-              {translate("propertyTypeCategory")}
-            </CustomText>
-          }
-        >
-          <Radio.Group
-            size="middle"
-            optionType="button"
-            buttonStyle="solid"
-            onChange={handlePropertyTypeCategoryChange}
-          >
-            {Object.keys(filterSettings.property_types).map(
-              (option: string) => (
-                <Radio.Button
-                  key={option}
-                  value={option}
-                  style={{
-                    margin: 3,
-                    borderRadius: 20,
-                    border: "1px solid #d9d9d9",
-                  }}
-                  onClick={() =>
-                    handleRadioItemClick(
-                      FilterFormNames.PROPERTY_TYPE_CATEGORY,
-                      option,
-                    )
-                  }
-                >
-                  {option}
-                </Radio.Button>
-              ),
-            )}
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item
-          noStyle
-          shouldUpdate={(prevValues, currentValues) => {
-            return (
-              prevValues.property_type_category !==
-              currentValues.property_type_category
-            );
-          }}
-        >
-          {({ getFieldValue }) =>
-            getFieldValue(FilterFormNames.PROPERTY_TYPE_CATEGORY) != null ? (
-              <Form.Item
-                name="property_type"
-                label={
-                  <CustomText style={{ fontWeight: 500 }}>
-                    {translate("propertyType")}
-                  </CustomText>
-                }
+        {!isHolidayHomesPage && (
+          <>
+            <Form.Item
+              name={FilterFormNames.PROPERTY_TYPE_CATEGORY}
+              label={
+                <CustomText style={{ fontWeight: 500 }}>
+                  {translate("propertyTypeCategory")}
+                </CustomText>
+              }
+            >
+              <Radio.Group
+                size="middle"
+                optionType="button"
+                buttonStyle="solid"
+                onChange={handlePropertyTypeCategoryChange}
               >
-                <Checkbox.Group style={{ columnGap: 4 }}>
-                  {(
-                    filterSettings.property_types?.[
-                      getFieldValue(FilterFormNames.PROPERTY_TYPE_CATEGORY)
-                    ] || []
-                  ).map((option: string) => (
-                    <Checkbox
+                {Object.keys(filterSettings.property_types).map(
+                  (option: string) => (
+                    <Radio.Button
                       key={option}
                       value={option}
                       style={{
                         margin: 3,
                         borderRadius: 20,
                         border: "1px solid #d9d9d9",
-                        padding: "4px 8px",
-                        cursor: "pointer",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        transition: "all 0.3s",
                       }}
-                      className="custom-checkbox"
+                      onClick={() =>
+                        handleRadioItemClick(
+                          FilterFormNames.PROPERTY_TYPE_CATEGORY,
+                          option,
+                        )
+                      }
                     >
                       {option}
-                    </Checkbox>
-                  ))}
-                </Checkbox.Group>
-              </Form.Item>
-            ) : null
-          }
-        </Form.Item>
-        {/* Multiple-select styled checkbox group */}
+                    </Radio.Button>
+                  ),
+                )}
+              </Radio.Group>
+            </Form.Item>
+            <Form.Item
+              noStyle
+              shouldUpdate={(prevValues, currentValues) => {
+                return (
+                  prevValues.property_type_category !==
+                  currentValues.property_type_category
+                );
+              }}
+            >
+              {({ getFieldValue }) =>
+                getFieldValue(FilterFormNames.PROPERTY_TYPE_CATEGORY) !=
+                null ? (
+                  <Form.Item
+                    name="property_type"
+                    label={
+                      <CustomText style={{ fontWeight: 500 }}>
+                        {translate("propertyType")}
+                      </CustomText>
+                    }
+                  >
+                    <Checkbox.Group style={{ columnGap: 4 }}>
+                      {(
+                        filterSettings.property_types?.[
+                          getFieldValue(FilterFormNames.PROPERTY_TYPE_CATEGORY)
+                        ] || []
+                      ).map((option: string) => (
+                        <Checkbox
+                          key={option}
+                          value={option}
+                          style={{
+                            margin: 3,
+                            borderRadius: 20,
+                            border: "1px solid #d9d9d9",
+                            padding: "4px 8px",
+                            cursor: "pointer",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            transition: "all 0.3s",
+                          }}
+                          className="custom-checkbox"
+                        >
+                          {option}
+                        </Checkbox>
+                      ))}
+                    </Checkbox.Group>
+                  </Form.Item>
+                ) : null
+              }
+            </Form.Item>
 
-        <Form.Item
-          noStyle
-          shouldUpdate={(prevValues, currentValues) => {
-            return prevValues.type !== currentValues.type;
-          }}
-        >
-          {({ getFieldValue }) =>
-            getFieldValue(FilterFormNames.PROPERTY_PURPOSE) ===
-            FilterConstants.PROPERTY_PURPOSES[0].value ? (
-              <Form.Item
-                name={FilterFormNames.PRICE_PERIOD}
-                label={
-                  <CustomText style={{ fontWeight: 500 }}>
-                    {translate("pricePeriod")}
-                  </CustomText>
-                }
-              >
-                <Checkbox.Group style={{ columnGap: 4 }}>
-                  {filterSettings.price_periods.map((option: string) => (
-                    <Checkbox
-                      key={option}
-                      value={option}
-                      style={{
-                        margin: 3,
-                        borderRadius: 20,
-                        border: "1px solid #d9d9d9",
-                        padding: "4px 8px",
-                        cursor: "pointer",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        transition: "all 0.3s",
-                      }}
-                      className="custom-checkbox"
-                    >
-                      {option}
-                    </Checkbox>
-                  ))}
-                </Checkbox.Group>
-              </Form.Item>
-            ) : null
-          }
-        </Form.Item>
-        <Form.Item
-          name={FilterFormNames.AMENITIES}
-          label={
-            <CustomText style={{ fontWeight: 500 }}>
-              {translate("amenities")}
-            </CustomText>
-          }
-        >
-          <Select
-            size="middle"
-            mode="multiple"
-            options={filterSettings.amenities.map((option: string) => ({
-              label: option,
-              value: option,
-            }))}
-            maxTagCount="responsive"
-            placeholder={translate("amenities")}
-            allowClear
-            showSearch
-          />
-        </Form.Item>
+            <Form.Item
+              noStyle
+              shouldUpdate={(prevValues, currentValues) => {
+                return (
+                  prevValues.property_purpose !== currentValues.property_purpose
+                );
+              }}
+            >
+              {({ getFieldValue }) =>
+                getFieldValue(FilterFormNames.PROPERTY_PURPOSE) ===
+                FilterConstants.PROPERTY_PURPOSES[0].value ? (
+                  <Form.Item
+                    name={FilterFormNames.PRICE_PERIOD}
+                    label={
+                      <CustomText style={{ fontWeight: 500 }}>
+                        {translate("pricePeriod")}
+                      </CustomText>
+                    }
+                  >
+                    <Checkbox.Group style={{ columnGap: 4 }}>
+                      {filterSettings.price_periods.map((option: string) => (
+                        <Checkbox
+                          key={option}
+                          value={option}
+                          style={{
+                            margin: 3,
+                            borderRadius: 20,
+                            border: "1px solid #d9d9d9",
+                            padding: "4px 8px",
+                            cursor: "pointer",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            transition: "all 0.3s",
+                          }}
+                          className="custom-checkbox"
+                        >
+                          {option}
+                        </Checkbox>
+                      ))}
+                    </Checkbox.Group>
+                  </Form.Item>
+                ) : null
+              }
+            </Form.Item>
+            <Form.Item
+              name={FilterFormNames.AMENITIES}
+              label={
+                <CustomText style={{ fontWeight: 500 }}>
+                  {translate("amenities")}
+                </CustomText>
+              }
+            >
+              <Select
+                size="middle"
+                mode="multiple"
+                options={filterSettings.amenities.map((option: string) => ({
+                  label: option,
+                  value: option,
+                }))}
+                maxTagCount="responsive"
+                placeholder={translate("amenities")}
+                allowClear
+                showSearch
+              />
+            </Form.Item>
+          </>
+        )}
         <Form.Item
           name={FilterFormNames.PRICE_RANGE}
           label={
