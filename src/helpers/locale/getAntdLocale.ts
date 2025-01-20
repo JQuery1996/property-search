@@ -11,6 +11,10 @@ export function getAntdLocale(locale: TLOCALE) {
         ...arEG.Form,
         optional: "(إختياري)",
       },
+      Empty: {
+        ...arEG.Empty,
+        description: "لا توجد بيانات",
+      },
     } as Locale,
     en: enUS,
   };

@@ -31,7 +31,6 @@ type TFilterModal = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   filterSettings: TFilterSettings;
-  bedrooms: 3;
 };
 
 export function FilterModal({

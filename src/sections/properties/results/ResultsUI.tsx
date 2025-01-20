@@ -1,5 +1,13 @@
 "use client";
-import { Button, Col, Flex, Pagination, PaginationProps, Row } from "antd";
+import {
+  Button,
+  Col,
+  Empty,
+  Flex,
+  Pagination,
+  PaginationProps,
+  Row,
+} from "antd";
 import { CustomText, CustomTitle, VerticalCard } from "@/components";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -68,24 +76,30 @@ export function ResultsUI({ listings, pagination }: TResultsUI) {
           }
         />
       </div>
-      <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
-        {listings.map((listing) => (
-          <Col key={listing.id} xs={24} md={12} lg={8} xl={6}>
-            <VerticalCard listing={listing} />
-          </Col>
-        ))}
-      </Row>
-      <Flex justify="center" style={{ margin: "20px 0" }}>
-        <Pagination
-          current={currentPage}
-          pageSize={APP.paginationSize}
-          total={pagination.total}
-          hideOnSinglePage
-          responsive
-          showSizeChanger={false}
-          onChange={handlePageChange}
-        />
-      </Flex>
+      {listings.length > 0 ? (
+        <>
+          <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
+            {listings.map((listing) => (
+              <Col key={listing.id} xs={24} md={12} lg={8} xl={6}>
+                <VerticalCard listing={listing} />
+              </Col>
+            ))}
+          </Row>
+          <Flex justify="center" style={{ margin: "20px 0" }}>
+            <Pagination
+              current={currentPage}
+              pageSize={APP.paginationSize}
+              total={pagination.total}
+              hideOnSinglePage
+              responsive
+              showSizeChanger={false}
+              onChange={handlePageChange}
+            />
+          </Flex>
+        </>
+      ) : (
+        <Empty style={{ margin: "40px 0" }} />
+      )}
     </Flex>
   );
 }

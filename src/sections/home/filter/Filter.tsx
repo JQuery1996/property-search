@@ -10,9 +10,11 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { FilterModal } from "./FilterModal";
-import { TFilterSettings } from "@/types";
-import { flattenFilters } from "@/helpers";
+import { TFilterSettings, TLOCALE } from "@/types";
+import { flattenFilters, getFullLocale } from "@/helpers";
 import { PAGES } from "@/constants";
+import { CustomText } from "@/components";
+import { useLocale } from "use-intl";
 
 const { useToken } = theme;
 
@@ -26,8 +28,9 @@ export function Filter({
   const { push } = useRouter();
   const searchParams = useSearchParams();
   const [searchValue, setSearchValue] = useState(
-    searchParams.get("city") || "",
+    searchParams.get("query_text") || "",
   );
+  const locale = useLocale();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [searchLoading, setSearchLoading] = useState(false);
@@ -45,23 +48,27 @@ export function Filter({
     }
   }, [browserSupportsSpeechRecognition]);
 
-  // Update searchValue only when the modal closes
+  // Handle the transcript after the user finishes speaking
   useEffect(() => {
     if (!listening && isModalOpen) {
       // Add a small delay before closing the modal to ensure the transcript is captured
       const timeoutId = setTimeout(() => {
-        setSearchValue(transcript.trim()); // Update searchValue with the final transcript
         setIsModalOpen(false);
+
+        // Call handleSearch only if the transcript is not empty
+        if (transcript.trim()) {
+          handleSearch(transcript.trim());
+        }
       }, 500); // Adjust the delay as needed
 
       return () => clearTimeout(timeoutId); // Cleanup timeout
     }
   }, [listening, isModalOpen, transcript]);
 
-  // Set the default value of the search input to the "city" query parameter
+  // Set the default value of the search input to the "query_text" query parameter
   useEffect(() => {
-    const city = searchParams.get("city") || "";
-    setSearchValue(city);
+    const query_text = searchParams.get("query_text") || "";
+    setSearchValue(query_text);
   }, [searchParams]);
 
   // Start or stop recording
@@ -84,23 +91,25 @@ export function Filter({
     setSearchLoading(true);
     // Step 1: Call the Engine API to fetch filters
     const response = await fetch(
-      `/api/searchEngine?query_text=${encodeURIComponent(value)}`,
+      `/api/searchEngine?query_text=${encodeURIComponent(value.trim())}`,
       {
         method: "GET",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        cache: "force-cache", // Cache the response indefinitely
+        // cache: "force-cache", // Cache the response indefinitely
       },
     );
 
     const engineFilters = await response.json();
 
     // Step 2: Flatten the filters to remove null/undefined values
-    const flattenedFilters = flattenFilters(engineFilters);
+    const flattenedFilters = flattenFilters({
+      query_text: value,
+      ...engineFilters,
+    });
 
-    console.log({ engineFilters, flattenedFilters });
     // Step 3: Create a new URLSearchParams object
     const newSearchParams = new URLSearchParams(flattenedFilters);
 
@@ -113,18 +122,20 @@ export function Filter({
   function handleFilterOpen() {
     setIsFilterModalOpen(true);
   }
+
   // Count the number of query parameters
   const countQueryParams = () => {
     const params = new URLSearchParams(searchParams);
     let count = 0;
     params.forEach((value, key) => {
-      if (!["page", "per_page"].includes(key)) {
+      if (!["page", "per_page", "query_text"].includes(key)) {
         // Exclude 'page' parameter from the count
         count++;
       }
     });
     return count;
   };
+
   return (
     <>
       <Flex
@@ -202,7 +213,7 @@ export function Filter({
         }}
         closable={false} // Disable the close button (X)
       >
-        <div style={{ textAlign: "center", padding: "20px" }}>
+        <Flex vertical justify="center" align="center" gap={12}>
           {/* Pulsating mic icon */}
           <div
             style={{
@@ -217,12 +228,20 @@ export function Filter({
               animation: listening ? "pulse 1.5s infinite" : "none",
             }}
           >
-            <span style={{ color: "#1890ff", fontSize: "48px" }}>🎤</span>
+            <Image
+              src="/images/icons/microphone.svg"
+              width={48}
+              height={48}
+              alt="mic"
+            />
           </div>
-          <p style={{ color: "#666", fontSize: "16px" }}>
-            {listening ? "Listening..." : "Press the mic to start"}
-          </p>
-        </div>
+          <CustomText style={{ color: "#666", fontSize: "16px" }}>
+            {listening ? "Listening..." : transcript}
+          </CustomText>
+          <CustomText type="secondary">
+            {getFullLocale(locale as TLOCALE)}
+          </CustomText>
+        </Flex>
       </Modal>
       <FilterModal
         isOpen={isFilterModalOpen}
