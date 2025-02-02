@@ -63,7 +63,8 @@
     "contactInformation": "Contact Information",
     "youCanContactUsThroughTheFollowingNumbers": "You can contact us through the following Numbers:",
     "whatsapp": "Whatsapp",
-    "mobile": "Mobile"
+    "mobile": "Mobile",
+    "website": "Website"
   },
   "LoginPage": {
     "action": "welcome back."

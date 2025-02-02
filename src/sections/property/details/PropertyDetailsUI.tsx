@@ -2,7 +2,6 @@
 import { TListing } from "@/types";
 import { Button, Descriptions, Divider, Flex, Tag } from "antd";
 import {
-  BookmarkIcon,
   Contact,
   CustomText,
   CustomTitle,
@@ -15,6 +14,7 @@ import { useResponsive } from "antd-style";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageViewer } from "./ImageViewer";
+import { HeartOutlined } from "@ant-design/icons";
 
 type TPropertyDetailsUI = {
   details: TListing;
@@ -53,7 +53,7 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
           <Button
             color="danger"
             variant="text"
-            icon={<BookmarkIcon width={24} height={24} color="white" />}
+            icon={<HeartOutlined style={{ fontSize: 25 }} />}
           />
           <Button
             color="danger"
@@ -62,7 +62,11 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
           />
           <Button
             color="danger"
-            variant="text"
+            variant="link"
+            disabled={!details.url}
+            href={details.url}
+            title={commonTranslate("website")}
+            target="_blank"
             icon={<EarthIcon width={24} height={24} />}
           />
         </Flex>

@@ -14,7 +14,7 @@ export function ImageViewer({ images }: TImageViewer) {
     <>
       <Row gutter={[8, 8]}>
         {/* Main image */}
-        <Col xs={24} lg={12}>
+        <Col xs={24} lg={12} style={{ maxHeight: 610 }}>
           <ImageWithSkeleton
             src={images[0]}
             alt="property image"
@@ -23,7 +23,7 @@ export function ImageViewer({ images }: TImageViewer) {
           />
         </Col>
         {/* Additional images */}
-        <Col xs={24} lg={12}>
+        <Col xs={24} lg={12} style={{ maxHeight: 610 }}>
           <Row gutter={[8, 4]} style={{ height: "100%" }}>
             {images.slice(1, 5).map((image, index, slicedImages) => (
               <Col xs={12} key={index} style={{ height: "50%" }}>
