@@ -59,7 +59,11 @@
       "title": "Welcome to <span>Property</span> Search.",
       "description": "We are pleased to see you again at  <span>Property Search</span> where you can find your future dream home at competitive prices."
     },
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "contactInformation": "Contact Information",
+    "youCanContactUsThroughTheFollowingNumbers": "You can contact us through the following Numbers:",
+    "whatsapp": "Whatsapp",
+    "mobile": "Mobile"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -117,7 +121,16 @@
     }
   },
   "listing": {
-    "source": "Source"
+    "source": "Source",
+    "price": "Price",
+    "description": "Description",
+    "propertyDetails": "Property Details",
+    "amenities": "Amenities",
+    "propertyType": "Property Type",
+    "propertySize": "Property Size",
+    "bathrooms": "Bathrooms",
+    "bedrooms": "Bedrooms",
+    "locationAndNearby": "Location & Nearby"
   },
   "developers": {
     "verify": "verify"

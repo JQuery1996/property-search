@@ -1,11 +1,13 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Button, Card, Flex } from "antd";
+import { Button, Card, Flex, Skeleton } from "antd"; // Import Skeleton
 import Image from "next/image";
 import { TDevelopmentProperty, TLOCALE } from "@/types";
 import { useLocale } from "use-intl";
 import { getDirectionFromLocale } from "@/helpers";
 import { CustomText, CustomTitle } from "@/components";
+import { useState } from "react"; // Import useState and useEffect
+import styles from "./styles.module.css";
 
 export function DeveloperCard({
   developmentProperty,
@@ -16,6 +18,10 @@ export function DeveloperCard({
   const locale = useLocale();
   const direction = getDirectionFromLocale(locale as TLOCALE);
   const borderRadius = 5;
+
+  // State to track image loading
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <Card
       hoverable
@@ -36,19 +42,38 @@ export function DeveloperCard({
             height: 200,
           }}
         >
-          <Image
-            src={developmentProperty.developer.image} // Use the URL from the map function
-            alt="property-image"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: 200,
-              objectFit: "fill",
-            }}
-            objectFit="fill"
-          />
+          {/* Skeleton placeholder while image is loading */}
+          {(!developmentProperty.developer.image || !isImageLoaded) && (
+            <div className={styles.skeletonImageWrapper}>
+              <Skeleton.Image
+                active
+                style={{
+                  width: "100%",
+                  height: 200,
+                }}
+              />
+            </div>
+          )}
+
+          {/* Image component (always rendered but hidden while loading) */}
+          {developmentProperty.developer.image && (
+            <Image
+              src={developmentProperty.developer.image}
+              alt="property-image"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: 200,
+                objectFit: "fill",
+                visibility: isImageLoaded ? "visible" : "hidden", // Hide image while loading
+              }}
+              onLoad={() => setIsImageLoaded(true)} // Set loaded state to true
+            />
+          )}
+
+          {/* Bookmark icon */}
           <div
             style={{
               cursor: "pointer",

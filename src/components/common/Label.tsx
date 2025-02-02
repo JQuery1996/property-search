@@ -1,23 +1,15 @@
 import { ReactNode } from "react";
+import { Flex, FlexProps } from "antd";
 
 type TLabel = {
   icon: ReactNode;
   text: ReactNode;
-  gap?: number;
-};
-export function Label({ icon, text, gap }: TLabel) {
+} & Omit<FlexProps, "children">;
+export function Label({ icon, text, ...props }: TLabel) {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        alignContent: "center",
-        gap: gap ?? 4,
-      }}
-    >
+    <Flex justify="center" align="center" gap={4} {...props}>
       {icon}
       {text}
-    </div>
+    </Flex>
   );
 }

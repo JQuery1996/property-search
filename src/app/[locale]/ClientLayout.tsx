@@ -10,11 +10,11 @@ import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
 import { useLocale } from "use-intl";
 import { TLOCALE } from "@/types";
 import { useResponsive } from "antd-style";
+import { AppFooter } from "@/sections";
+import { usePathname, useRouter } from "@/i18n/routing";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-import { AppFooter } from "@/sections";
-import { usePathname, useRouter } from "@/i18n/routing";
 
 type TClientLayout = {
   children: ReactNode;

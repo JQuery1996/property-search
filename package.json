@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
+    "@react-google-maps/api": "^2.20.5",
     "@types/react-slick": "^0.23.13",
     "antd": "^5.22.7",
     "antd-phone-input": "^0.3.12",
@@ -24,6 +25,7 @@
     "react-voice-visualizer": "^2.0.4",
     "regenerator-runtime": "^0.14.1",
     "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.1",
     "swr": "^2.3.0",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"

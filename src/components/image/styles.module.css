@@ -1,0 +1,6 @@
+/* Override Ant Design styles for Skeleton.Image */
+.skeletonImageWrapper :global(.ant-skeleton-element) {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}

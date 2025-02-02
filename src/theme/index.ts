@@ -8,6 +8,5 @@ export const themeConfig: ThemeConfig = {
   },
   components: {
     ...menuTheme,
-    // ...buttonTheme,
   },
 };

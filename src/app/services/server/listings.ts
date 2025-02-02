@@ -37,3 +37,19 @@ export async function getListings(
     };
   }
 }
+
+export async function getListing(
+  id: string,
+  options?: TFetchOptions,
+): Promise<TListing | null> {
+  try {
+    const response = await fetchInstance<TListing>(
+      `${LISTINGS_URL}/${id}`,
+      options,
+    );
+    return response;
+  } catch (error) {
+    logger.error(`Failed to fetch listing [${id}]`, { error });
+    return null;
+  }
+}

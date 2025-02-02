@@ -53,8 +53,16 @@ export async function fetchInstance<T>(
   fetchOptions = {
     ...fetchOptions,
     headers,
-    cache: options.cache || "default", // Use the provided cache option or default
   };
+
+  // Handle cache and next.revalidate conflict
+  if (fetchOptions.next?.revalidate) {
+    // If next.revalidate is provided, remove the cache option
+    delete fetchOptions.cache;
+  } else {
+    // If next.revalidate is not provided, use the cache option (default to "default")
+    fetchOptions.cache = fetchOptions.cache || "default";
+  }
 
   try {
     let response = await fetch(url, fetchOptions);

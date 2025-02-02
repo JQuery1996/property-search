@@ -7,10 +7,13 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { useTranslations } from "next-intl";
 import styles from "./styles.module.css";
-import { useState } from "react"; // Import useState for state management
+import { useState } from "react";
+import { useRouter } from "@/i18n/routing";
+import { PAGES } from "@/constants"; // Import useState for state management
 
 export function VerticalCard({ listing }: { listing: TListing }) {
   const translate = useTranslations();
+  const { push } = useRouter();
   const borderRadius = 5;
 
   // State to track loading status of each image
@@ -27,11 +30,15 @@ export function VerticalCard({ listing }: { listing: TListing }) {
     });
   };
 
+  const handlePropertyClick = (id: string | number) => () => {
+    push(`${PAGES.PROPERTIES}/${id}`);
+  };
   return (
     <Card
       hoverable
       style={{
         borderRadius,
+        cursor: "pointer",
       }}
       styles={{
         body: {
@@ -136,6 +143,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           </div>
         </div>
       }
+      onClick={handlePropertyClick(listing.id)}
     >
       <CustomTitle level={5}>
         {translate("listing.source")} : {listing.source}

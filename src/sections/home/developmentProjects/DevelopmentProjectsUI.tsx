@@ -1,3 +1,4 @@
+"use client";
 import { Button, Col, Flex, Row } from "antd";
 import { CustomTitle, DeveloperCard } from "@/components";
 import { useTranslations } from "next-intl";
@@ -11,6 +12,7 @@ export function DevelopmentProjectsUI({
   developmentProperties,
 }: TDevelopmentProjectsUI) {
   const translate = useTranslations("HomePage.developmentProjects");
+  console.log({ developmentProperties });
   return (
     <Flex vertical gap={4} style={{ width: "87%" }}>
       <CustomTitle type="primary" level={4} style={{ margin: 0 }}>
@@ -45,13 +47,15 @@ export function DevelopmentProjectsUI({
           }
         />
       </div>
-      <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
-        {developmentProperties.map((developmentProperty, index) => (
-          <Col key={index} xs={24} md={12} lg={8} xl={6}>
-            <DeveloperCard developmentProperty={developmentProperty} />
-          </Col>
-        ))}
-      </Row>
+      {developmentProperties.length > 0 && (
+        <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
+          {developmentProperties.map((developmentProperty, index) => (
+            <Col key={index} xs={24} md={12} lg={8} xl={6}>
+              <DeveloperCard developmentProperty={developmentProperty} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </Flex>
   );
 }
