@@ -9,6 +9,7 @@ import {
   Label,
   Map,
   ShareIcon,
+  ShareWrapper,
 } from "@/components";
 import { useResponsive } from "antd-style";
 import { useTranslations } from "next-intl";
@@ -46,6 +47,7 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
       children: details.bathrooms,
     },
   ];
+
   return (
     <Flex vertical gap={12} style={{ padding: "24px 48px" }}>
       <Flex gap={8} justify="end" wrap>
@@ -55,11 +57,20 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
             variant="text"
             icon={<HeartOutlined style={{ fontSize: 25 }} />}
           />
-          <Button
-            color="danger"
-            variant="text"
-            icon={<ShareIcon width={24} height={24} />}
-          />
+          <ShareWrapper
+            shareData={{
+              title: details.title,
+              text: details.description,
+              url: details.url,
+            }}
+          >
+            <Button
+              color="danger"
+              variant="text"
+              icon={<ShareIcon width={24} height={24} />}
+              disabled={!details.url}
+            />
+          </ShareWrapper>
           <Button
             color="danger"
             variant="link"

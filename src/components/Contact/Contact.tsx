@@ -15,6 +15,7 @@ type TContact = {
   descriptionProps?: TextProps;
   containerProps?: Omit<FlexProps, "children">;
 };
+
 export function Contact({
   title,
   description,
@@ -25,6 +26,17 @@ export function Contact({
   containerProps,
 }: TContact) {
   const translate = useTranslations("Common");
+
+  // Function to handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${whatsapp}`, "_blank");
+  };
+
+  // Function to handle phone click
+  const handlePhoneClick = () => {
+    window.open(`tel:${mobile}`, "_blank");
+  };
+
   return (
     <Flex vertical gap={20} {...containerProps}>
       <Flex vertical gap={8}>
@@ -33,7 +45,7 @@ export function Contact({
         </CustomTitle>
         <CustomText {...descriptionProps}>{description}</CustomText>
       </Flex>
-      <Flex gap="10%" wrap style={{ rowGap: 20 }}>
+      <Flex gap="10%" wrap style={{ rowGap: "20px !important" }}>
         <Label
           justify="start"
           align="center"
@@ -41,17 +53,24 @@ export function Contact({
           icon={
             <Image
               src="/images/icons/whatsapp-contact.svg"
-              alt="bed"
+              alt="WhatsApp"
               width={50}
               height={50}
             />
           }
+          style={{ cursor: "pointer" }}
+          onClick={handleWhatsAppClick}
           text={
             <Flex vertical>
               <CustomTitle level={4} style={{ fontWeight: "bold" }}>
                 {translate("whatsapp")}
               </CustomTitle>
-              <CustomText style={{ fontWeight: 400, letterSpacing: 0.5 }}>
+              <CustomText
+                style={{
+                  fontWeight: 400,
+                  letterSpacing: 0.5,
+                }}
+              >
                 {whatsapp}
               </CustomText>
             </Flex>
@@ -61,12 +80,14 @@ export function Contact({
           justify="start"
           align="center"
           gap={8}
+          style={{ cursor: "pointer" }}
+          onClick={handlePhoneClick}
           icon={
             <Image
               src="/images/icons/phone-contact.png"
-              alt="bed"
-              width={50}
-              height={50}
+              alt="Phone"
+              width={45}
+              height={45}
             />
           }
           text={
@@ -74,7 +95,12 @@ export function Contact({
               <CustomTitle level={4} style={{ fontWeight: "bold" }}>
                 {translate("mobile")}
               </CustomTitle>
-              <CustomText style={{ fontWeight: 400, letterSpacing: 0.5 }}>
+              <CustomText
+                style={{
+                  fontWeight: 400,
+                  letterSpacing: 0.5,
+                }}
+              >
                 {mobile}
               </CustomText>
             </Flex>
