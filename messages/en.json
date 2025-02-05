@@ -61,7 +61,11 @@
         "imperialMeasure": "Imperial (ft², km)",
         "metricMeasure": "Metric (m², mi)",
         "language": "Language",
-        "logout": "Logout"
+        "logout": "Logout",
+        "english": "English",
+        "arabic": "Arabic",
+        "russian": "Russian",
+        "chinese": "Chinese"
       }
     }
   },

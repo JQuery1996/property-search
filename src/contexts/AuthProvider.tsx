@@ -12,7 +12,7 @@ import Cookies from "js-cookie";
 
 interface AuthContextType {
   token: string | null;
-  user: any | null;
+  user: TUser | null;
   isAuthenticated: boolean;
   login: (token: string, user: any) => void;
   logout: () => void;
