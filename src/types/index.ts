@@ -10,3 +10,4 @@ export * from "./TFilterSettings";
 export * from "./TFetchOptions";
 export * from "./TUser";
 export * from "./TPhone";
+export * from "./TUpdateProfile";

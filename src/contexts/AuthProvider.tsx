@@ -7,8 +7,9 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { TUser } from "@/types";
+import { TUpdateProfile, TUser } from "@/types";
 import Cookies from "js-cookie";
+import { axiosInstance } from "@/client";
 
 interface AuthContextType {
   token: string | null;
@@ -16,6 +17,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (token: string, user: any) => void;
   logout: () => void;
+  updateProfile: (body: TUpdateProfile) => void; // Function to update user
+  authLoading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -23,6 +26,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<TUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(false);
 
   useEffect(() => {
     const storedToken = Cookies.get("token");
@@ -36,8 +40,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = (token: string, user: TUser) => {
     setToken(token);
     setUser(user);
-    Cookies.set("token", token, { expires: 7, secure: true });
-    Cookies.set("user", JSON.stringify(user), { expires: 7, secure: true });
+    Cookies.set("token", token, { secure: true });
+    Cookies.set("user", JSON.stringify(user), { secure: true });
   };
 
   const logout = () => {
@@ -46,12 +50,46 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     Cookies.remove("token");
     Cookies.remove("user");
   };
+  // Function to update the user object
+  const updateProfile = async (body: TUpdateProfile) => {
+    setAuthLoading(true);
+    try {
+      // Add _method=PATCH to the body
+      const requestBody = {
+        ...body,
+        _method: "PATCH",
+      };
 
+      // Make the POST request using axiosInstance
+      const response = await axiosInstance.post("/profile/update", requestBody);
+      const _user = response.data as TUser;
+
+      setUser(_user);
+      Cookies.set("user", JSON.stringify(_user), {
+        secure: true,
+      });
+      // Return the response data
+    } catch (error) {
+      // Handle errors (they are already logged by the interceptor)
+      console.error("Failed to update profile:", error);
+      throw error; // Re-throw the error if you want to handle it further up the call stack
+    } finally {
+      setAuthLoading(false);
+    }
+  };
   const isAuthenticated = !!token;
 
   return (
     <AuthContext.Provider
-      value={{ token, user, isAuthenticated, login, logout }}
+      value={{
+        token,
+        user,
+        isAuthenticated,
+        login,
+        logout,
+        updateProfile,
+        authLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

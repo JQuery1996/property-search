@@ -15,16 +15,25 @@ import { PlusOutlined, UserOutlined } from "@ant-design/icons";
 import { useAuth, useSettings } from "@/contexts";
 import { useLocale } from "use-intl";
 import { useResponsive } from "antd-style";
-import { ALL_LOCALES } from "@/constants";
-import { useTransition } from "react";
+import { useState, useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useParams } from "next/navigation";
+import { PAGES } from "@/constants";
 const { useToken } = theme;
 
 export function Profile() {
   const { token } = useToken();
-  const { user, isAuthenticated } = useAuth();
-  const { countries, measurements, loading } = useSettings();
+  const { user, isAuthenticated, updateProfile, authLoading, logout } =
+    useAuth();
+  const {
+    countries,
+    measurements,
+    loading,
+    countryId,
+    measurementId,
+    updateMeasurement,
+    updateCountry,
+  } = useSettings();
   const locale = useLocale();
   const { mobile } = useResponsive();
   const translate = useTranslations("Layout.Header.Profile"); // Use the appropriate namespace
@@ -32,6 +41,7 @@ export function Profile() {
   const pathname = usePathname();
   const params = useParams();
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   // Recursive function to translate labels and render icons
   const translateAndRenderIcons = (
@@ -66,7 +76,7 @@ export function Profile() {
       label: translate("country"),
       icon: "/images/icons/city.svg",
       children: countries.map((country) => ({
-        key: `5-${country.id}`,
+        key: `2-${country.id}`,
         label: (country as any)[`name_${locale}`],
         icon: `/images/icons/${country.code.toLowerCase()}.svg`,
       })),
@@ -138,13 +148,27 @@ export function Profile() {
   // Translate the labels and render icons for all items (including nested ones)
   const translatedItems = translateAndRenderIcons(profileItems);
 
-  const handleMenuClick: MenuProps["onClick"] = (e) => {
+  function handleGoRegister() {
+    router.push(PAGES.REGISTER_CLIENT);
+    setOpen(false);
+  }
+  const handleMenuClick: MenuProps["onClick"] = async (e) => {
     switch (e.key[0]) {
       case "1":
-        console.log("from one");
+        break;
+      case "2":
+        const country_id = e.key.split("-")[1];
+        updateCountry({ id: parseInt(country_id) });
+        if (isAuthenticated) updateProfile({ country_id });
+        break;
+      case "5":
+        const measurement_id = e.key.split("-")[1];
+        updateMeasurement({ id: parseInt(measurement_id) });
+        if (isAuthenticated) updateProfile({ measurement_id });
         break;
       case "6":
         const language = e.key.split("-")[1];
+        if (isAuthenticated) updateProfile({ language });
         startTransition(() => {
           router.replace(
             // @ts-expect-error -- TypeScript will validate that only known `params`
@@ -155,8 +179,10 @@ export function Profile() {
           );
         });
         break;
+      case "7":
+        logout();
+        break;
       default:
-        console.log("from default");
     }
   };
 
@@ -165,11 +191,17 @@ export function Profile() {
     onClick: handleMenuClick,
     forceSubMenuRender: true,
     style: { boxShadow: "none" },
-    defaultSelectedKeys: [`5-${user?.measurement?.id ?? 1}`, `6-${locale}`],
+    selectedKeys: [
+      `2-${countryId ?? 1}`,
+      `5-${measurementId ?? 1}`,
+      `6-${locale}`,
+    ],
   };
 
   return (
     <Dropdown
+      open={open}
+      onOpenChange={(_open) => setOpen(_open)}
       overlayStyle={{
         background: "#ffffff",
         boxShadow:
@@ -181,8 +213,19 @@ export function Profile() {
       placement="bottomLeft"
       arrow
       dropdownRender={(menus) =>
-        loading ? (
-          <Spin />
+        authLoading || loading ? (
+          <div
+            style={{
+              minHeight: 232,
+              minWidth: 204,
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Spin />
+          </div>
         ) : (
           <div>
             {menus}
@@ -210,6 +253,7 @@ export function Profile() {
                   icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
                   size="small"
                   style={{ padding: 5, gap: 2 }}
+                  onClick={handleGoRegister}
                 >
                   <CustomText style={{ color: "white" }}>Account</CustomText>
                 </Button>
