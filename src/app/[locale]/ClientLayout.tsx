@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
-import { App, ConfigProvider, Layout, Menu, theme } from "antd";
+import { App, Badge, ConfigProvider, Layout, Menu, theme } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import { useTranslations } from "next-intl";
 import { MENU_ITEMS } from "@/constants";
@@ -10,11 +10,13 @@ import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
 import { useLocale } from "use-intl";
 import { TLOCALE } from "@/types";
 import { useResponsive } from "antd-style";
-import { AppFooter } from "@/sections";
+import { AppFooter, Profile } from "@/sections";
 import { usePathname, useRouter } from "@/i18n/routing";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
+import Image from "next/image";
+import { AuthProvider } from "@/contexts";
 
 type TClientLayout = {
   children: ReactNode;
@@ -86,6 +88,28 @@ export function ClientLayout({ children }: TClientLayout) {
                 backgroundColor: "transparent",
               }}
             />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                alignContent: "center",
+                gap: 30,
+              }}
+            >
+              <div style={{ marginTop: 20 }}>
+                <Badge count={10} style={{ cursor: "pointer" }}>
+                  <Image
+                    src="/images/icons/header-notification.svg"
+                    width={25}
+                    height={25}
+                    alt="notifications"
+                    style={{ cursor: "pointer" }}
+                  />
+                </Badge>
+              </div>
+              <Profile />
+            </div>
           </Header>
           <Content>
             <div
@@ -96,7 +120,7 @@ export function ClientLayout({ children }: TClientLayout) {
               }}
             >
               {/* Wrap children in Suspense */}
-              {children}
+              <AuthProvider>{children}</AuthProvider>
             </div>
           </Content>
           {/* Footer shouldn't be appeared in authentication pages[login, register, reset password, verification, etc...]*/}

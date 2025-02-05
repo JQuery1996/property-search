@@ -5,6 +5,8 @@ import "antd/es/theme/interface";
 declare module "antd/es/theme/interface" {
   export interface AliasToken {
     pinkLight: string;
+    pinkLighter: string;
     greyPink: string;
+    greyMain: string;
   }
 }

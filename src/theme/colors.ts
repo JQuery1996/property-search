@@ -6,7 +6,7 @@ export const colors = {
     dark: "#E54F8E",
     main: "#ED82AF",
     light: "#FFDCEB",
-    lighter: "##FDF2F7",
+    lighter: "#FDF2F7",
   },
   white: {
     main: "#fff",
@@ -30,5 +30,7 @@ export const colorTokens: Partial<AliasToken> = {
   colorTextSecondary: colors.grey.light, // Use grey-pink for secondary text
   colorTextPlaceholder: colors.grey.main,
   pinkLight: colors.pink.light,
+  pinkLighter: colors.pink.lighter,
   greyPink: colors.greyPink.main,
+  greyMain: colors.grey.main,
 };

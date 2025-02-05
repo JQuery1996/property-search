@@ -51,6 +51,17 @@
         "holidayHomes": "Holiday Homes",
         "developers": "Developers",
         "contact": "Contact"
+      },
+      "Profile": {
+        "profile": "Profile",
+        "country": "Country",
+        "notificationSettings": "Notification Settings",
+        "savedItems": "Saved Items",
+        "measurementSystem": "Measurement System",
+        "imperialMeasure": "Imperial (ft², km)",
+        "metricMeasure": "Metric (m², mi)",
+        "language": "Language",
+        "logout": "Logout"
       }
     }
   },

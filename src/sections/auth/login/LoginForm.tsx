@@ -1,13 +1,55 @@
 "use client";
-import { Button, Checkbox, Flex, Form, Input } from "antd";
+import { App, Button, Checkbox, Flex, Form, Input, theme } from "antd";
 import PhoneInput from "antd-phone-input";
 import { LockOutlined } from "@ant-design/icons";
 import { CustomText } from "@/components";
-import { Link } from "@/i18n/routing";
+import { Link, useRouter } from "@/i18n/routing";
 import { PAGES } from "@/constants";
+import { useAuth } from "@/contexts";
+import { axiosInstance } from "@/client";
+import { useState } from "react";
+import { TPhone } from "@/types";
+import { phoneNumberFormation } from "@/helpers";
+
+const { useToken } = theme;
 
 export function LoginForm() {
   const [form] = Form.useForm();
+  const { token } = useToken();
+  const { login } = useAuth();
+  const { replace } = useRouter();
+  const [loading, setLoading] = useState(false);
+  const { message } = App.useApp();
+
+  const onFinish = async ({
+    phone,
+    password,
+  }: {
+    phone: TPhone;
+    password: string;
+  }) => {
+    setLoading(true);
+    try {
+      const response = await axiosInstance.post("/login", {
+        phone: phoneNumberFormation(phone),
+        password: password,
+        fcm_token: "xxxx",
+      });
+
+      const { token: authToken, user } = response.data;
+      login(authToken, user);
+      message.success("Login successful!");
+      replace("/");
+    } catch (error: any) {
+      console.log({ error });
+      console.error("Login failed:", error);
+      message.error(
+        error.response?.data?.message || "Login failed. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <Form
       form={form}
@@ -18,10 +60,11 @@ export function LoginForm() {
       }}
       autoComplete="off"
       requiredMark={false}
+      onFinish={onFinish}
     >
       <Form.Item
         label="Phone Number"
-        name="phoneNumber"
+        name="phone"
         rules={[
           {
             required: true,
@@ -75,7 +118,17 @@ export function LoginForm() {
         }}
       >
         <Form.Item style={{ width: "100%", margin: 0 }}>
-          <Button block htmlType="submit" size="large" type="default">
+          <Button
+            block
+            htmlType="submit"
+            size="large"
+            style={{
+              backgroundColor: token.greyMain,
+              border: "none",
+              color: "white",
+            }}
+            loading={loading}
+          >
             Log in
           </Button>
         </Form.Item>

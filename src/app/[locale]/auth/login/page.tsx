@@ -1,3 +1,4 @@
+"use client";
 import { AuthCard, LoginForm } from "@/sections";
 import { Col, Row } from "antd";
 import Image from "next/image";
