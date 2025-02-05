@@ -98,7 +98,7 @@ export function LoginForm() {
           </Form.Item>
           <CustomText type="secondary" style={{ textWrap: "nowrap" }}>
             Forget your password?
-            <Link href="/auth/reset-password" passHref>
+            <Link href="" passHref>
               <CustomText type="primary" style={{ cursor: "pointer" }}>
                 {" "}
                 Reset Password

@@ -3,7 +3,7 @@ import { App, Button, Form, Tooltip, Upload } from "antd";
 import { useState } from "react";
 import { colors } from "@/theme/colors";
 import Image from "next/image";
-import { CustomTitle } from "@/components";
+import { CustomText, CustomTitle } from "@/components";
 import { CloseOutlined } from "@ant-design/icons";
 import { useTranslations } from "next-intl";
 import styles from "./style.module.css";
@@ -79,61 +79,75 @@ export function CustomUpload({
   }
 
   return (
-    <div
-      className={styles.uploadContainer}
-      style={{
-        border: `2px solid ${colors.pink.dark}`,
-        ...(preview.type === "image" && {
-          backgroundImage: `url(${preview.content})`,
-        }),
-      }}
-    >
-      {!preview.content && (
-        <CustomTitle level={2} type="secondary" className={styles.title}>
-          {placeholder}
-        </CustomTitle>
-      )}
-      {preview?.type !== "image" && preview?.content && (
-        <span className={styles.filePreview}>{preview.content as string}</span>
-      )}
-      <Form.Item
-        name="file"
-        valuePropName="fileList"
-        getValueFromEvent={normFile}
-        className={styles.formItem}
-        rules={[
-          {
-            required: true,
-            message: "File is required!",
-          },
-        ]}
+    <>
+      <div
+        className={styles.uploadContainer}
+        style={{
+          border: `2px solid ${colors.pink.dark}`,
+          ...(preview.type === "image" && {
+            backgroundImage: `url(${preview.content})`,
+          }),
+        }}
       >
-        <Upload
-          beforeUpload={handleBeforeUpload} // Prevent automatic upload
-          maxCount={1} // Restrict to one file
-          showUploadList={false} // Disable preview and progress UI
-          onChange={handleFileChange} // Handle file change
-          accept={acceptedExtensions.map((ext) => `.${ext}`).join(",")}
+        {!preview.content && (
+          <CustomTitle level={2} type="secondary" className={styles.title}>
+            {placeholder}
+          </CustomTitle>
+        )}
+        {preview?.type !== "image" && preview?.content && (
+          <span className={styles.filePreview}>
+            {preview.content as string}
+          </span>
+        )}
+        <Form.Item
+          name="license"
+          valuePropName="fileList"
+          getValueFromEvent={normFile}
+          className={styles.formItem}
+          rules={[
+            {
+              required: true,
+              message: "",
+            },
+          ]}
         >
-          <Image
-            alt="upload file"
-            src="/images/icons/camera.svg"
-            width="48"
-            height="48"
-          />
-        </Upload>
+          <Upload
+            beforeUpload={handleBeforeUpload} // Prevent automatic upload
+            maxCount={1} // Restrict to one file
+            showUploadList={false} // Disable preview and progress UI
+            onChange={handleFileChange} // Handle file change
+            accept={acceptedExtensions.map((ext) => `.${ext}`).join(",")}
+          >
+            <Image
+              alt="upload file"
+              src="/images/icons/camera.svg"
+              width="48"
+              height="48"
+              style={{ cursor: "pointer" }}
+            />
+          </Upload>
+        </Form.Item>
+        {preview.content && (
+          <Tooltip title={translate("remove")}>
+            <Button
+              onClick={handleRemove}
+              size="middle"
+              type="text"
+              icon={<CloseOutlined />}
+              className={styles.removeButton}
+            />
+          </Tooltip>
+        )}
+      </div>
+      {/* Display Error Message Below */}
+      <Form.Item shouldUpdate style={{ margin: 0 }}>
+        {({ getFieldError }) => {
+          const errors = getFieldError("license");
+          return errors.length > 0 ? (
+            <CustomText type="danger">license is required</CustomText>
+          ) : null;
+        }}
       </Form.Item>
-      {preview.content && (
-        <Tooltip title={translate("remove")}>
-          <Button
-            onClick={handleRemove}
-            size="middle"
-            type="text"
-            icon={<CloseOutlined />}
-            className={styles.removeButton}
-          />
-        </Tooltip>
-      )}
-    </div>
+    </>
   );
 }

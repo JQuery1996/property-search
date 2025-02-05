@@ -43,8 +43,6 @@ export function ClientRegisterForm() {
       message.success("Login successful!");
       replace("/");
     } catch (error: any) {
-      console.log({ error });
-      console.error("Login failed:", error);
       message.error(
         error.response?.data?.message || "Login failed. Please try again.",
       );
