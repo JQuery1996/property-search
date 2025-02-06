@@ -150,10 +150,10 @@ export function VerticalCard({ listing }: { listing: TListing }) {
       </CustomTitle>
       <Divider style={{ margin: "10px 0" }} />
       <Meta
-        title={<Tooltip title={listing.title}>{listing.title}</Tooltip>}
+        title={<Tooltip title={listing.title}>{listing.title ?? "-"}</Tooltip>}
         description={
           <CustomText style={{ fontWeight: "bold" }}>
-            {listing.price_value} {listing.price_currency}
+            {listing.price_value ?? "-"} {listing.price_currency}
           </CustomText>
         }
       />
@@ -166,7 +166,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           alt="location"
         />
         <CustomText ellipsis type="secondary" style={{ margin: "10px 0" }}>
-          {listing.location}
+          {listing.location ?? "-"}
         </CustomText>
       </Flex>
       <Flex gap={25} style={{ margin: "10px 0" }}>

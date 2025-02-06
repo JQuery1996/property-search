@@ -1,29 +1,25 @@
 "use client";
 import { AuthCard, LoginForm } from "@/sections";
-import { Col, Row } from "antd";
+import { Col, Flex, Row } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { CustomText, Logo } from "@/components";
+import React from "react";
+import { AuthSideImage } from "@/components/auth/AuthSideImage";
 
 export default function LoginPage() {
   const translate = useTranslations("LoginPage");
   return (
-    <Row style={{ margin: "24px" }}>
+    <Row style={{ margin: "24px 5%" }}>
+      {/* Image Column */}
+      <Col xs={0} xl={12}>
+        <AuthSideImage />
+      </Col>
       {/* Auth Card Column */}
       <Col xs={24} xl={12}>
         <AuthCard action={translate("action")}>
           <LoginForm />
         </AuthCard>
-      </Col>
-      {/* Image Column */}
-      <Col xs={0} xl={12}>
-        <Image
-          src="/images/auth/login/login.svg"
-          width={769}
-          height={769}
-          alt="login image"
-          style={{ marginLeft: "-250px" }}
-          priority
-        />
       </Col>
     </Row>
   );
