@@ -8,7 +8,7 @@ import {
   Testimonials,
 } from "@/sections";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <BannerWrapper />
