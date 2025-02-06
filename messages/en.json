@@ -59,6 +59,10 @@
       "title": "Welcome to <span>Property</span> Search.",
       "description": "We are pleased to see you again at  <span>Property Search</span> where you can find your future dream home at competitive prices."
     },
+    "Auth": {
+      "startJourney" : "Start Your Journey With Property Search.",
+      "propertySearchDescription": "Property Search where you can find your future dream home at competitive prices."
+    },
     "contactUs": "Contact Us",
     "contactInformation": "Contact Information",
     "youCanContactUsThroughTheFollowingNumbers": "You can contact us through the following Numbers:",
