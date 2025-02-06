@@ -7,4 +7,5 @@ export const PAGES = {
   HOLIDAY_HOMES: "/holiday-homes",
   DEVELOPERS: "/developers",
   CONTACT_US: "/contact-us",
+  PROFILE: "/profile",
 };

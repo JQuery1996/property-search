@@ -13,7 +13,12 @@ export function AppFooter() {
   const { token } = useToken();
   const { lg, mobile } = useResponsive();
   return (
-    <Footer style={{ padding: 40, backgroundColor: token.greyPink }}>
+    <Footer
+      style={{
+        padding: 40,
+        backgroundColor: token.greyPink,
+      }}
+    >
       <CustomTitle level={3} style={{ color: "white", fontWeight: "bold" }}>
         Discover the Comfort of Your Life
       </CustomTitle>

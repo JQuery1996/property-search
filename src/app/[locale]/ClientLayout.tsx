@@ -56,10 +56,10 @@ export function ClientLayout({ children }: TClientLayout) {
       direction={direction}
       theme={themeConfig}
     >
-      <App>
+      <App style={{ minHeight: "100vh" }}>
         <AuthProvider>
           <SettingsProvider>
-            <Layout>
+            <Layout style={{ minHeight: "100vh" }}>
               <Header
                 style={{
                   position: "sticky",
@@ -90,28 +90,7 @@ export function ClientLayout({ children }: TClientLayout) {
                     backgroundColor: "transparent",
                   }}
                 />
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    alignContent: "center",
-                    gap: 30,
-                  }}
-                >
-                  <div style={{ marginTop: 20 }}>
-                    <Badge count={10} style={{ cursor: "pointer" }}>
-                      <Image
-                        src="/images/icons/header-notification.svg"
-                        width={25}
-                        height={25}
-                        alt="notifications"
-                        style={{ cursor: "pointer" }}
-                      />
-                    </Badge>
-                  </div>
-                  <Profile />
-                </div>
+                <Profile />
               </Header>
               <Content>
                 <div

@@ -17,7 +17,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (token: string, user: any) => void;
   logout: () => void;
-  updateProfile: (body: TUpdateProfile) => void; // Function to update user
+  updateProfile: (body: TUpdateProfile) => Promise<void>; // Function to update user
   authLoading: boolean;
 }
 

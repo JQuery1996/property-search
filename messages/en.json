@@ -80,9 +80,9 @@
     "confirmLogout": "Confirm Logout",
     "logout": "Logout",
     "logoutMessage": "Are you sure you want to logout?",
-    "cancel": "Cancel"
-
-
+    "cancel": "Cancel",
+    "myAccount": "My Account",
+    "operationFailed": "Operation Failed"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -134,6 +134,10 @@
     "address": "Address",
     "apply": "Apply",
     "clearAll": "Clear All",
+    "save": "Save",
+    "reset": "Reset",
+    "country": "Country",
+    "measurement": "Measurement",
     "Validations": {
       "acceptedExtensions": "You can only upload these types:",
       "fileSizeLessThan": "File must smaller than"

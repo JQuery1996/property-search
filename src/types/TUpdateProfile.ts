@@ -4,4 +4,5 @@ export type TUpdateProfile = {
   language?: string;
   measurement_id?: string;
   country_id?: string;
+  password?: string;
 };

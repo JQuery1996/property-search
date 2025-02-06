@@ -16,6 +16,11 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
+  // check for authenticated pages
+  if (!authToken && /\/?(profile)/.test(pathname)) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
+
   return intlMiddleware(req);
 }
 

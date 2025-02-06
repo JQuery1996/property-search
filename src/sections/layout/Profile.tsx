@@ -163,6 +163,7 @@ export function Profile() {
   const handleMenuClick: MenuProps["onClick"] = async (e) => {
     switch (e.key[0]) {
       case "1":
+        router.push(PAGES.PROFILE);
         break;
       case "2":
         const country_id = e.key.split("-")[1];
