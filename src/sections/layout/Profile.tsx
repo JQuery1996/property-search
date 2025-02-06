@@ -5,6 +5,7 @@ import {
   Dropdown,
   Flex,
   type MenuProps,
+  Modal,
   Spin,
   theme,
 } from "antd";
@@ -36,12 +37,13 @@ export function Profile() {
   } = useSettings();
   const locale = useLocale();
   const { mobile } = useResponsive();
-  const translate = useTranslations("Layout.Header.Profile"); // Use the appropriate namespace
+  const translate = useTranslations("Common"); // Use the appropriate namespace
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
   // Recursive function to translate labels and render icons
   const translateAndRenderIcons = (
@@ -64,13 +66,7 @@ export function Profile() {
         : undefined, // Recursively handle children
     }));
   };
-
-  const profileItems = [
-    {
-      key: "1",
-      label: translate("profile"),
-      icon: "/images/icons/user-edit.svg",
-    },
+  const alwaysVisibleItems = [
     {
       key: "2",
       label: translate("country"),
@@ -136,15 +132,27 @@ export function Profile() {
       ],
     },
   ];
-  // Add the logout option only if the user exists
-  if (isAuthenticated) {
-    profileItems.push({
+
+  const authenticatedItems = [
+    {
+      key: "1",
+      label: translate("profile"),
+      icon: "/images/icons/user-edit.svg",
+    },
+    {
       key: "7",
       label: translate("logout"),
       icon: "/images/icons/logout.svg",
       danger: true,
-    } as any);
-  }
+    },
+  ];
+  const profileItems = (
+    isAuthenticated
+      ? alwaysVisibleItems.concat(authenticatedItems) // Combine arrays if authenticated
+      : alwaysVisibleItems
+  ) // Otherwise, use only alwaysVisibleItems
+    .sort((a, b) => a.key.localeCompare(b.key)); // Sort by key
+
   // Translate the labels and render icons for all items (including nested ones)
   const translatedItems = translateAndRenderIcons(profileItems);
 
@@ -180,7 +188,7 @@ export function Profile() {
         });
         break;
       case "7":
-        logout();
+        setIsLogoutModalOpen(true); // Show the logout confirmation modal
         break;
       default:
     }
@@ -199,98 +207,113 @@ export function Profile() {
   };
 
   return (
-    <Dropdown
-      open={open}
-      onOpenChange={(_open) => setOpen(_open)}
-      overlayStyle={{
-        background: "#ffffff",
-        boxShadow:
-          "0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05)",
-        borderRadius: 5,
-      }}
-      menu={menuProps}
-      trigger={["click"]}
-      placement="bottomLeft"
-      arrow
-      dropdownRender={(menus) =>
-        authLoading || loading ? (
-          <div
-            style={{
-              minHeight: 232,
-              minWidth: 204,
-              display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Spin />
-          </div>
-        ) : (
-          <div>
-            {menus}
-            {!isAuthenticated && (
-              <Flex
-                wrap
-                gap={8}
-                justify="center"
-                style={{
-                  margin: 10,
-                  padding: 10,
-                  backgroundColor: token.pinkLighter,
-                  borderRadius: 5,
-                }}
-              >
-                <Image
-                  src="/images/icons/user-add.svg"
-                  alt="create account"
-                  width={20}
-                  height={20}
-                />
-                <CustomText>You don’t have an accounts</CustomText>
-                <Button
-                  type="primary"
-                  icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
-                  size="small"
-                  style={{ padding: 5, gap: 2 }}
-                  onClick={handleGoRegister}
+    <>
+      <Dropdown
+        open={open}
+        onOpenChange={(_open) => setOpen(_open)}
+        overlayStyle={{
+          background: "#ffffff",
+          boxShadow:
+            "0 6px 16px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 9px 28px 8px rgba(0, 0, 0, 0.05)",
+          borderRadius: 5,
+        }}
+        menu={menuProps}
+        trigger={["click"]}
+        placement="bottomLeft"
+        arrow
+        dropdownRender={(menus) =>
+          authLoading || loading ? (
+            <div
+              style={{
+                minHeight: 232,
+                minWidth: 204,
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Spin />
+            </div>
+          ) : (
+            <div>
+              {menus}
+              {!isAuthenticated && (
+                <Flex
+                  wrap
+                  gap={8}
+                  justify="center"
+                  style={{
+                    margin: 10,
+                    padding: 10,
+                    backgroundColor: token.pinkLighter,
+                    borderRadius: 5,
+                  }}
                 >
-                  <CustomText style={{ color: "white" }}>Account</CustomText>
-                </Button>
-              </Flex>
-            )}
-          </div>
-        )
-      }
-    >
-      {user?.name ? (
-        <Avatar
-          style={{
-            verticalAlign: "middle",
-            textAlign: "center",
-            cursor: "pointer",
-            backgroundColor: token.colorPrimary,
-            color: "white",
-          }}
-          size="default"
-          gap={2}
-        >
-          {user.name[0].toUpperCase()}
-        </Avatar>
-      ) : (
-        <Avatar
-          style={{
-            verticalAlign: "middle",
-            textAlign: "center",
-            cursor: "pointer",
-            backgroundColor: token.colorPrimary,
-            color: "white",
-          }}
-          size="default"
-          gap={2}
-          icon={<UserOutlined />}
-        />
-      )}
-    </Dropdown>
+                  <Image
+                    src="/images/icons/user-add.svg"
+                    alt="create account"
+                    width={20}
+                    height={20}
+                  />
+                  <CustomText>You don’t have an accounts</CustomText>
+                  <Button
+                    type="primary"
+                    icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
+                    size="small"
+                    style={{ padding: 5, gap: 2 }}
+                    onClick={handleGoRegister}
+                  >
+                    <CustomText style={{ color: "white" }}>Account</CustomText>
+                  </Button>
+                </Flex>
+              )}
+            </div>
+          )
+        }
+      >
+        {user?.name ? (
+          <Avatar
+            style={{
+              verticalAlign: "middle",
+              textAlign: "center",
+              cursor: "pointer",
+              backgroundColor: token.colorPrimary,
+              color: "white",
+            }}
+            size="default"
+            gap={2}
+          >
+            {user.name[0].toUpperCase()}
+          </Avatar>
+        ) : (
+          <Avatar
+            style={{
+              verticalAlign: "middle",
+              textAlign: "center",
+              cursor: "pointer",
+              backgroundColor: token.colorPrimary,
+              color: "white",
+            }}
+            size="default"
+            gap={2}
+            icon={<UserOutlined />}
+          />
+        )}
+      </Dropdown>
+      <Modal
+        title={translate("confirmLogout")}
+        open={isLogoutModalOpen}
+        onOk={() => {
+          logout(); // Call the logout function
+          setIsLogoutModalOpen(false); // Close the modal
+        }}
+        onCancel={() => setIsLogoutModalOpen(false)} // Close the modal without logging out
+        okText={translate("logout")}
+        cancelText={translate("cancel")}
+      >
+        <p>{translate("logoutMessage")}</p>
+      </Modal>
+    </>
   );
 }

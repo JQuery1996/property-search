@@ -51,21 +51,6 @@
         "holidayHomes": "Holiday Homes",
         "developers": "Developers",
         "contact": "Contact"
-      },
-      "Profile": {
-        "profile": "Profile",
-        "country": "Country",
-        "notificationSettings": "Notification Settings",
-        "savedItems": "Saved Items",
-        "measurementSystem": "Measurement System",
-        "imperialMeasure": "Imperial (ft², km)",
-        "metricMeasure": "Metric (m², mi)",
-        "language": "Language",
-        "logout": "Logout",
-        "english": "English",
-        "arabic": "Arabic",
-        "russian": "Russian",
-        "chinese": "Chinese"
       }
     }
   },
@@ -79,7 +64,25 @@
     "youCanContactUsThroughTheFollowingNumbers": "You can contact us through the following Numbers:",
     "whatsapp": "Whatsapp",
     "mobile": "Mobile",
-    "website": "Website"
+    "website": "Website",
+    "profile": "Profile",
+    "country": "Country",
+    "notificationSettings": "Notification Settings",
+    "savedItems": "Saved Items",
+    "measurementSystem": "Measurement System",
+    "imperialMeasure": "Imperial (ft², km)",
+    "metricMeasure": "Metric (m², mi)",
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "russian": "Russian",
+    "chinese": "Chinese",
+    "confirmLogout": "Confirm Logout",
+    "logout": "Logout",
+    "logoutMessage": "Are you sure you want to logout?",
+    "cancel": "Cancel"
+
+
   },
   "LoginPage": {
     "action": "welcome back."
