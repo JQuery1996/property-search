@@ -2,6 +2,7 @@
 import { BASE_URL } from "@/constants";
 import { TFetchOptions } from "@/types";
 import { logger } from "@/lib"; // Import your logger
+import { cookies } from "next/headers"; // ✅ Import Next.js cookies
 
 type Interceptor = (options: TFetchOptions) => TFetchOptions;
 
@@ -22,6 +23,8 @@ export async function fetchInstance<T>(
   endpoint: string,
   options: TFetchOptions = {},
 ): Promise<T> {
+  // ✅ Get token from cookies (Server-side)
+  const token = cookies().get("token")?.value;
   // Convert params object to query string
   const queryString = options.params
     ? `?${new URLSearchParams(
@@ -49,6 +52,10 @@ export async function fetchInstance<T>(
     ...fetchOptions.headers,
   };
 
+  // ✅ If token exists, add it to headers
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
   // Merge options with defaults
   fetchOptions = {
     ...fetchOptions,

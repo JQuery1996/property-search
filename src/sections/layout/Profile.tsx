@@ -78,16 +78,6 @@ export function Profile() {
       })),
     },
     {
-      key: "3",
-      label: translate("notificationSettings"),
-      icon: "/images/icons/notification.svg",
-    },
-    {
-      key: "4",
-      label: translate("savedItems"),
-      icon: "/images/icons/save-item.svg",
-    },
-    {
       key: "5",
       label: translate("measurementSystem"),
       icon: "/images/icons/measurement.svg",
@@ -140,6 +130,11 @@ export function Profile() {
       icon: "/images/icons/user-edit.svg",
     },
     {
+      key: "4",
+      label: translate("savedItems"),
+      icon: "/images/icons/heart.svg",
+    },
+    {
       key: "7",
       label: translate("logout"),
       icon: "/images/icons/logout.svg",
@@ -148,7 +143,7 @@ export function Profile() {
   ];
   const profileItems = (
     isAuthenticated
-      ? alwaysVisibleItems.concat(authenticatedItems) // Combine arrays if authenticated
+      ? alwaysVisibleItems.concat(authenticatedItems as any) // Combine arrays if authenticated
       : alwaysVisibleItems
   ) // Otherwise, use only alwaysVisibleItems
     .sort((a, b) => a.key.localeCompare(b.key)); // Sort by key
@@ -169,6 +164,9 @@ export function Profile() {
         const country_id = e.key.split("-")[1];
         updateCountry({ id: parseInt(country_id) });
         if (isAuthenticated) updateProfile({ country_id });
+        break;
+      case "4":
+        router.push(PAGES.FAVORITE);
         break;
       case "5":
         const measurement_id = e.key.split("-")[1];

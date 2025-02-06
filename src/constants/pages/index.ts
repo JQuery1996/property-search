@@ -8,4 +8,5 @@ export const PAGES = {
   DEVELOPERS: "/developers",
   CONTACT_US: "/contact-us",
   PROFILE: "/profile",
+  FAVORITE: "/favorite",
 };

@@ -1,19 +1,31 @@
 "use client";
-import { Button, Card, Divider, Flex, Tooltip, Skeleton } from "antd";
+import { Card, Divider, Flex, Tooltip, App, Spin, Skeleton } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
-import { CustomText, CustomTitle, Label } from "@/components";
+import {
+  CustomText,
+  CustomTitle,
+  ImageWithSkeleton,
+  Label,
+} from "@/components";
 import Image from "next/image";
 import Slider from "react-slick";
 import { useTranslations } from "next-intl";
-import styles from "./styles.module.css";
 import { useState } from "react";
 import { useRouter } from "@/i18n/routing";
-import { PAGES } from "@/constants"; // Import useState for state management
+import { PAGES, SAVED_ITEMS } from "@/constants";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
+import { axiosInstance } from "@/client";
+import styles from "./styles.module.css";
+import { useAuth } from "@/contexts"; // Import useState for state management
 
 export function VerticalCard({ listing }: { listing: TListing }) {
   const translate = useTranslations();
+  const { message } = App.useApp();
   const { push } = useRouter();
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+  const [favoriteLoading, setFavoriteLoading] = useState(false);
   const borderRadius = 5;
 
   // State to track loading status of each image
@@ -29,6 +41,35 @@ export function VerticalCard({ listing }: { listing: TListing }) {
       return newStates;
     });
   };
+  const openWhatsapp = (e: any) => {
+    e.stopPropagation();
+    if (!listing.whatsapp_number) return;
+    const url = `https://wa.me/${listing.whatsapp_number}`;
+    window.open(url, "_blank");
+  };
+
+  async function toggleFromFavorite(e: any) {
+    e.stopPropagation();
+    if (!isAuthenticated) {
+      router.push(PAGES.LOGIN);
+      message.error(translate("Common.eligibleProcess"));
+      return;
+    }
+    setFavoriteLoading(true);
+    try {
+      await axiosInstance.post(`${SAVED_ITEMS}/${listing.id}`);
+      if (listing.is_saved)
+        message.success(translate("Common.propertyRemovedFromYourFavorite"));
+      else message.success(translate("Common.propertyAddedToYourFavorite"));
+      // toggle in_favorite
+      listing.is_saved = !listing.is_saved;
+    } catch (error: any) {
+      console.log(error);
+      message.error(translate("Common.operationFailed"));
+    } finally {
+      setFavoriteLoading(false);
+    }
+  }
 
   const handlePropertyClick = (id: string | number) => () => {
     push(`${PAGES.PROPERTIES}/${id}`);
@@ -98,8 +139,8 @@ export function VerticalCard({ listing }: { listing: TListing }) {
               position: "absolute",
               top: "4%",
               insetInlineStart: "4%",
-              width: 31,
-              height: 23,
+              width: 35,
+              height: 28,
               backgroundColor: "white",
               borderRadius: 6,
               display: "flex",
@@ -111,10 +152,11 @@ export function VerticalCard({ listing }: { listing: TListing }) {
             }}
           >
             <Image
-              src="/images/icons/share.svg"
-              width={15}
-              height={15}
+              src="/images/icons/whatsapp.svg"
+              width={20}
+              height={20}
               alt="share"
+              onClick={openWhatsapp}
             />
           </div>
           <div
@@ -122,8 +164,8 @@ export function VerticalCard({ listing }: { listing: TListing }) {
               position: "absolute",
               top: "4%",
               insetInlineEnd: "4%",
-              width: 31,
-              height: 23,
+              width: 35,
+              height: 27,
               backgroundColor: "white",
               borderRadius: 6,
               display: "flex",
@@ -134,12 +176,19 @@ export function VerticalCard({ listing }: { listing: TListing }) {
               zIndex: 2, // Ensure icons are above the image and skeleton
             }}
           >
-            <Image
-              src="/images/icons/bookmark.svg"
-              width={15}
-              height={15}
-              alt="bookmark"
-            />
+            {favoriteLoading ? (
+              <Spin size="small" />
+            ) : listing.is_saved ? (
+              <HeartFilled
+                style={{ fontSize: 18, color: "red" }}
+                onClick={toggleFromFavorite}
+              />
+            ) : (
+              <HeartOutlined
+                style={{ fontSize: 18 }}
+                onClick={toggleFromFavorite}
+              />
+            )}
           </div>
         </div>
       }
@@ -212,27 +261,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           }
         />
       </Flex>
-      <Flex justify="space-between" gap={16}>
-        <Button
-          color="danger"
-          variant="filled"
-          styles={{
-            icon: {
-              width: 16,
-              height: 16,
-            },
-          }}
-          icon={
-            <Image
-              src="/images/icons/hang.svg"
-              alt="contact us"
-              width={16}
-              height={16}
-            />
-          }
-        >
-          {translate("Common.contactUs")}
-        </Button>
+      <Flex justify="flex-end" gap={16}>
         <Label
           icon={
             <Image

@@ -10,7 +10,7 @@ import { AuthSideImage } from "@/components/auth/AuthSideImage";
 export default function LoginPage() {
   const translate = useTranslations("LoginPage");
   return (
-    <Row style={{ margin: "24px 5%" }}>
+    <Row style={{ margin: "48px 5%" }}>
       {/* Image Column */}
       <Col xs={0} xl={12}>
         <AuthSideImage />

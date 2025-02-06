@@ -10,6 +10,9 @@ import {
 import { TUpdateProfile, TUser } from "@/types";
 import Cookies from "js-cookie";
 import { axiosInstance } from "@/client";
+import { router } from "next/client";
+import { PAGES } from "@/constants";
+import { useRouter } from "@/i18n/routing";
 
 interface AuthContextType {
   token: string | null;
@@ -24,18 +27,14 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<TUser | null>(null);
+  const [token, setToken] = useState<string | null>(
+    (Cookies.get("token") as string) ?? null,
+  );
+  const [user, setUser] = useState<TUser | null>(
+    Cookies.get("user") ? JSON.parse(Cookies.get("user") as string) : null,
+  );
   const [authLoading, setAuthLoading] = useState(false);
-
-  useEffect(() => {
-    const storedToken = Cookies.get("token");
-    const storedUser = Cookies.get("user");
-    if (storedToken && storedUser) {
-      setToken(storedToken);
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+  const { replace } = useRouter();
 
   const login = (token: string, user: TUser) => {
     setToken(token);
@@ -49,6 +48,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
     Cookies.remove("token");
     Cookies.remove("user");
+    replace(PAGES.HOME);
   };
   // Function to update the user object
   const updateProfile = async (body: TUpdateProfile) => {

@@ -4,3 +4,4 @@ export * from "./layout";
 export * from "./properties";
 export * from "./property";
 export * from "./profile";
+export * from "./favorite";

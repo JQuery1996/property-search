@@ -4,3 +4,4 @@ export const DEVELOPERS_URL = "/developers";
 export const FILTER_LISTS = "/filter-lists";
 export const COUNTRIES_LIST = "/list/countries";
 export const MEASUREMENT_LIST = "/list/measurements";
+export const SAVED_ITEMS = "/saved-items";

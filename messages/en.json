@@ -86,7 +86,10 @@
     "logoutMessage": "Are you sure you want to logout?",
     "cancel": "Cancel",
     "myAccount": "My Account",
-    "operationFailed": "Operation Failed"
+    "operationFailed": "Operation Failed",
+    "propertyAddedToYourFavorite": "Property has been added to your favorite",
+    "propertyRemovedFromYourFavorite": "Property has been removed from your favorite",
+    "eligibleProcess": "You are not eligible to perform this operation. Please log in first."
   },
   "LoginPage": {
     "action": "welcome back."
@@ -161,5 +164,10 @@
   },
   "developers": {
     "verify": "verify"
+  },
+  "Favorite": {
+    "savedItems": "Saved Items",
+    "youDontHaveAnySavedItems": "You don’t have any saved items",
+    "startAddingYourFavorites": "Start adding your favorites to see them here!"
   }
 }

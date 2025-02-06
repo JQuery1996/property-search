@@ -17,8 +17,9 @@ export function AuthSideImage() {
       >
         <Image
           src="/images/auth/auth.jpg"
-          width={606}
-          height={615}
+          width={0}
+          height={0}
+          sizes="100vw"
           alt="login image"
           priority
           style={{ borderRadius: "5px", width: "100%", height: "100%" }}

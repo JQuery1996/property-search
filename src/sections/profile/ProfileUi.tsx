@@ -1,6 +1,6 @@
 "use client";
 import { useAuth, useSettings } from "@/contexts";
-import { CustomText, CustomTitle, ProfileSkeleton } from "@/components";
+import { CustomText, CustomTitle, SavedItemSkeleton } from "@/components";
 import { useTranslations } from "next-intl";
 import { Avatar, Card, Flex, theme } from "antd";
 import { ProfileForm } from "./ProfileForm";
@@ -48,6 +48,6 @@ export function ProfileUi() {
       </Card>
     </Flex>
   ) : (
-    <ProfileSkeleton /> // Use the skeleton component
+    <SavedItemSkeleton /> // Use the skeleton component
   );
 }
