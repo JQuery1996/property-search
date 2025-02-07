@@ -1,15 +1,21 @@
 "use server";
 import { DEVELOPERS_URL } from "@/constants";
-import { TFetchOptions, TDevelopmentProperty } from "@/types";
+import {
+  TFetchOptions,
+  TDevelopmentProperty,
+  TPaginationMetadata,
+} from "@/types";
 import { fetchInstance, logger } from "@/lib"; // Import fetchInstance
 
 interface TDevelopersResponse {
   data: TDevelopmentProperty[];
+  pagination: TPaginationMetadata;
 }
 
 export async function getDevelopers(
   options?: TFetchOptions, // Accept only the options parameter
 ): Promise<TDevelopersResponse> {
+  console.log({ options });
   try {
     // Use fetchInstance to fetch developers
     const response = await fetchInstance<{
@@ -20,10 +26,19 @@ export async function getDevelopers(
     });
 
     // Extract data from the response
-    const { data } = response;
-    return { data };
+    const { data, ...rest } = response;
+    return { data, pagination: rest as TPaginationMetadata };
   } catch (error) {
     logger.error("Failed to fetch developers", { error });
-    return { data: [] }; // Return an empty array if something goes wrong
+    return {
+      data: [],
+      pagination: {
+        from: 0,
+        to: 0,
+        total: 0,
+        current_page: 0,
+        per_page: 0,
+      } as TPaginationMetadata,
+    };
   }
 }
