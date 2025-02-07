@@ -144,7 +144,9 @@ export function CustomUpload({
         {({ getFieldError }) => {
           const errors = getFieldError("license");
           return errors.length > 0 ? (
-            <CustomText type="danger">license is required</CustomText>
+            <CustomText type="danger">
+              {translate("Validations.licenseRequired")}
+            </CustomText>
           ) : null;
         }}
       </Form.Item>

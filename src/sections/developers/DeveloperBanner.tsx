@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Flex } from "antd";
 import { CustomTitle } from "@/components";
 import { useResponsive } from "antd-style";
+import { useTranslations } from "next-intl";
 
 export function DeveloperBanner() {
+  const translate = useTranslations("developers.Banner");
   const { lg } = useResponsive();
   return (
     <div style={{ position: "relative", height: 500, width: "100%" }}>
@@ -42,7 +44,7 @@ export function DeveloperBanner() {
             }),
           }}
         >
-          Find A Developer
+          {translate("findDeveloper")}
         </CustomTitle>
         <CustomTitle
           level={2}
@@ -54,8 +56,9 @@ export function DeveloperBanner() {
             }),
           }}
         >
-          Book your dream apartment <br />
-          in our residential complexes.
+          {translate.rich("vision", {
+            space: () => <br />,
+          })}
         </CustomTitle>
       </Flex>
     </div>

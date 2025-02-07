@@ -10,6 +10,7 @@ import { axiosInstance } from "@/client";
 import { useState } from "react";
 import { TPhone } from "@/types";
 import { phoneNumberFormation } from "@/helpers";
+import { useTranslations } from "next-intl";
 
 const { useToken } = theme;
 
@@ -20,6 +21,7 @@ export function LoginForm() {
   const { replace } = useRouter();
   const [loading, setLoading] = useState(false);
   const { message } = App.useApp();
+  const translate = useTranslations("Form");
 
   const onFinish = async ({
     phone,
@@ -44,7 +46,7 @@ export function LoginForm() {
       console.log({ error });
       console.error("Login failed:", error);
       message.error(
-        error.response?.data?.message || "Login failed. Please try again.",
+        error.response?.data?.message || translate("Validations.loginFailed"),
       );
     } finally {
       setLoading(false);
@@ -63,12 +65,12 @@ export function LoginForm() {
       onFinish={onFinish}
     >
       <Form.Item
-        label="Phone Number"
+        label={translate("phoneNumber")}
         name="phone"
         rules={[
           {
             required: true,
-            message: "Please enter a phone number",
+            message: translate("Validations.phoneNumberRequired"),
           },
         ]}
       >
@@ -79,9 +81,14 @@ export function LoginForm() {
         />
       </Form.Item>
       <Form.Item
-        label="Password"
+        label={translate("password")}
         name="password"
-        rules={[{ required: true, message: "Please input your password!" }]}
+        rules={[
+          {
+            required: true,
+            message: translate("Validations.passwordRequired"),
+          },
+        ]}
         hasFeedback
       >
         <Input.Password
@@ -94,14 +101,16 @@ export function LoginForm() {
       <Form.Item>
         <Flex justify="space-between" align="center" wrap gap={8}>
           <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox style={{ textWrap: "nowrap" }}>Remember me</Checkbox>
+            <Checkbox style={{ textWrap: "nowrap" }}>
+              {translate("rememberMe")}
+            </Checkbox>
           </Form.Item>
           <CustomText type="secondary" style={{ textWrap: "nowrap" }}>
-            Forget your password?
+            {translate("forgetPassword")}
             <Link href="" passHref>
               <CustomText type="primary" style={{ cursor: "pointer" }}>
                 {" "}
-                Reset Password
+                {translate("resetPassword")}
               </CustomText>
             </Link>
           </CustomText>
@@ -129,18 +138,18 @@ export function LoginForm() {
             }}
             loading={loading}
           >
-            Log in
+            {translate("login")}
           </Button>
         </Form.Item>
         <Link href={PAGES.REGISTER_CLIENT} style={{ width: "100%" }}>
           <Button block variant="outlined" color="primary" size="large">
-            Create as Client
+            {translate("createAsClient")}
           </Button>
         </Link>
 
         <Link href={PAGES.REGISTER_AGENT} style={{ width: "100%" }}>
           <Button block variant="outlined" color="primary" size="large">
-            Create as Agent
+            {translate("createAsAgent")}
           </Button>
         </Link>
       </Flex>

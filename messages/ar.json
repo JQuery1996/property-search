@@ -32,8 +32,27 @@
     },
     "subscribe": {
       "title": "انضم إلينا",
-      "description": "احصل على رؤى العقارات<space></space> والقوائم مباشرة إلى بريدك الإلكتروني",
-      "subDescription": "اشترك معنا للحصول على النشرة الإخبارية حول معلومات العقارات."
+      "description": "احصل على رؤى العقارات و <space></space>القوائم مباشرة إلى بريدك الإلكتروني",
+      "subDescription": "اشترك لدينا للحصول على النشرة الإخبارية حول معلومات العقارات.",
+      "insertEmail": "أدخل بريدك الإلكتروني هنا",
+      "subscribe": "اشترك"
+    },
+    "category": {
+      "propertyCategory": "فئة العقار",
+      "chooseProperty": "اختر العقار حسب الفئة"
+    },
+    "Footer": {
+      "discover": "اكتشف راحة حياتك",
+      "home": "الصفحة الرئيسية",
+      "packages": "الباقات",
+      "contact": "اتصل",
+      "categories": "الفئات",
+      "blog": "المدونة",
+      "licensing": "التراخيص",
+      "copyRight": "حقوق الطبع والنشر",
+      "office": "المكتب",
+      "apartment": "شقة",
+      "warehouse": "مستودع"
     }
   },
   "PropertiesPage": {
@@ -89,7 +108,9 @@
     "operationFailed": "فشلت العملية",
     "propertyAddedToYourFavorite": "تمت إضافة العقار إلى المفضلة",
     "propertyRemovedFromYourFavorite": "تمت إزالة العقار من المفضلة",
-    "eligibleProcess": "أنت غير مؤهل لإجراء هذه العملية. يرجى تسجيل الدخول أولاً."
+    "eligibleProcess": "أنت غير مؤهل لإجراء هذه العملية. يرجى تسجيل الدخول أولاً.",
+    "dontHaveAccount": "ليس لديك حساب",
+    "account": "حساب"
   },
   "LoginPage": {
     "action": "مرحبًا بعودتك."
@@ -145,9 +166,25 @@
     "reset": "إعادة تعيين",
     "country": "البلد",
     "measurement": "القياس",
+    "forgetPassword": "هل نسيت كلمة المرور؟",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "login": "تسجيل الدخول",
+    "createAsClient": "إنشاء كعميل",
+    "createAsAgent": "إنشاء كوسيط",
     "Validations": {
       "acceptedExtensions": "يمكنك فقط تحميل هذه الأنواع:",
-      "fileSizeLessThan": "يجب أن يكون الملف أصغر من"
+      "fileSizeLessThan": "يجب أن يكون الملف أصغر من",
+      "loginFailed": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "registerFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+      "phoneNumberRequired": "يرجى إدخال رقم الهاتف",
+      "emailRequired": "يرجى إدخال عنوان البريد الإلكتروني",
+      "passwordRequired": "يرجى إدخال كلمة المرور!",
+      "confirmPassword": "يرجى تأكيد كلمة المرور!",
+      "confirmNotMatch": "كلمة المرور الجديدة التي أدخلتها غير متطابقة!",
+      "fullNameRequired": "يرجى إدخال الاسم الكامل",
+      "licenseRequired": "الترخيص مطلوب",
+      "loginSuccess": "تم تسجيل الدخول بنجاح!",
+      "registerSuccess": "تم التسجيل بنجاح!"
     }
   },
   "listing": {
@@ -163,7 +200,11 @@
     "locationAndNearby": "الموقع وما حوله"
   },
   "developers": {
-    "verify": "تحقق"
+    "verify": "تحقق",
+    "Banner": {
+      "findDeveloper": "ابحث عن مطور",
+      "vision": "احجز شقة أحلامك <space></space>في مجمعاتنا السكنية."
+    }
   },
   "Favorite": {
     "savedItems": "العناصر المحفوظة",

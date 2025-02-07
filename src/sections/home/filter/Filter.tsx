@@ -94,9 +94,10 @@ export function Filter({
       <Flex
         style={{
           padding: "20px",
-          backgroundColor: token.colorPrimary,
+          backgroundColor: "#E54F8E99",
           borderRadius: "12px",
           width: "90%",
+          alignItems: "center",
         }}
         gap={12}
       >

@@ -32,8 +32,27 @@
     },
     "subscribe": {
       "title": "加入我们",
-      "description": "获取房产洞察和<space></space>列表直接发送到您的邮箱",
-      "subDescription": "订阅我们以获取有关房产信息的新闻通讯。"
+      "description": "直接通过电子邮件获取房地产洞察和 <space></space>列表",
+      "subDescription": "订阅我们获取关于房地产信息的新闻通讯。",
+      "insertEmail": "在此处插入您的电子邮件",
+      "subscribe": "订阅"
+    },
+    "category": {
+      "propertyCategory": "房产类别",
+      "chooseProperty": "按类别选择房产"
+    },
+    "Footer": {
+      "discover": "发现生活的舒适",
+      "home": "首页",
+      "packages": "套餐",
+      "contact": "联系我们",
+      "categories": "类别",
+      "blog": "博客",
+      "licensing": "许可",
+      "copyRight": "版权",
+      "office": "办公室",
+      "apartment": "公寓",
+      "warehouse": "仓库"
     }
   },
   "PropertiesPage": {
@@ -89,7 +108,9 @@
     "operationFailed": "操作失败",
     "propertyAddedToYourFavorite": "房产已添加到您的收藏夹",
     "propertyRemovedFromYourFavorite": "房产已从您的收藏夹中移除",
-    "eligibleProcess": "您没有资格执行此操作。请先登录。"
+    "eligibleProcess": "您没有资格执行此操作。请先登录。",
+    "dontHaveAccount": "您没有账户",
+    "account": "账户"
   },
   "LoginPage": {
     "action": "欢迎回来。"
@@ -145,9 +166,25 @@
     "reset": "重置",
     "country": "国家",
     "measurement": "测量",
+    "forgetPassword": "忘记密码？",
+    "resetPassword": "重置密码",
+    "login": "登录",
+    "createAsClient": "以客户身份创建",
+    "createAsAgent": "以代理身份创建",
     "Validations": {
       "acceptedExtensions": "您只能上传这些类型：",
-      "fileSizeLessThan": "文件必须小于"
+      "fileSizeLessThan": "文件必须小于",
+      "loginFailed": "登录失败，请重试。",
+      "registerFailed": "注册失败，请重试。",
+      "phoneNumberRequired": "请输入电话号码",
+      "emailRequired": "请输入电子邮件地址",
+      "passwordRequired": "请输入密码！",
+      "confirmPassword": "请确认密码！",
+      "confirmNotMatch": "您输入的新密码不匹配！",
+      "fullNameRequired": "请输入您的全名",
+      "licenseRequired": "需要许可证",
+      "loginSuccess": "登录成功！",
+      "registerSuccess": "注册成功！"
     }
   },
   "listing": {
@@ -163,7 +200,11 @@
     "locationAndNearby": "位置及周边"
   },
   "developers": {
-    "verify": "验证"
+    "verify": "验证",
+    "Banner": {
+      "findDeveloper": "寻找开发商",
+      "vision": "在我们的住宅区预订您梦想中的公寓。<space></space>"
+    }
   },
   "Favorite": {
     "savedItems": "保存的项目",

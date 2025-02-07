@@ -1,24 +1,23 @@
 "use client";
 import Image from "next/image";
-import { CustomText, CustomTitle } from "@/components";
-import { Button, Flex } from "antd";
-import { useMediaQuery } from "@/hooks";
+import { CustomTitle } from "@/components";
+import { Flex } from "antd";
 import { Filter } from "../filter";
 import { useTranslations } from "next-intl";
 import { TFilterSettings } from "@/types";
+import { useResponsive } from "antd-style";
 
 export function Banner({
   filterSettings,
 }: {
   filterSettings: TFilterSettings;
 }) {
-  const { lessThan } = useMediaQuery();
   const translate = useTranslations("HomePage.Banner");
-  const isSmall = lessThan("sm");
+  const { lg } = useResponsive();
   return (
-    <div style={{ position: "relative", height: "659px", width: "100%" }}>
+    <div style={{ position: "relative", height: 500, width: "100%" }}>
       <Image
-        src="/images/home/banner.png"
+        src="/images/home/banner.svg"
         alt="home page banner"
         width={0}
         height={0}
@@ -30,11 +29,16 @@ export function Banner({
         style={{
           position: "absolute",
           top: "20%",
-          padding: "0 40px",
-          maxWidth: "1000px",
+          insetInlineStart: lg ? "3%" : "1%",
+          padding: "20px 40px",
+          backgroundColor: "#0F0A0C4D",
+          ...(lg && {
+            minWidth: 900,
+          }),
+          maxWidth: 1000,
         }}
         vertical
-        gap={8}
+        gap={16}
       >
         <CustomTitle level={4} style={{ color: "white", margin: 0 }}>
           {translate("greeting")}
@@ -43,29 +47,15 @@ export function Banner({
           level={1}
           style={{
             color: "white",
-            margin: 0,
-            fontSize: isSmall ? "40px" : "68px",
-            lineHeight: isSmall ? "60px" : "102px",
+            fontWeight: 700,
+            ...(lg && {
+              letterSpacing: 1.5,
+              fontSize: 68,
+            }),
           }}
         >
           {translate("vision")}
         </CustomTitle>
-        <CustomText
-          style={{
-            color: "white",
-            margin: 0,
-            fontSize: "24px",
-          }}
-        >
-          {translate("description")}
-        </CustomText>
-        <Button
-          type="primary"
-          size="large"
-          style={{ width: "fit-content", padding: "0 60px" }}
-        >
-          {translate("publishProperty")}
-        </Button>
       </Flex>
       <div
         style={{
