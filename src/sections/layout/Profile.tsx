@@ -68,85 +68,112 @@ export function Profile() {
   };
   const alwaysVisibleItems = [
     {
-      key: "2",
+      key: "country",
       label: translate("country"),
       icon: "/images/icons/city.svg",
       children: countries.map((country) => ({
-        key: `2-${country.id}`,
+        key: `country-${country.id}`,
         label: (country as any)[`name_${locale}`],
         icon: `/images/icons/${country.code.toLowerCase()}.svg`,
       })),
+      order: 5,
     },
     {
-      key: "5",
+      key: "measurement",
       label: translate("measurementSystem"),
       icon: "/images/icons/measurement.svg",
       children: measurements.map((measurement) => ({
-        key: `5-${measurement.id}`,
+        key: `measurement-${measurement.id}`,
         label: (measurement as any)[`name_${locale}`],
         icon: measurement.name_en.includes("Imperial")
           ? "/images/icons/imperial.svg"
           : "/images/icons/metric.svg",
       })),
+      order: 6,
     },
     {
-      key: "6",
+      key: "language",
       label: translate("language"),
       icon: "/images/icons/language.svg",
       disabled: isPending,
       children: [
         {
-          key: "6-en",
+          key: "language-en",
           label: translate("english"),
           icon: "/images/icons/language.svg",
           disabled: isPending,
         },
         {
-          key: "6-ar",
+          key: "language-ar",
           label: translate("arabic"),
           icon: "/images/icons/language.svg",
           disabled: isPending,
         },
         {
-          key: "6-ru",
+          key: "language-ru",
           label: translate("russian"),
           icon: "/images/icons/language.svg",
           disabled: isPending,
         },
         {
-          key: "6-cn",
+          key: "language-ch",
           label: translate("chinese"),
           icon: "/images/icons/language.svg",
           disabled: isPending,
         },
       ],
+      order: 7,
     },
   ];
 
   const authenticatedItems = [
     {
-      key: "1",
+      key: "profile",
       label: translate("profile"),
       icon: "/images/icons/user-edit.svg",
+      order: 1,
     },
     {
-      key: "4",
+      key: "savedItems",
       label: translate("savedItems"),
       icon: "/images/icons/heart.svg",
+      order: 4,
     },
     {
-      key: "7",
+      key: "logout",
       label: translate("logout"),
       icon: "/images/icons/logout.svg",
       danger: true,
+      order: 8,
     },
   ];
-  const profileItems = (
-    isAuthenticated
-      ? alwaysVisibleItems.concat(authenticatedItems as any) // Combine arrays if authenticated
-      : alwaysVisibleItems
-  ) // Otherwise, use only alwaysVisibleItems
-    .sort((a, b) => a.key.localeCompare(b.key)); // Sort by key
+
+  const roledItems = [
+    {
+      key: "addNewProperty",
+      label: translate("addNewProperty"),
+      icon: "/images/icons/add-property.svg",
+      order: 2,
+    },
+    {
+      key: "myProperties",
+      label: translate("myProperties"),
+      icon: "/images/icons/my-property.svg",
+      order: 3,
+    },
+  ];
+
+  let profileItems = [...alwaysVisibleItems];
+  if (isAuthenticated) {
+    profileItems = [...profileItems, ...authenticatedItems] as any;
+    if (user?.account_role !== "user")
+      profileItems = [...profileItems, ...roledItems] as any;
+  }
+
+  profileItems = profileItems
+    .sort((a, b) => a.order - b.order)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map(({ order, ...rest }) => rest) as any;
 
   // Translate the labels and render icons for all items (including nested ones)
   const translatedItems = translateAndRenderIcons(profileItems);
@@ -156,24 +183,27 @@ export function Profile() {
     setOpen(false);
   }
   const handleMenuClick: MenuProps["onClick"] = async (e) => {
-    switch (e.key[0]) {
-      case "1":
+    const target = e.key.split("-")[0];
+    switch (target) {
+      case "profile":
         router.push(PAGES.PROFILE);
         break;
-      case "2":
+      case "myProperties":
+        router.push(PAGES.MY_PROPERTIES);
+      case "country":
         const country_id = e.key.split("-")[1];
         updateCountry({ id: parseInt(country_id) });
         if (isAuthenticated) updateProfile({ country_id });
         break;
-      case "4":
+      case "savedItems":
         router.push(PAGES.FAVORITE);
         break;
-      case "5":
+      case "measurement":
         const measurement_id = e.key.split("-")[1];
         updateMeasurement({ id: parseInt(measurement_id) });
         if (isAuthenticated) updateProfile({ measurement_id });
         break;
-      case "6":
+      case "language":
         const language = e.key.split("-")[1];
         if (isAuthenticated) updateProfile({ language });
         startTransition(() => {
@@ -186,7 +216,7 @@ export function Profile() {
           );
         });
         break;
-      case "7":
+      case "logout":
         setIsLogoutModalOpen(true); // Show the logout confirmation modal
         break;
       default:
@@ -199,9 +229,9 @@ export function Profile() {
     forceSubMenuRender: true,
     style: { boxShadow: "none" },
     selectedKeys: [
-      `2-${countryId ?? 1}`,
-      `5-${measurementId ?? 1}`,
-      `6-${locale}`,
+      `country-${countryId ?? 1}`,
+      `measurement-${measurementId ?? 1}`,
+      `language-${locale}`,
     ],
   };
 

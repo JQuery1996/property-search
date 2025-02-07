@@ -113,7 +113,11 @@
     "dontHaveAccount": "您没有账户",
     "account": "账户",
     "email": "电子邮件",
-    "search": "搜索"
+    "search": "搜索",
+    "addNewProperty": "添加新房产",
+    "myProperties": "我的房产",
+    "pending": "待处理",
+    "approved": "已批准"
   },
   "LoginPage": {
     "action": "欢迎回来。"
@@ -220,5 +224,9 @@
     "savedItems": "保存的项目",
     "youDontHaveAnySavedItems": "您没有任何保存的项目",
     "startAddingYourFavorites": "开始添加您的最爱，以在此处查看它们！"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "您还没有添加任何房产",
+    "startAddingYourProperties": "开始添加您的房产以在此处查看！"
   }
 }

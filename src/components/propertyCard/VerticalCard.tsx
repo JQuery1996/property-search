@@ -1,13 +1,8 @@
 "use client";
-import { Card, Divider, Flex, Tooltip, App, Spin, Skeleton } from "antd";
+import { Card, Divider, Flex, Tooltip, App, Spin, Skeleton, Tag } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
-import {
-  CustomText,
-  CustomTitle,
-  ImageWithSkeleton,
-  Label,
-} from "@/components";
+import { CustomText, CustomTitle, Label } from "@/components";
 import Image from "next/image";
 import Slider from "react-slick";
 import { useTranslations } from "next-intl";
@@ -19,7 +14,13 @@ import { axiosInstance } from "@/client";
 import styles from "./styles.module.css";
 import { useAuth } from "@/contexts"; // Import useState for state management
 
-export function VerticalCard({ listing }: { listing: TListing }) {
+export function VerticalCard({
+  listing,
+  showStatus = false,
+}: {
+  listing: TListing;
+  showStatus?: boolean;
+}) {
   const translate = useTranslations();
   const { message } = App.useApp();
   const { push } = useRouter();
@@ -261,7 +262,20 @@ export function VerticalCard({ listing }: { listing: TListing }) {
           }
         />
       </Flex>
-      <Flex justify="flex-end" gap={16}>
+      <Flex justify="space-between" gap={16} style={{ marginTop: 10 }}>
+        {showStatus && (
+          <>
+            {listing.is_approved ? (
+              <Tag color="success" style={{ fontWeight: "bold" }}>
+                {translate("Common.approved")}
+              </Tag>
+            ) : (
+              <Tag color="warning" style={{ fontWeight: "bold" }}>
+                {translate("Common.pending")}
+              </Tag>
+            )}
+          </>
+        )}
         <Label
           icon={
             <Image

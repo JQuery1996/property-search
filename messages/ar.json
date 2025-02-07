@@ -113,7 +113,11 @@
     "dontHaveAccount": "ليس لديك حساب",
     "account": "حساب",
     "email": "البريد الإلكتروني",
-    "search": "البحث"
+    "search": "البحث",
+    "addNewProperty": "إضافة عقار جديد",
+    "myProperties": "عقاراتي",
+    "pending": "قيد الانتظار",
+    "approved": "معتمد"
   },
   "LoginPage": {
     "action": "مرحبًا بعودتك."
@@ -220,5 +224,9 @@
     "savedItems": "العناصر المحفوظة",
     "youDontHaveAnySavedItems": "ليس لديك أي عناصر محفوظة",
     "startAddingYourFavorites": "ابدأ بإضافة العناصر المفضلة لديك لرؤيتها هنا!"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "لم تقم بإضافة أي عقار بعد",
+    "startAddingYourProperties": "ابدأ في إضافة عقاراتك لرؤيتها هنا!"
   }
 }

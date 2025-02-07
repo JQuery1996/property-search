@@ -9,8 +9,9 @@ import { TextProps } from "antd/es/typography/Text";
 type TContact = {
   title: string;
   description: string;
-  mobile: string;
-  whatsapp: string;
+  mobile?: string;
+  whatsapp?: string;
+  email?: string;
   titleProps?: TitleProps;
   descriptionProps?: TextProps;
   containerProps?: Omit<FlexProps, "children">;
@@ -21,6 +22,7 @@ export function Contact({
   description,
   mobile,
   whatsapp,
+  email,
   titleProps,
   descriptionProps,
   containerProps,
@@ -37,6 +39,9 @@ export function Contact({
     window.open(`tel:${mobile}`, "_blank");
   };
 
+  const handleEmailClick = () => {
+    window.open(`mailto:${email}`, "_blank");
+  };
   return (
     <Flex vertical gap={20} {...containerProps}>
       <Flex vertical gap={8}>
@@ -46,66 +51,102 @@ export function Contact({
         <CustomText {...descriptionProps}>{description}</CustomText>
       </Flex>
       <Flex gap="10%" wrap style={{ rowGap: "20px !important" }}>
-        <Label
-          justify="start"
-          align="center"
-          gap={8}
-          icon={
-            <Image
-              src="/images/icons/whatsapp-contact.svg"
-              alt="WhatsApp"
-              width={50}
-              height={50}
-            />
-          }
-          style={{ cursor: "pointer" }}
-          onClick={handleWhatsAppClick}
-          text={
-            <Flex vertical>
-              <CustomTitle level={4} style={{ fontWeight: "bold" }}>
-                {translate("whatsapp")}
-              </CustomTitle>
-              <CustomText
-                style={{
-                  fontWeight: 400,
-                  letterSpacing: 0.5,
-                }}
-              >
-                {whatsapp}
-              </CustomText>
-            </Flex>
-          }
-        />
-        <Label
-          justify="start"
-          align="center"
-          gap={8}
-          style={{ cursor: "pointer" }}
-          onClick={handlePhoneClick}
-          icon={
-            <Image
-              src="/images/icons/phone-contact.png"
-              alt="Phone"
-              width={45}
-              height={45}
-            />
-          }
-          text={
-            <Flex vertical>
-              <CustomTitle level={4} style={{ fontWeight: "bold" }}>
-                {translate("mobile")}
-              </CustomTitle>
-              <CustomText
-                style={{
-                  fontWeight: 400,
-                  letterSpacing: 0.5,
-                }}
-              >
-                {mobile}
-              </CustomText>
-            </Flex>
-          }
-        />
+        {whatsapp && (
+          <Label
+            justify="start"
+            align="center"
+            gap={8}
+            icon={
+              <Image
+                src="/images/icons/whatsapp-contact.svg"
+                alt="WhatsApp"
+                width={50}
+                height={50}
+              />
+            }
+            style={{ cursor: "pointer" }}
+            onClick={handleWhatsAppClick}
+            text={
+              <Flex vertical>
+                <CustomTitle level={4} style={{ fontWeight: "bold" }}>
+                  {translate("whatsapp")}
+                </CustomTitle>
+                <CustomText
+                  style={{
+                    fontWeight: 400,
+                    letterSpacing: 0.5,
+                  }}
+                >
+                  {whatsapp}
+                </CustomText>
+              </Flex>
+            }
+          />
+        )}
+        {mobile && (
+          <Label
+            justify="start"
+            align="center"
+            gap={8}
+            style={{ cursor: "pointer" }}
+            onClick={handlePhoneClick}
+            icon={
+              <Image
+                src="/images/icons/phone-contact.png"
+                alt="Phone"
+                width={45}
+                height={45}
+              />
+            }
+            text={
+              <Flex vertical>
+                <CustomTitle level={4} style={{ fontWeight: "bold" }}>
+                  {translate("mobile")}
+                </CustomTitle>
+                <CustomText
+                  style={{
+                    fontWeight: 400,
+                    letterSpacing: 0.5,
+                  }}
+                >
+                  {mobile}
+                </CustomText>
+              </Flex>
+            }
+          />
+        )}
+        {email && (
+          <Label
+            justify="start"
+            align="center"
+            gap={8}
+            style={{ cursor: "pointer" }}
+            onClick={handleEmailClick}
+            icon={
+              <Image
+                src="/images/icons/mail-contact.png"
+                alt="mail"
+                width={45}
+                height={45}
+              />
+            }
+            text={
+              <Flex vertical>
+                <CustomTitle level={4} style={{ fontWeight: "bold" }}>
+                  {translate("mobile")}
+                </CustomTitle>
+                <CustomText
+                  style={{
+                    fontWeight: 400,
+                    letterSpacing: 0.5,
+                  }}
+                >
+                  {email}
+                </CustomText>
+              </Flex>
+            }
+          />
+        )}
       </Flex>
     </Flex>
   );

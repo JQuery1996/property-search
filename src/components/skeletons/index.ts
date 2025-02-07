@@ -4,3 +4,4 @@ export * from "./profileSkeleton";
 export * from "./SavedItemSkeleton";
 export * from "./developerSkeletons";
 export * from "./projectSkeleton";
+export * from "./MyPropertiesSkeleton";

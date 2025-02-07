@@ -110,10 +110,14 @@
     "propertyAddedToYourFavorite": "Property has been added to your favorite",
     "propertyRemovedFromYourFavorite": "Property has been removed from your favorite",
     "eligibleProcess": "You are not eligible to perform this operation. Please log in first.",
-    "dontHaveAccount": "You don’t have an accounts",
+    "dontHaveAccount": "You don’t have an account",
     "account": "Account",
     "email": "Email",
-    "search": "Search"
+    "search": "Search",
+    "addNewProperty": "Add New Property",
+    "myProperties": "My Properties",
+    "pending": "Pending",
+    "approved": "Approved"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -220,5 +224,9 @@
     "savedItems": "Saved Items",
     "youDontHaveAnySavedItems": "You don’t have any saved items",
     "startAddingYourFavorites": "Start adding your favorites to see them here!"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "You Don't Add Any Property Yet",
+    "startAddingYourProperties": "Start Adding your properties to see them here!"
   }
 }

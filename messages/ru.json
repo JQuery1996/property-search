@@ -113,7 +113,11 @@
     "dontHaveAccount": "У вас нет аккаунта",
     "account": "Аккаунт",
     "email": "Электронная почта",
-    "search": "Поиск"
+    "search": "Поиск",
+    "addNewProperty": "Добавить новую недвижимость",
+    "myProperties": "Моя недвижимость",
+    "pending": "В ожидании",
+    "approved": "Одобрено"
   },
   "LoginPage": {
     "action": "Добро пожаловать обратно."
@@ -220,5 +224,9 @@
     "savedItems": "Сохраненные объекты",
     "youDontHaveAnySavedItems": "У вас нет сохраненных объектов",
     "startAddingYourFavorites": "Начните добавлять свои избранные объекты, чтобы увидеть их здесь!"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "Вы еще не добавили недвижимость",
+    "startAddingYourProperties": "Начните добавлять свою недвижимость, чтобы увидеть её здесь!"
   }
 }

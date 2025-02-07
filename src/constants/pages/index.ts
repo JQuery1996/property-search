@@ -9,4 +9,5 @@ export const PAGES = {
   CONTACT_US: "/contact-us",
   PROFILE: "/profile",
   FAVORITE: "/favorite",
+  MY_PROPERTIES: "/my-properties",
 };
