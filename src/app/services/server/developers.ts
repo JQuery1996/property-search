@@ -4,6 +4,7 @@ import {
   TFetchOptions,
   TDevelopmentProperty,
   TPaginationMetadata,
+  TProject,
 } from "@/types";
 import { fetchInstance, logger } from "@/lib"; // Import fetchInstance
 
@@ -15,7 +16,6 @@ interface TDevelopersResponse {
 export async function getDevelopers(
   options?: TFetchOptions, // Accept only the options parameter
 ): Promise<TDevelopersResponse> {
-  console.log({ options });
   try {
     // Use fetchInstance to fetch developers
     const response = await fetchInstance<{
@@ -40,5 +40,32 @@ export async function getDevelopers(
         per_page: 0,
       } as TPaginationMetadata,
     };
+  }
+}
+
+export async function getDeveloper(
+  id: string,
+  options?: TFetchOptions, // Accept only the options parameter
+): Promise<{
+  developer: TDevelopmentProperty;
+  projects: TProject[];
+} | null> {
+  try {
+    console.log({ id });
+    // Use fetchInstance to fetch developers
+    const response = await fetchInstance<any>(
+      `${DEVELOPERS_URL}/${id}/projects`,
+      {
+        ...options, // Spread all options (including params, headers, caching, etc.)
+      },
+    );
+    // Extract data from the response
+    return response as {
+      developer: TDevelopmentProperty;
+      projects: TProject[];
+    };
+  } catch (error) {
+    logger.error("Failed to fetch developer", { error });
+    return null;
   }
 }

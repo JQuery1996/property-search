@@ -166,7 +166,13 @@
   },
   "developers": {
     "verify": "verify",
-    "projectsUnderDevelopment": "Projects under development"
+    "projectsUnderDevelopment": "Projects under development",
+    "projects": "Projects",
+    "from": "From",
+    "salesStarted": "Sales Started",
+    "deliveryDate": "Delivery Date",
+    "offPlanAndNewProjectBy": "Off-plan & New Project By",
+    "properties": "Properties"
   },
   "Favorite": {
     "savedItems": "Saved Items",

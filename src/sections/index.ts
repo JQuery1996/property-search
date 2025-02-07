@@ -6,3 +6,4 @@ export * from "./property";
 export * from "./profile";
 export * from "./favorite";
 export * from "./developers";
+export * from "./developer";

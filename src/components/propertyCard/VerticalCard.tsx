@@ -97,7 +97,7 @@ export function VerticalCard({ listing }: { listing: TListing }) {
         >
           <Slider autoplay infinite speed={1000}>
             {listing.image_urls.map((url, index) => (
-              <div key={index}>
+              <div key={index} style={{ outline: "none", userSelect: "none" }}>
                 {/* Skeleton placeholder while image is loading */}
                 {imageLoadingStates[index] && (
                   <div className={styles.skeletonImageWrapper}>

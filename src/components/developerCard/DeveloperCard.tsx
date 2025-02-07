@@ -6,13 +6,16 @@ import { TDevelopmentProperty } from "@/types";
 import { CustomText, CustomTitle } from "@/components";
 import { useState } from "react"; // Import useState
 import styles from "./styles.module.css";
-import { MailOutlined, MailTwoTone } from "@ant-design/icons";
+import { MailOutlined } from "@ant-design/icons";
+import { useRouter } from "@/i18n/routing";
+import { PAGES } from "@/constants";
 
 export function DeveloperCard({
   developmentProperty,
 }: {
   developmentProperty: TDevelopmentProperty;
 }) {
+  const { push } = useRouter();
   const translate = useTranslations();
   const borderRadius = 5;
 
@@ -39,6 +42,9 @@ export function DeveloperCard({
       window.open(`mailto:${developmentProperty.email}`, "_blank");
     }
   };
+  function handleCardClick() {
+    push(`${PAGES.DEVELOPERS}/${developmentProperty.developer.id}`);
+  }
   return (
     <Card
       hoverable
@@ -50,6 +56,7 @@ export function DeveloperCard({
           padding: 20,
         },
       }}
+      onClick={handleCardClick}
       cover={
         <div
           style={{
