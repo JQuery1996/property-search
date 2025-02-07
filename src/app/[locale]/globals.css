@@ -14,6 +14,18 @@ body {
   text-overflow: ellipsis;
 }
 
+.truncated-text-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Limits text to 6 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Adjust line height */
+  min-height: 3rem;
+  max-height: 3em; /* 6 lines * line-height */
+  word-break: break-word;
+}
+
 .truncated-text-6 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -22,5 +34,6 @@ body {
   text-overflow: ellipsis;
   line-height: 1.5em; /* Adjust line height */
   max-height: 9em; /* 6 lines * line-height */
+  min-height: 9em; /* 6 lines * line-height */
   word-break: break-word;
 }

@@ -110,7 +110,9 @@
     "propertyRemovedFromYourFavorite": "Property has been removed from your favorite",
     "eligibleProcess": "You are not eligible to perform this operation. Please log in first.",
     "dontHaveAccount": "You don’t have an accounts",
-    "account": "Account"
+    "account": "Account",
+    "email": "Email",
+    "search": "Search"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -201,6 +203,13 @@
   },
   "developers": {
     "verify": "verify",
+    "projectsUnderDevelopment": "Projects under development",
+    "projects": "Projects",
+    "from": "From",
+    "salesStarted": "Sales Started",
+    "deliveryDate": "Delivery Date",
+    "offPlanAndNewProjectBy": "Off-plan & New Project By",
+    "properties": "Properties",
     "Banner": {
       "findDeveloper": "Find A Developer",
       "vision": "Book your dream apartment <space></space> in our residential complexes."

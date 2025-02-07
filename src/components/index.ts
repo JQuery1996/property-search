@@ -13,3 +13,4 @@ export * from "./map";
 export * from "./image";
 export * from "./typography";
 export * from "./Contact";
+export * from "./projectCard";
