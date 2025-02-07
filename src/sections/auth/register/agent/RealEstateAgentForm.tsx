@@ -203,7 +203,7 @@ export function RealEstateAgentForm() {
         style={{
           marginLeft: "20px",
           marginRight: "20px",
-          marginTop: "40px",
+          marginTop: "20px",
         }}
       >
         <Form.Item style={{ width: "100%" }}>

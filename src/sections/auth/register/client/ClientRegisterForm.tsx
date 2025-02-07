@@ -211,7 +211,7 @@ export function ClientRegisterForm() {
         style={{
           marginLeft: "20px",
           marginRight: "20px",
-          marginTop: "40px",
+          marginTop: 14,
         }}
       >
         <Form.Item style={{ width: "100%" }}>

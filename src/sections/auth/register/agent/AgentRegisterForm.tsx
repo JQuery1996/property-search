@@ -22,7 +22,7 @@ export function AgentRegisterForm() {
   const translate = useTranslations("RegisterPage.Agent");
 
   return (
-    <Row style={{ margin: "24px 5%" }}>
+    <Row style={{ margin: "0px 5%" }}>
       {/* Image Column */}
       <Col xs={0} xl={12}>
         <AuthSideImage />

@@ -124,6 +124,7 @@ export function LoginForm() {
         style={{
           marginLeft: "20px",
           marginRight: "20px",
+          marginTop: "40px",
         }}
       >
         <Form.Item style={{ width: "100%", margin: 0 }}>
