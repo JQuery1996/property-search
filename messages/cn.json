@@ -50,6 +50,7 @@
       "blog": "博客",
       "licensing": "许可",
       "copyRight": "版权",
+      "house": "房子",
       "office": "办公室",
       "apartment": "公寓",
       "warehouse": "仓库"
@@ -110,7 +111,9 @@
     "propertyRemovedFromYourFavorite": "房产已从您的收藏夹中移除",
     "eligibleProcess": "您没有资格执行此操作。请先登录。",
     "dontHaveAccount": "您没有账户",
-    "account": "账户"
+    "account": "账户",
+    "email": "电子邮件",
+    "search": "搜索"
   },
   "LoginPage": {
     "action": "欢迎回来。"
@@ -201,6 +204,13 @@
   },
   "developers": {
     "verify": "验证",
+    "projectsUnderDevelopment": "正在开发的项目",
+    "projects": "项目",
+    "from": "来自",
+    "salesStarted": "销售开始",
+    "deliveryDate": "交货日期",
+    "offPlanAndNewProjectBy": "非规划 & 新项目由",
+    "properties": "房产",
     "Banner": {
       "findDeveloper": "寻找开发商",
       "vision": "在我们的住宅区预订您梦想中的公寓。<space></space>"

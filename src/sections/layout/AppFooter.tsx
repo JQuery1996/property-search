@@ -144,7 +144,7 @@ export function AppFooter() {
               }}
             >
               <CustomText style={{ color: "white" }}>
-                {translate("home")}
+                {translate("house")}
               </CustomText>
               <CustomText style={{ color: "white" }}>
                 {translate("office")}

@@ -50,6 +50,7 @@
       "blog": "Блог",
       "licensing": "Лицензирование",
       "copyRight": "Авторские права",
+      "house": "Дом",
       "office": "Офис",
       "apartment": "Квартира",
       "warehouse": "Склад"
@@ -110,7 +111,9 @@
     "propertyRemovedFromYourFavorite": "Недвижимость удалена из избранного",
     "eligibleProcess": "Вы не имеете права выполнять эту операцию. Пожалуйста, сначала войдите в систему.",
     "dontHaveAccount": "У вас нет аккаунта",
-    "account": "Аккаунт"
+    "account": "Аккаунт",
+    "email": "Электронная почта",
+    "search": "Поиск"
   },
   "LoginPage": {
     "action": "Добро пожаловать обратно."
@@ -201,6 +204,13 @@
   },
   "developers": {
     "verify": "проверить",
+    "projectsUnderDevelopment": "Проекты в разработке",
+    "projects": "Проекты",
+    "from": "От",
+    "salesStarted": "Продажа началась",
+    "deliveryDate": "Дата доставки",
+    "offPlanAndNewProjectBy": "Проект без плана и новый проект от",
+    "properties": "Недвижимость",
     "Banner": {
       "findDeveloper": "Найти застройщика",
       "vision": "Забронируйте квартиру своей мечты <space></space>в наших жилых комплексах."

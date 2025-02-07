@@ -50,6 +50,7 @@
       "blog": "المدونة",
       "licensing": "التراخيص",
       "copyRight": "حقوق الطبع والنشر",
+      "house": "منزل",
       "office": "المكتب",
       "apartment": "شقة",
       "warehouse": "مستودع"
@@ -110,7 +111,9 @@
     "propertyRemovedFromYourFavorite": "تمت إزالة العقار من المفضلة",
     "eligibleProcess": "أنت غير مؤهل لإجراء هذه العملية. يرجى تسجيل الدخول أولاً.",
     "dontHaveAccount": "ليس لديك حساب",
-    "account": "حساب"
+    "account": "حساب",
+    "email": "البريد الإلكتروني",
+    "search": "البحث"
   },
   "LoginPage": {
     "action": "مرحبًا بعودتك."
@@ -201,6 +204,13 @@
   },
   "developers": {
     "verify": "تحقق",
+    "projectsUnderDevelopment": "المشاريع تحت التطوير",
+    "projects": "المشاريع",
+    "from": "من",
+    "salesStarted": "المبيعات التي بدأت",
+    "deliveryDate": "تاريخ التسليم",
+    "offPlanAndNewProjectBy": "مشاريع غير مخطط لها ومشاريع جديدة من قبل",
+    "properties": "العقارات",
     "Banner": {
       "findDeveloper": "ابحث عن مطور",
       "vision": "احجز شقة أحلامك <space></space>في مجمعاتنا السكنية."
