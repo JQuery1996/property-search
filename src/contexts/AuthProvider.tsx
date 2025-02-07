@@ -39,8 +39,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const login = (token: string, user: TUser) => {
     setToken(token);
     setUser(user);
-    Cookies.set("token", token, { secure: true });
-    Cookies.set("user", JSON.stringify(user), { secure: true });
+    Cookies.set("token", token, { secure: true, expires: 365 });
+    Cookies.set("user", JSON.stringify(user), { secure: true, expires: 365 });
   };
 
   const logout = () => {
@@ -67,6 +67,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setUser(_user);
       Cookies.set("user", JSON.stringify(_user), {
         secure: true,
+        expires: 365,
       });
       // Return the response data
     } catch (error) {
