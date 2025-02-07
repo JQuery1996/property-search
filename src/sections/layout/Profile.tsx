@@ -114,7 +114,7 @@ export function Profile() {
           disabled: isPending,
         },
         {
-          key: "6-ch",
+          key: "6-cn",
           label: translate("chinese"),
           icon: "/images/icons/language.svg",
           disabled: isPending,
