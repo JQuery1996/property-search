@@ -89,7 +89,8 @@
     "operationFailed": "Operation Failed",
     "propertyAddedToYourFavorite": "Property has been added to your favorite",
     "propertyRemovedFromYourFavorite": "Property has been removed from your favorite",
-    "eligibleProcess": "You are not eligible to perform this operation. Please log in first."
+    "eligibleProcess": "You are not eligible to perform this operation. Please log in first.",
+    "email": "Email"
   },
   "LoginPage": {
     "action": "welcome back."
