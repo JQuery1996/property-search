@@ -27,6 +27,7 @@ export function VerticalCard({
   const { isAuthenticated } = useAuth();
   const router = useRouter();
   const [favoriteLoading, setFavoriteLoading] = useState(false);
+  const [isSaved, setIsSaved] = useState(listing?.is_saved ?? false);
   const borderRadius = 5;
 
   // State to track loading status of each image
@@ -63,7 +64,7 @@ export function VerticalCard({
         message.success(translate("Common.propertyRemovedFromYourFavorite"));
       else message.success(translate("Common.propertyAddedToYourFavorite"));
       // toggle in_favorite
-      listing.is_saved = !listing.is_saved;
+      setIsSaved((prev) => !prev);
     } catch (error: any) {
       console.log(error);
       message.error(translate("Common.operationFailed"));
@@ -179,7 +180,7 @@ export function VerticalCard({
           >
             {favoriteLoading ? (
               <Spin size="small" />
-            ) : listing.is_saved ? (
+            ) : isSaved ? (
               <HeartFilled
                 style={{ fontSize: 18, color: "red" }}
                 onClick={toggleFromFavorite}

@@ -24,11 +24,17 @@ import { useResponsive } from "antd-style";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageViewer } from "./ImageViewer";
-import { DeleteFilled, EditFilled, HeartOutlined } from "@ant-design/icons";
+import {
+  DeleteFilled,
+  EditFilled,
+  HeartFilled,
+  HeartOutlined,
+} from "@ant-design/icons";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useState } from "react";
 import { axiosInstance } from "@/client";
-import { LISTING_URL, PAGES } from "@/constants";
+import { LISTING_URL, PAGES, SAVED_ITEMS } from "@/constants";
+import { useAuth } from "@/contexts";
 const { useToken } = theme;
 type TPropertyDetailsUI = {
   details: TListing;
@@ -42,8 +48,11 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
   const { token } = useToken();
   const { message } = App.useApp();
   const [deleteLoading, setDeleteLoading] = useState(false);
+  const [favoriteLoading, setFavoriteLoading] = useState(false);
   // State to control the visibility of the delete confirmation modal
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
+  const [isSaved, setIsSaved] = useState(details?.is_saved ?? false);
+  const { isAuthenticated } = useAuth();
 
   const propertyDetails = [
     {
@@ -83,6 +92,29 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
       setIsDeleteModalVisible(false);
     }
   };
+
+  async function toggleFromFavorite(e: any) {
+    e.stopPropagation();
+    if (!isAuthenticated) {
+      push(PAGES.LOGIN);
+      message.error(commonTranslate("eligibleProcess"));
+      return;
+    }
+    setFavoriteLoading(true);
+    try {
+      await axiosInstance.post(`${SAVED_ITEMS}/${details.id}`);
+      if (details.is_saved)
+        message.success(commonTranslate("propertyRemovedFromYourFavorite"));
+      else message.success(commonTranslate("propertyAddedToYourFavorite"));
+      // toggle in_favorite
+      setIsSaved((prev) => !prev);
+    } catch (error: any) {
+      console.log(error);
+      message.error(commonTranslate("operationFailed"));
+    } finally {
+      setFavoriteLoading(false);
+    }
+  }
   return (
     <Flex vertical gap={12} style={{ padding: "24px 48px" }}>
       <Flex gap={8} justify="space-between" wrap>
@@ -97,10 +129,19 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
         )}
         <Flex gap={12} justify="end" align="end">
           <Button
+            loading={favoriteLoading}
             color="danger"
+            onClick={toggleFromFavorite}
             variant="text"
-            icon={<HeartOutlined style={{ fontSize: 25 }} />}
+            icon={
+              isSaved ? (
+                <HeartFilled style={{ fontSize: 25 }} />
+              ) : (
+                <HeartOutlined style={{ fontSize: 25 }} />
+              )
+            }
           />
+
           <ShareWrapper
             shareData={{
               title: details.title,
