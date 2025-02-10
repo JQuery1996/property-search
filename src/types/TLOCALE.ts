@@ -1,1 +1,1 @@
-export type TLOCALE = "en" | "ar";
+export type TLOCALE = "en" | "ar" | "ru" | "cn";

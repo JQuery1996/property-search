@@ -37,11 +37,11 @@ export function Subscribe() {
         >
           <Input
             type="email"
-            placeholder="Insert your email here"
+            placeholder={translate("insertEmail")}
             style={{ padding: 10, maxWidth: 350 }}
           />
           <Button type="primary" size="large">
-            Subscribe
+            {translate("subscribe")}
           </Button>
         </div>
       </Col>

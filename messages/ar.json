@@ -1,25 +1,232 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "Banner": {
+      "greeting": "مرحبًا، أنت الآن في Property Search.",
+      "vision": "نجعل رؤية منزل أحلامك حقيقة.",
+      "description": "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدبيسينغ إليت.",
+      "publishProperty": "نشر عقار"
+    },
+    "Filter": {
+      "searchProperty": "ابحث عن عقار"
+    },
+    "RecentAdditions": {
+      "title": "الإضافات الأخيرة",
+      "findPropertiesThatSuitsYou": "ابحث عن العقارات التي تناسبك"
+    },
+    "developmentProjects": {
+      "title": "العقار المميز",
+      "developmentProjects": "مشاريع التطوير"
+    },
+    "ourApplication": {
+      "title": "تطبيقنا",
+      "description": "افتح بوابة اكتشاف العقارات عن طريق تثبيت تطبيقنا على جهازك المحمول",
+      "miniDescription": "لوريم إيبسوم دولور سيت أميت، كونسكتيتور أدبيسينغ إليت.",
+      "downloadOnThe": "تنزيل من",
+      "appleStore": "متجر Apple",
+      "getItOn": "احصل عليه من",
+      "googlePlay": "Google Play"
+    },
+    "testimonials": {
+      "title": "شهادات العملاء",
+      "description": "أصحاب المنازل السعداء يشاركون<space></space> قصصهم"
+    },
+    "subscribe": {
+      "title": "انضم إلينا",
+      "description": "احصل على رؤى العقارات و <space></space>القوائم مباشرة إلى بريدك الإلكتروني",
+      "subDescription": "اشترك لدينا للحصول على النشرة الإخبارية حول معلومات العقارات.",
+      "insertEmail": "أدخل بريدك الإلكتروني هنا",
+      "subscribe": "اشترك"
+    },
+    "category": {
+      "propertyCategory": "فئة العقار",
+      "chooseProperty": "اختر العقار حسب الفئة"
+    },
+    "Footer": {
+      "discover": "اكتشف راحة حياتك",
+      "home": "الصفحة الرئيسية",
+      "packages": "الباقات",
+      "contact": "اتصل",
+      "categories": "الفئات",
+      "blog": "المدونة",
+      "licensing": "التراخيص",
+      "copyRight": "حقوق الطبع والنشر",
+      "house": "منزل",
+      "office": "المكتب",
+      "apartment": "شقة",
+      "warehouse": "مستودع"
+    }
+  },
+  "PropertiesPage": {
+    "filterResults": "تصفية النتائج",
+    "foundItems": "{count, plural, one {تم العثور على عنصر واحد} other {تم العثور على # عناصر}}"
   },
   "NotFoundPage": {
-    "title": "Page not found"
+    "title": "الصفحة غير موجودة"
   },
   "Layout": {
     "Header": {
       "Items": {
         "home": "الرئيسية",
-        "categories": "التصنيفات",
-        "developers": "المطورون",
+        "properties": "العقارات",
+        "holidayHomes": "منازل العطلات",
+        "developers": "المطورين",
         "contact": "اتصل بنا"
       }
     }
   },
   "Common": {
     "Welcome": {
-      "title": "Welcome to <span>Property</span> Search.",
-      "description": "We are pleased to see you again at  <span>Property Search</span> where you can find your future dream home at competitive prices."
+      "title": "مرحبًا بك في <span>Property</span> Search.",
+      "description": "يسرنا رؤيتك مرة أخرى في <span>Property Search</span> حيث يمكنك العثور على منزل أحلامك المستقبلي بأسعار تنافسية."
+    },
+    "Auth": {
+      "startJourney": "ابدأ رحلتك مع Property Search.",
+      "propertySearchDescription": "Property Search حيث يمكنك العثور على منزل أحلامك المستقبلي بأسعار تنافسية."
+    },
+    "contactUs": "اتصل بنا",
+    "contactInformation": "معلومات الاتصال",
+    "youCanContactUsThroughTheFollowingNumbers": "يمكنك الاتصال بنا من خلال الأرقام التالية:",
+    "whatsapp": "واتساب",
+    "mobile": "الجوال",
+    "website": "الموقع الإلكتروني",
+    "profile": "الملف الشخصي",
+    "country": "البلد",
+    "notificationSettings": "إعدادات الإشعارات",
+    "savedItems": "العناصر المحفوظة",
+    "measurementSystem": "نظام القياس",
+    "imperialMeasure": "الإمبراطوري (قدم²، كم)",
+    "metricMeasure": "المتري (م²، ميل)",
+    "language": "اللغة",
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "russian": "الروسية",
+    "chinese": "الصينية",
+    "confirmLogout": "تأكيد تسجيل الخروج",
+    "logout": "تسجيل الخروج",
+    "logoutMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "cancel": "إلغاء",
+    "myAccount": "حسابي",
+    "operationFailed": "فشلت العملية",
+    "propertyAddedToYourFavorite": "تمت إضافة العقار إلى المفضلة",
+    "propertyRemovedFromYourFavorite": "تمت إزالة العقار من المفضلة",
+    "eligibleProcess": "أنت غير مؤهل لإجراء هذه العملية. يرجى تسجيل الدخول أولاً.",
+    "dontHaveAccount": "ليس لديك حساب",
+    "account": "حساب",
+    "email": "البريد الإلكتروني",
+    "search": "البحث",
+    "addNewProperty": "إضافة عقار جديد",
+    "myProperties": "عقاراتي",
+    "pending": "قيد الانتظار",
+    "approved": "معتمد"
+  },
+  "LoginPage": {
+    "action": "مرحبًا بعودتك."
+  },
+  "RegisterPage": {
+    "Client": {
+      "action": "أنشئ حسابك!"
+    },
+    "Agent": {
+      "action": "سجل كوسيط!",
+      "holidayHomesAgent": "وسيط منازل العطلات",
+      "realEstateAgent": "وسيط عقارات"
     }
+  },
+  "Form": {
+    "fullName": "الاسم الكامل",
+    "phoneNumber": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "rememberMe": "تذكرني",
+    "agree_terms": "أوافق على شروط العضوية",
+    "allowFastHome": "أسمح لـ Fast home بالاتصال بي عبر البريد الإلكتروني، الرسائل النصية، إلخ لأغراض التسويق والترويج.",
+    "createAnAccount": "إنشاء حساب",
+    "alreadyMember": "هل أنت عضو بالفعل؟ <span>سجل الدخول</span> الآن!",
+    "tradeLicense": "رخصة تجارية",
+    "signUp": "التسجيل",
+    "remove": "إزالة",
+    "propertyFilter": "تصفية العقارات",
+    "rent": "إيجار",
+    "buy": "شراء",
+    "offPlanPrimary": "الخطة الأولية",
+    "offPlan&NewProjectsBy": "الخطة الأولية والمشاريع الجديدة بواسطة",
+    "completed": "مكتمل",
+    "completedPrimary": "مكتمل أولي",
+    "propertyTypeCategory": "فئة نوع العقار",
+    "propertyType": "نوع العقار",
+    "amenities": "المرافق",
+    "pricePeriod": "فترة السعر",
+    "priceRange": "نطاق السعر (درهم إماراتي)",
+    "completionStatus": "حالة الإكمال",
+    "bedrooms": "غرف النوم",
+    "bathrooms": "الحمامات",
+    "studio": "استوديو",
+    "propertySize": "حجم العقار",
+    "minSize": "الحد الأدنى للحجم",
+    "maxSize": "الحد الأقصى للحجم",
+    "source": "المصدر",
+    "address": "العنوان",
+    "apply": "تطبيق",
+    "clearAll": "مسح الكل",
+    "save": "حفظ",
+    "reset": "إعادة تعيين",
+    "country": "البلد",
+    "measurement": "القياس",
+    "forgetPassword": "هل نسيت كلمة المرور؟",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "login": "تسجيل الدخول",
+    "createAsClient": "إنشاء كعميل",
+    "createAsAgent": "إنشاء كوسيط",
+    "Validations": {
+      "acceptedExtensions": "يمكنك فقط تحميل هذه الأنواع:",
+      "fileSizeLessThan": "يجب أن يكون الملف أصغر من",
+      "loginFailed": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "registerFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+      "phoneNumberRequired": "يرجى إدخال رقم الهاتف",
+      "emailRequired": "يرجى إدخال عنوان البريد الإلكتروني",
+      "passwordRequired": "يرجى إدخال كلمة المرور!",
+      "confirmPassword": "يرجى تأكيد كلمة المرور!",
+      "confirmNotMatch": "كلمة المرور الجديدة التي أدخلتها غير متطابقة!",
+      "fullNameRequired": "يرجى إدخال الاسم الكامل",
+      "licenseRequired": "الترخيص مطلوب",
+      "loginSuccess": "تم تسجيل الدخول بنجاح!",
+      "registerSuccess": "تم التسجيل بنجاح!"
+    }
+  },
+  "listing": {
+    "source": "المصدر",
+    "price": "السعر",
+    "description": "الوصف",
+    "propertyDetails": "تفاصيل العقار",
+    "amenities": "المرافق",
+    "propertyType": "نوع العقار",
+    "propertySize": "حجم العقار",
+    "bathrooms": "الحمامات",
+    "bedrooms": "غرف النوم",
+    "locationAndNearby": "الموقع وما حوله"
+  },
+  "developers": {
+    "verify": "تحقق",
+    "projectsUnderDevelopment": "المشاريع تحت التطوير",
+    "projects": "المشاريع",
+    "from": "من",
+    "salesStarted": "المبيعات التي بدأت",
+    "deliveryDate": "تاريخ التسليم",
+    "offPlanAndNewProjectBy": "مشاريع غير مخطط لها ومشاريع جديدة من قبل",
+    "properties": "العقارات",
+    "Banner": {
+      "findDeveloper": "ابحث عن مطور",
+      "vision": "احجز شقة أحلامك <space></space>في مجمعاتنا السكنية."
+    }
+  },
+  "Favorite": {
+    "savedItems": "العناصر المحفوظة",
+    "youDontHaveAnySavedItems": "ليس لديك أي عناصر محفوظة",
+    "startAddingYourFavorites": "ابدأ بإضافة العناصر المفضلة لديك لرؤيتها هنا!"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "لم تقم بإضافة أي عقار بعد",
+    "startAddingYourProperties": "ابدأ في إضافة عقاراتك لرؤيتها هنا!"
   }
 }

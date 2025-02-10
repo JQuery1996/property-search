@@ -19,6 +19,7 @@ export function HolidayHomesAgentForm() {
   const { replace } = useRouter();
   const [loading, setLoading] = useState(false);
   const translate = useTranslations("Form");
+
   function handleRemoveFile() {
     form.resetFields(["license"]);
   }
@@ -54,11 +55,12 @@ export function HolidayHomesAgentForm() {
       });
       const { token: authToken, user } = response.data;
       login(authToken, user);
-      message.success("register successful!");
+      message.success(translate("Validations.registerSuccess"));
       replace("/");
     } catch (error: any) {
       message.error(
-        error.response?.data?.message || "Login failed. Please try again.",
+        error.response?.data?.message ||
+          translate("Validations.registerFailed"),
       );
     } finally {
       setLoading(false);
@@ -79,7 +81,7 @@ export function HolidayHomesAgentForm() {
         rules={[
           {
             required: true,
-            message: "Please enter your full name",
+            message: translate("Validations.fullNameRequired"),
           },
         ]}
       >
@@ -101,7 +103,7 @@ export function HolidayHomesAgentForm() {
         rules={[
           {
             required: true,
-            message: "Please enter a phone number",
+            message: translate("Validations.fullNameRequired"),
           },
         ]}
       >
@@ -110,7 +112,13 @@ export function HolidayHomesAgentForm() {
       <Form.Item
         name="email"
         label={translate("email")}
-        rules={[{ type: "email", required: true }]}
+        rules={[
+          {
+            type: "email",
+            required: true,
+            message: translate("Validations.emailRequired"),
+          },
+        ]}
       >
         <Input
           placeholder={translate("email")}
@@ -131,7 +139,7 @@ export function HolidayHomesAgentForm() {
         rules={[
           {
             required: true,
-            message: "Please input your password!",
+            message: translate("Validations.passwordRequired"),
           },
         ]}
         hasFeedback
@@ -157,7 +165,7 @@ export function HolidayHomesAgentForm() {
         rules={[
           {
             required: true,
-            message: "Please confirm your password!",
+            message: translate("confirmPassword"),
           },
           ({ getFieldValue }) => ({
             validator(_, value) {
@@ -165,7 +173,7 @@ export function HolidayHomesAgentForm() {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error("The new password that you entered do not match!"),
+                new Error(translate("Validations.confirmNotMatch")),
               );
             },
           }),
@@ -195,7 +203,7 @@ export function HolidayHomesAgentForm() {
         style={{
           marginLeft: "20px",
           marginRight: "20px",
-          marginTop: "40px",
+          marginTop: "20px",
         }}
       >
         <Form.Item style={{ width: "100%" }}>

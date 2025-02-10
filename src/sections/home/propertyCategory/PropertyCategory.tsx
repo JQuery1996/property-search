@@ -2,11 +2,14 @@
 import { Flex, theme } from "antd";
 import { CategoryList, CustomText, CustomTitle } from "@/components";
 import { useResponsive } from "antd-style";
+import { useTranslations } from "next-intl";
 const { useToken } = theme;
 
 export function PropertyCategory() {
   const { token } = useToken();
   const { xl } = useResponsive();
+  const translate = useTranslations("HomePage.category");
+
   return (
     <Flex
       align="center"
@@ -20,10 +23,10 @@ export function PropertyCategory() {
       }}
     >
       <CustomText type="primary" style={{ fontWeight: "500" }}>
-        Property Category
+        {translate("propertyCategory")}
       </CustomText>
       <CustomTitle level={1} style={{ fontWeight: "bold" }}>
-        Choose Property by Category
+        {translate("chooseProperty")}
       </CustomTitle>
       <CategoryList
         gutter={[16, 16]}

@@ -40,11 +40,11 @@ export function ClientRegisterForm() {
 
       const { token: authToken, user } = response.data;
       login(authToken, user);
-      message.success("Login successful!");
+      message.success(translate("Validations.loginSuccess"));
       replace("/");
     } catch (error: any) {
       message.error(
-        error.response?.data?.message || "Login failed. Please try again.",
+        error.response?.data?.message || translate("Validations.loginFailed"),
       );
     } finally {
       setLoading(false);
@@ -65,7 +65,7 @@ export function ClientRegisterForm() {
         rules={[
           {
             required: true,
-            message: "Please enter your full name",
+            message: translate("Validations.fullNameRequired"),
           },
         ]}
       >
@@ -88,7 +88,7 @@ export function ClientRegisterForm() {
         rules={[
           {
             required: true,
-            message: "Please enter a phone number",
+            message: translate("Validations.phoneNumberRequired"),
           },
         ]}
       >
@@ -97,7 +97,13 @@ export function ClientRegisterForm() {
       <Form.Item
         name="email"
         label={translate("email")}
-        rules={[{ type: "email", required: true }]}
+        rules={[
+          {
+            type: "email",
+            required: true,
+            message: translate("Validations.emailRequired"),
+          },
+        ]}
       >
         <Input
           placeholder={translate("email")}
@@ -118,7 +124,7 @@ export function ClientRegisterForm() {
         rules={[
           {
             required: true,
-            message: "Please input your password!",
+            message: translate("Validations.passwordRequired"),
           },
         ]}
         hasFeedback
@@ -144,7 +150,7 @@ export function ClientRegisterForm() {
         rules={[
           {
             required: true,
-            message: "Please confirm your password!",
+            message: translate("Validations.confirmPassword"),
           },
           ({ getFieldValue }) => ({
             validator(_, value) {
@@ -152,7 +158,7 @@ export function ClientRegisterForm() {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error("The new password that you entered do not match!"),
+                new Error(translate("Validations.confirmNotMatch")),
               );
             },
           }),
@@ -205,7 +211,7 @@ export function ClientRegisterForm() {
         style={{
           marginLeft: "20px",
           marginRight: "20px",
-          marginTop: "40px",
+          marginTop: 14,
         }}
       >
         <Form.Item style={{ width: "100%" }}>

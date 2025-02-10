@@ -7,7 +7,7 @@ import React from "react";
 export default function RegisterClientPage() {
   const translate = useTranslations("RegisterPage.Client");
   return (
-    <Row style={{ margin: "24px 5%" }}>
+    <Row style={{ margin: "0 5%" }}>
       {/* Image Column */}
       <Col xs={0} xl={12}>
         <AuthSideImage />

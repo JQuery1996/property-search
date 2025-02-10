@@ -33,7 +33,27 @@
     "subscribe": {
       "title": "Join us",
       "description": "Get Property Insights and <space></space>Listings Directly to Your Email",
-      "subDescription": "Subscribe us to get newsleter about property information."
+      "subDescription": "Subscribe us to get newsleter about property information.",
+      "insertEmail": "Insert your email here",
+      "subscribe": "Subscribe"
+    },
+    "category": {
+      "propertyCategory": "Property Category",
+      "chooseProperty": "Choose Property by Category"
+    },
+    "Footer": {
+      "discover": "Discover the Comfort of Your Life",
+      "home": "Home",
+      "packages": "Packages",
+      "contact": "Contact",
+      "categories": "Categories",
+      "blog": "Blog",
+      "licensing": "Licensing",
+      "copyRight": "CopyRight",
+      "house": "House",
+      "office": "office",
+      "apartment": "Apartment",
+      "warehouse": "Warehouse"
     }
   },
   "PropertiesPage": {
@@ -91,6 +111,8 @@
     "propertyAddedToYourFavorite": "Property has been added to your favorite",
     "propertyRemovedFromYourFavorite": "Property has been removed from your favorite",
     "eligibleProcess": "You are not eligible to perform this operation. Please log in first.",
+    "dontHaveAccount": "You don’t have an account",
+    "account": "Account",
     "email": "Email",
     "search": "Search",
     "addNewProperty": "Add New Property",
@@ -160,10 +182,26 @@
     "reset": "Reset",
     "country": "Country",
     "measurement": "Measurement",
+    "forgetPassword": "Forget your password?",
+    "resetPassword": "Reset Password",
+    "login": "Log in",
+    "createAsClient": "Create as Client",
+    "createAsAgent": "Create as Agent",
     "propertyLocation": "Property Location",
     "Validations": {
       "acceptedExtensions": "You can only upload these types:",
-      "fileSizeLessThan": "File must smaller than"
+      "fileSizeLessThan": "File must smaller than",
+      "loginFailed": "Login failed. Please try again.",
+      "registerFailed": "Register failed. Please try again.",
+      "phoneNumberRequired": "Please enter a phone number",
+      "emailRequired": "Please enter Email Address",
+      "passwordRequired": "Please enter your password!",
+      "confirmPassword": "Please confirm your password!",
+      "confirmNotMatch": "The new password that you entered do not match!",
+      "fullNameRequired": "Please enter your full name",
+      "licenseRequired": "License is required",
+      "loginSuccess": "Login successful!",
+      "registerSuccess": "register successful!"
     }
   },
   "listing": {
@@ -186,7 +224,11 @@
     "salesStarted": "Sales Started",
     "deliveryDate": "Delivery Date",
     "offPlanAndNewProjectBy": "Off-plan & New Project By",
-    "properties": "Properties"
+    "properties": "Properties",
+    "Banner": {
+      "findDeveloper": "Find A Developer",
+      "vision": "Book your dream apartment <space></space> in our residential complexes."
+    }
   },
   "Favorite": {
     "savedItems": "Saved Items",

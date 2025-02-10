@@ -1,0 +1,232 @@
+{
+  "HomePage": {
+    "Banner": {
+      "greeting": "Приветствие, вы сейчас в Property Search.",
+      "vision": "Реализация вашей мечты о доме.",
+      "description": "Lorem ipsum dolor sit amet consectetur. Est quisque elementum aliquam a.",
+      "publishProperty": "Опубликовать недвижимость"
+    },
+    "Filter": {
+      "searchProperty": "Поиск недвижимости"
+    },
+    "RecentAdditions": {
+      "title": "Последние добавления",
+      "findPropertiesThatSuitsYou": "Найдите недвижимость, которая подходит вам"
+    },
+    "developmentProjects": {
+      "title": "Рекомендуемая недвижимость",
+      "developmentProjects": "Проекты развития"
+    },
+    "ourApplication": {
+      "title": "Наше приложение",
+      "description": "Откройте дверь к открытию недвижимости, установив наше приложение на ваше мобильное устройство.",
+      "miniDescription": "Lorem ipsum dolor sit amet consectetur. Integer sagittis quis urna eu cras tellus sed posuere magna.",
+      "downloadOnThe": "Скачать в",
+      "appleStore": "App Store",
+      "getItOn": "Доступно в",
+      "googlePlay": "Google Play"
+    },
+    "testimonials": {
+      "title": "Отзывы",
+      "description": "Счастливые домовладельцы делятся<space></space> своими историями"
+    },
+    "subscribe": {
+      "title": "Присоединяйтесь к нам",
+      "description": "Получайте информацию о недвижимости и <space></space>списки прямо на вашу почту",
+      "subDescription": "Подпишитесь, чтобы получать новостную рассылку о недвижимости.",
+      "insertEmail": "Введите свой email здесь",
+      "subscribe": "Подписаться"
+    },
+    "category": {
+      "propertyCategory": "Категория недвижимости",
+      "chooseProperty": "Выберите недвижимость по категории"
+    },
+    "Footer": {
+      "discover": "Откройте для себя комфорт вашей жизни",
+      "home": "Главная",
+      "packages": "Пакеты",
+      "contact": "Контакты",
+      "categories": "Категории",
+      "blog": "Блог",
+      "licensing": "Лицензирование",
+      "copyRight": "Авторские права",
+      "house": "Дом",
+      "office": "Офис",
+      "apartment": "Квартира",
+      "warehouse": "Склад"
+    }
+  },
+  "PropertiesPage": {
+    "filterResults": "Фильтровать результаты",
+    "foundItems": "{count, plural, one {Найден # объект} other {Найдено # объектов}}"
+  },
+  "NotFoundPage": {
+    "title": "Страница не найдена"
+  },
+  "Layout": {
+    "Header": {
+      "Items": {
+        "home": "Главная",
+        "properties": "Недвижимость",
+        "holidayHomes": "Дома для отпуска",
+        "developers": "Застройщики",
+        "contact": "Контакты"
+      }
+    }
+  },
+  "Common": {
+    "Welcome": {
+      "title": "Добро пожаловать в <span>Property</span> Search.",
+      "description": "Мы рады видеть вас снова в <span>Property Search</span>, где вы можете найти свой будущий дом мечты по конкурентоспособным ценам."
+    },
+    "Auth": {
+      "startJourney": "Начните свое путешествие с Property Search.",
+      "propertySearchDescription": "Property Search, где вы можете найти свой будущий дом мечты по конкурентоспособным ценам."
+    },
+    "contactUs": "Свяжитесь с нами",
+    "contactInformation": "Контактная информация",
+    "youCanContactUsThroughTheFollowingNumbers": "Вы можете связаться с нами по следующим номерам:",
+    "whatsapp": "Whatsapp",
+    "mobile": "Мобильный",
+    "website": "Веб-сайт",
+    "profile": "Профиль",
+    "country": "Страна",
+    "notificationSettings": "Настройки уведомлений",
+    "savedItems": "Сохраненные объекты",
+    "measurementSystem": "Система измерений",
+    "imperialMeasure": "Имперская (кв. футы, км)",
+    "metricMeasure": "Метрическая (кв. метры, мили)",
+    "language": "Язык",
+    "english": "Английский",
+    "arabic": "Арабский",
+    "russian": "Русский",
+    "chinese": "Китайский",
+    "confirmLogout": "Подтвердите выход",
+    "logout": "Выйти",
+    "logoutMessage": "Вы уверены, что хотите выйти?",
+    "cancel": "Отмена",
+    "myAccount": "Мой аккаунт",
+    "operationFailed": "Операция не удалась",
+    "propertyAddedToYourFavorite": "Недвижимость добавлена в избранное",
+    "propertyRemovedFromYourFavorite": "Недвижимость удалена из избранного",
+    "eligibleProcess": "Вы не имеете права выполнять эту операцию. Пожалуйста, сначала войдите в систему.",
+    "dontHaveAccount": "У вас нет аккаунта",
+    "account": "Аккаунт",
+    "email": "Электронная почта",
+    "search": "Поиск",
+    "addNewProperty": "Добавить новую недвижимость",
+    "myProperties": "Моя недвижимость",
+    "pending": "В ожидании",
+    "approved": "Одобрено"
+  },
+  "LoginPage": {
+    "action": "Добро пожаловать обратно."
+  },
+  "RegisterPage": {
+    "Client": {
+      "action": "Создайте свой аккаунт!"
+    },
+    "Agent": {
+      "action": "Зарегистрируйтесь как агент!",
+      "holidayHomesAgent": "Агент по домам для отпуска",
+      "realEstateAgent": "Агент по недвижимости"
+    }
+  },
+  "Form": {
+    "fullName": "Полное имя",
+    "phoneNumber": "Номер телефона",
+    "email": "Адрес электронной почты",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "rememberMe": "Запомнить меня",
+    "agree_terms": "Я согласен с условиями членства",
+    "allowFastHome": "Я разрешаю Fast home связываться со мной по электронной почте, SMS и т.д. для маркетинговых и рекламных целей.",
+    "createAnAccount": "Создать аккаунт",
+    "alreadyMember": "Уже зарегистрированы? <span>Войдите</span> сейчас!",
+    "tradeLicense": "Торговая лицензия",
+    "signUp": "Зарегистрироваться",
+    "remove": "Удалить",
+    "propertyFilter": "Фильтр недвижимости",
+    "rent": "аренда",
+    "buy": "покупка",
+    "offPlanPrimary": "первичная продажа",
+    "offPlan&NewProjectsBy": "первичная продажа и новые проекты от",
+    "completed": "завершено",
+    "completedPrimary": "первичная завершенная",
+    "propertyTypeCategory": "Категория типа недвижимости",
+    "propertyType": "Тип недвижимости",
+    "amenities": "Удобства",
+    "pricePeriod": "Период цены",
+    "priceRange": "Диапазон цен (AED)",
+    "completionStatus": "Статус завершения",
+    "bedrooms": "Спальни",
+    "bathrooms": "Ванные комнаты",
+    "studio": "Студия",
+    "propertySize": "Размер недвижимости",
+    "minSize": "Минимальный размер",
+    "maxSize": "Максимальный размер",
+    "source": "Источник",
+    "address": "Адрес",
+    "apply": "Применить",
+    "clearAll": "Очистить все",
+    "save": "Сохранить",
+    "reset": "Сбросить",
+    "country": "Страна",
+    "measurement": "Измерение",
+    "forgetPassword": "Забыли пароль?",
+    "resetPassword": "Сбросить пароль",
+    "login": "Войти",
+    "createAsClient": "Создать как клиент",
+    "createAsAgent": "Создать как агент",
+    "Validations": {
+      "acceptedExtensions": "Вы можете загружать только файлы следующих типов:",
+      "fileSizeLessThan": "Файл должен быть меньше",
+      "loginFailed": "Ошибка входа. Пожалуйста, попробуйте снова.",
+      "registerFailed": "Ошибка регистрации. Пожалуйста, попробуйте снова.",
+      "phoneNumberRequired": "Пожалуйста, введите номер телефона",
+      "emailRequired": "Пожалуйста, введите адрес электронной почты",
+      "passwordRequired": "Пожалуйста, введите пароль!",
+      "confirmPassword": "Пожалуйста, подтвердите пароль!",
+      "confirmNotMatch": "Новый пароль, который вы ввели, не совпадает!",
+      "fullNameRequired": "Пожалуйста, введите ваше полное имя",
+      "licenseRequired": "Требуется лицензия",
+      "loginSuccess": "Вход выполнен успешно!",
+      "registerSuccess": "Регистрация прошла успешно!"
+    }
+  },
+  "listing": {
+    "source": "Источник",
+    "price": "Цена",
+    "description": "Описание",
+    "propertyDetails": "Детали недвижимости",
+    "amenities": "Удобства",
+    "propertyType": "Тип недвижимости",
+    "propertySize": "Размер недвижимости",
+    "bathrooms": "Ванные комнаты",
+    "bedrooms": "Спальни",
+    "locationAndNearby": "Местоположение и окрестности"
+  },
+  "developers": {
+    "verify": "проверить",
+    "projectsUnderDevelopment": "Проекты в разработке",
+    "projects": "Проекты",
+    "from": "От",
+    "salesStarted": "Продажа началась",
+    "deliveryDate": "Дата доставки",
+    "offPlanAndNewProjectBy": "Проект без плана и новый проект от",
+    "properties": "Недвижимость",
+    "Banner": {
+      "findDeveloper": "Найти застройщика",
+      "vision": "Забронируйте квартиру своей мечты <space></space>в наших жилых комплексах."
+    }
+  },
+  "Favorite": {
+    "savedItems": "Сохраненные объекты",
+    "youDontHaveAnySavedItems": "У вас нет сохраненных объектов",
+    "startAddingYourFavorites": "Начните добавлять свои избранные объекты, чтобы увидеть их здесь!"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "Вы еще не добавили недвижимость",
+    "startAddingYourProperties": "Начните добавлять свою недвижимость, чтобы увидеть её здесь!"
+  }
+}

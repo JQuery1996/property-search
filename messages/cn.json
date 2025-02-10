@@ -1,0 +1,232 @@
+{
+  "HomePage": {
+    "Banner": {
+      "greeting": "您好，您现在在 Property Search。",
+      "vision": "实现您梦想家园的愿景。",
+      "description": "Lorem ipsum dolor sit amet consectetur. Est quisque elementum aliquam a.",
+      "publishProperty": "发布房产"
+    },
+    "Filter": {
+      "searchProperty": "搜索房产"
+    },
+    "RecentAdditions": {
+      "title": "最新添加",
+      "findPropertiesThatSuitsYou": "找到适合您的房产"
+    },
+    "developmentProjects": {
+      "title": "精选房产",
+      "developmentProjects": "开发项目"
+    },
+    "ourApplication": {
+      "title": "我们的应用程序",
+      "description": "通过在您的移动设备上安装我们的应用程序，打开房产发现之门。",
+      "miniDescription": "Lorem ipsum dolor sit amet consectetur. Integer sagittis quis urna eu cras tellus sed posuere magna.",
+      "downloadOnThe": "在",
+      "appleStore": "苹果商店下载",
+      "getItOn": "在",
+      "googlePlay": "Google Play 下载"
+    },
+    "testimonials": {
+      "title": "客户评价",
+      "description": "快乐房主分享<space></space>他们的故事"
+    },
+    "subscribe": {
+      "title": "加入我们",
+      "description": "直接通过电子邮件获取房地产洞察和 <space></space>列表",
+      "subDescription": "订阅我们获取关于房地产信息的新闻通讯。",
+      "insertEmail": "在此处插入您的电子邮件",
+      "subscribe": "订阅"
+    },
+    "category": {
+      "propertyCategory": "房产类别",
+      "chooseProperty": "按类别选择房产"
+    },
+    "Footer": {
+      "discover": "发现生活的舒适",
+      "home": "首页",
+      "packages": "套餐",
+      "contact": "联系我们",
+      "categories": "类别",
+      "blog": "博客",
+      "licensing": "许可",
+      "copyRight": "版权",
+      "house": "房子",
+      "office": "办公室",
+      "apartment": "公寓",
+      "warehouse": "仓库"
+    }
+  },
+  "PropertiesPage": {
+    "filterResults": "筛选结果",
+    "foundItems": "{count, plural, one {找到 # 个项目} other {找到 # 个项目}}"
+  },
+  "NotFoundPage": {
+    "title": "页面未找到"
+  },
+  "Layout": {
+    "Header": {
+      "Items": {
+        "home": "首页",
+        "properties": "房产",
+        "holidayHomes": "度假屋",
+        "developers": "开发商",
+        "contact": "联系我们"
+      }
+    }
+  },
+  "Common": {
+    "Welcome": {
+      "title": "欢迎来到 <span>Property</span> Search。",
+      "description": "我们很高兴再次见到您，在 <span>Property Search</span>，您可以以有竞争力的价格找到您未来的梦想家园。"
+    },
+    "Auth": {
+      "startJourney": "开始您的 Property Search 之旅。",
+      "propertySearchDescription": "Property Search，在这里您可以以有竞争力的价格找到您未来的梦想家园。"
+    },
+    "contactUs": "联系我们",
+    "contactInformation": "联系信息",
+    "youCanContactUsThroughTheFollowingNumbers": "您可以通过以下号码联系我们：",
+    "whatsapp": "Whatsapp",
+    "mobile": "手机",
+    "website": "网站",
+    "profile": "个人资料",
+    "country": "国家",
+    "notificationSettings": "通知设置",
+    "savedItems": "保存的项目",
+    "measurementSystem": "测量系统",
+    "imperialMeasure": "英制 (平方英尺, 公里)",
+    "metricMeasure": "公制 (平方米, 英里)",
+    "language": "语言",
+    "english": "英语",
+    "arabic": "阿拉伯语",
+    "russian": "俄语",
+    "chinese": "中文",
+    "confirmLogout": "确认退出",
+    "logout": "退出",
+    "logoutMessage": "您确定要退出吗？",
+    "cancel": "取消",
+    "myAccount": "我的账户",
+    "operationFailed": "操作失败",
+    "propertyAddedToYourFavorite": "房产已添加到您的收藏夹",
+    "propertyRemovedFromYourFavorite": "房产已从您的收藏夹中移除",
+    "eligibleProcess": "您没有资格执行此操作。请先登录。",
+    "dontHaveAccount": "您没有账户",
+    "account": "账户",
+    "email": "电子邮件",
+    "search": "搜索",
+    "addNewProperty": "添加新房产",
+    "myProperties": "我的房产",
+    "pending": "待处理",
+    "approved": "已批准"
+  },
+  "LoginPage": {
+    "action": "欢迎回来。"
+  },
+  "RegisterPage": {
+    "Client": {
+      "action": "创建您的账户！"
+    },
+    "Agent": {
+      "action": "注册为代理商！",
+      "holidayHomesAgent": "度假屋代理商",
+      "realEstateAgent": "房地产代理商"
+    }
+  },
+  "Form": {
+    "fullName": "全名",
+    "phoneNumber": "电话号码",
+    "email": "电子邮件地址",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "rememberMe": "记住我",
+    "agree_terms": "我同意会员条款",
+    "allowFastHome": "我允许 Fast home 通过电子邮件、短信等方式联系我以进行营销和促销。",
+    "createAnAccount": "创建账户",
+    "alreadyMember": "已经是会员？<span>立即登录</span>！",
+    "tradeLicense": "商业许可证",
+    "signUp": "注册",
+    "remove": "删除",
+    "propertyFilter": "房产筛选",
+    "rent": "出租",
+    "buy": "购买",
+    "offPlanPrimary": "期房初级",
+    "offPlan&NewProjectsBy": "期房和新项目由",
+    "completed": "已完成",
+    "completedPrimary": "已完成初级",
+    "propertyTypeCategory": "房产类型类别",
+    "propertyType": "房产类型",
+    "amenities": "设施",
+    "pricePeriod": "价格周期",
+    "priceRange": "价格范围 (AED)",
+    "completionStatus": "完成状态",
+    "bedrooms": "卧室",
+    "bathrooms": "浴室",
+    "studio": "工作室",
+    "propertySize": "房产面积",
+    "minSize": "最小面积",
+    "maxSize": "最大面积",
+    "source": "来源",
+    "address": "地址",
+    "apply": "应用",
+    "clearAll": "清除所有",
+    "save": "保存",
+    "reset": "重置",
+    "country": "国家",
+    "measurement": "测量",
+    "forgetPassword": "忘记密码？",
+    "resetPassword": "重置密码",
+    "login": "登录",
+    "createAsClient": "以客户身份创建",
+    "createAsAgent": "以代理身份创建",
+    "Validations": {
+      "acceptedExtensions": "您只能上传这些类型：",
+      "fileSizeLessThan": "文件必须小于",
+      "loginFailed": "登录失败，请重试。",
+      "registerFailed": "注册失败，请重试。",
+      "phoneNumberRequired": "请输入电话号码",
+      "emailRequired": "请输入电子邮件地址",
+      "passwordRequired": "请输入密码！",
+      "confirmPassword": "请确认密码！",
+      "confirmNotMatch": "您输入的新密码不匹配！",
+      "fullNameRequired": "请输入您的全名",
+      "licenseRequired": "需要许可证",
+      "loginSuccess": "登录成功！",
+      "registerSuccess": "注册成功！"
+    }
+  },
+  "listing": {
+    "source": "来源",
+    "price": "价格",
+    "description": "描述",
+    "propertyDetails": "房产详情",
+    "amenities": "设施",
+    "propertyType": "房产类型",
+    "propertySize": "房产面积",
+    "bathrooms": "浴室",
+    "bedrooms": "卧室",
+    "locationAndNearby": "位置及周边"
+  },
+  "developers": {
+    "verify": "验证",
+    "projectsUnderDevelopment": "正在开发的项目",
+    "projects": "项目",
+    "from": "来自",
+    "salesStarted": "销售开始",
+    "deliveryDate": "交货日期",
+    "offPlanAndNewProjectBy": "非规划 & 新项目由",
+    "properties": "房产",
+    "Banner": {
+      "findDeveloper": "寻找开发商",
+      "vision": "在我们的住宅区预订您梦想中的公寓。<space></space>"
+    }
+  },
+  "Favorite": {
+    "savedItems": "保存的项目",
+    "youDontHaveAnySavedItems": "您没有任何保存的项目",
+    "startAddingYourFavorites": "开始添加您的最爱，以在此处查看它们！"
+  },
+  "MyProperties": {
+    "youDontAddAnyProperty": "您还没有添加任何房产",
+    "startAddingYourProperties": "开始添加您的房产以在此处查看！"
+  }
+}

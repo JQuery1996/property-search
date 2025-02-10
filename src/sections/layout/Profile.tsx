@@ -289,7 +289,7 @@ export function Profile() {
                     width={20}
                     height={20}
                   />
-                  <CustomText>You don’t have an accounts</CustomText>
+                  <CustomText>{translate("dontHaveAccount")}</CustomText>
                   <Button
                     type="primary"
                     icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
@@ -297,7 +297,9 @@ export function Profile() {
                     style={{ padding: 5, gap: 2 }}
                     onClick={handleGoRegister}
                   >
-                    <CustomText style={{ color: "white" }}>Account</CustomText>
+                    <CustomText style={{ color: "white" }}>
+                      {translate("account")}
+                    </CustomText>
                   </Button>
                 </Flex>
               )}

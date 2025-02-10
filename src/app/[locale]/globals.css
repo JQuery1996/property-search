@@ -37,3 +37,10 @@ body {
   min-height: 9em; /* 6 lines * line-height */
   word-break: break-word;
 }
+
+.ant-form-item{
+  margin-bottom: 10px !important;
+}
+.ant-form-item-label {
+  padding: 0 0 1px !important;
+}

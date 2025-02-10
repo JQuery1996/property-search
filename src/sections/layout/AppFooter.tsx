@@ -5,6 +5,7 @@ import { APP } from "@/constants";
 import { Link } from "@/i18n/routing";
 import { useResponsive } from "antd-style";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const { Footer } = Layout;
 const { useToken } = theme;
@@ -12,6 +13,8 @@ const { useToken } = theme;
 export function AppFooter() {
   const { token } = useToken();
   const { lg, mobile } = useResponsive();
+  const translate = useTranslations("HomePage.Footer");
+
   return (
     <Footer
       style={{
@@ -20,7 +23,7 @@ export function AppFooter() {
       }}
     >
       <CustomTitle level={3} style={{ color: "white", fontWeight: "bold" }}>
-        Discover the Comfort of Your Life
+        {translate("discover")}
       </CustomTitle>
       <Row style={{ marginTop: 40 }} gutter={[16, 16]}>
         <Col xs={24} md={12} lg={8}>
@@ -53,7 +56,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Home
+                {translate("home")}
               </CustomText>
             </Link>
             <Link href="">
@@ -65,7 +68,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Packages
+                {translate("packages")}
               </CustomText>
             </Link>
             <Link href="">
@@ -77,7 +80,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Contact
+                {translate("contact")}
               </CustomText>
             </Link>
             <Link href="">
@@ -89,7 +92,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Categories
+                {translate("categories")}
               </CustomText>
             </Link>
             <Link href="">
@@ -101,7 +104,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Blog
+                {translate("blog")}
               </CustomText>
             </Link>
             <Link href="">
@@ -113,7 +116,7 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Licensing
+                {translate("licensing")}
               </CustomText>
             </Link>
           </div>
@@ -140,17 +143,25 @@ export function AppFooter() {
                 padding: "0 10px",
               }}
             >
-              <CustomText style={{ color: "white" }}>Home</CustomText>
-              <CustomText style={{ color: "white" }}>office</CustomText>
-              <CustomText style={{ color: "white" }}>Apartment</CustomText>
-              <CustomText style={{ color: "white" }}>Warehouse</CustomText>
+              <CustomText style={{ color: "white" }}>
+                {translate("house")}
+              </CustomText>
+              <CustomText style={{ color: "white" }}>
+                {translate("office")}
+              </CustomText>
+              <CustomText style={{ color: "white" }}>
+                {translate("apartment")}
+              </CustomText>
+              <CustomText style={{ color: "white" }}>
+                {translate("warehouse")}
+              </CustomText>
             </div>
           </div>
         </Col>
       </Row>
       <Flex justify="space-between" wrap style={{ marginTop: 30 }} gap={24}>
         <CustomTitle level={4} style={{ color: "white" }}>
-          CopyRight &copy;{new Date().getFullYear()}
+          {translate("copyRight")} &copy;{new Date().getFullYear()}
         </CustomTitle>
         <Flex gap={24}>
           <Button
