@@ -15,6 +15,7 @@ export const colors = {
     main: "#3E3238",
   },
   grey: {
+    lighter: "#BCB5B8",
     light: "#818181",
     main: "#8C8A8B",
     dark: "#4D4D4D",
@@ -32,5 +33,6 @@ export const colorTokens: Partial<AliasToken> = {
   pinkLight: colors.pink.light,
   pinkLighter: colors.pink.lighter,
   greyPink: colors.greyPink.main,
+  greyLighter: colors.grey.lighter,
   greyMain: colors.grey.main,
 };

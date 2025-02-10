@@ -8,3 +8,4 @@ export * from "./favorite";
 export * from "./developers";
 export * from "./developer";
 export * from "./myProperties";
+export * from "./add-new-property";

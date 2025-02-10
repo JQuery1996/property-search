@@ -12,3 +12,4 @@ export * from "./TUser";
 export * from "./TPhone";
 export * from "./TUpdateProfile";
 export * from "./TProject";
+export * from "./TAddProperty";

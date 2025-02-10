@@ -7,6 +7,7 @@ declare module "antd/es/theme/interface" {
     pinkLight: string;
     pinkLighter: string;
     greyPink: string;
+    greyLighter: string;
     greyMain: string;
   }
 }

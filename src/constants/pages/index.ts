@@ -10,4 +10,5 @@ export const PAGES = {
   PROFILE: "/profile",
   FAVORITE: "/favorite",
   MY_PROPERTIES: "/my-properties",
+  ADD_NEW_PROPERTY: "/add-new-property",
 };

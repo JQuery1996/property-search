@@ -188,8 +188,12 @@ export function Profile() {
       case "profile":
         router.push(PAGES.PROFILE);
         break;
+      case "addNewProperty":
+        router.push(PAGES.ADD_NEW_PROPERTY);
+        break;
       case "myProperties":
         router.push(PAGES.MY_PROPERTIES);
+        break;
       case "country":
         const country_id = e.key.split("-")[1];
         updateCountry({ id: parseInt(country_id) });

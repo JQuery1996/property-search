@@ -85,6 +85,7 @@
     "logout": "Logout",
     "logoutMessage": "Are you sure you want to logout?",
     "cancel": "Cancel",
+    "add": "Add",
     "myAccount": "My Account",
     "operationFailed": "Operation Failed",
     "propertyAddedToYourFavorite": "Property has been added to your favorite",
@@ -95,7 +96,12 @@
     "addNewProperty": "Add New Property",
     "myProperties": "My Properties",
     "pending": "Pending",
-    "approved": "Approved"
+    "approved": "Approved",
+    "generalInformation": "General Information",
+    "locationInformation": "Location Information",
+    "propertyPhotos": "Property Photos",
+    "propertyHasBeenAddedSuccessfully": "Property has been added successfully",
+    "propertyAddedFailed": "An error occurred while adding the property. Try again."
   },
   "LoginPage": {
     "action": "welcome back."
@@ -111,6 +117,8 @@
     }
   },
   "Form": {
+    "title": "Title",
+    "description": "Description",
     "fullName": "Full Name",
     "phoneNumber": "Phone Number",
     "email": "Email Address",
@@ -125,8 +133,8 @@
     "signUp": "Sign Up",
     "remove": "Remove",
     "propertyFilter": "Property Filter",
-    "rent": "rent",
-    "buy": "buy",
+    "rent": "Rent",
+    "buy": "Buy",
     "offPlanPrimary": "off plan primary",
     "offPlan&NewProjectsBy": "off-Plan & New Projects By",
     "completed": "completed",
@@ -141,6 +149,7 @@
     "bathrooms": "Bathrooms",
     "studio": "Studio",
     "propertySize": "Property Size",
+    "propertyPrice": "Property Price",
     "minSize": "Min Size",
     "maxSize": "Max Size",
     "source": "Source",
@@ -151,6 +160,7 @@
     "reset": "Reset",
     "country": "Country",
     "measurement": "Measurement",
+    "propertyLocation": "Property Location",
     "Validations": {
       "acceptedExtensions": "You can only upload these types:",
       "fileSizeLessThan": "File must smaller than"

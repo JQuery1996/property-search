@@ -306,7 +306,7 @@ export function FilterModal({
                 getFieldValue(FilterFormNames.PROPERTY_TYPE_CATEGORY) !=
                 null ? (
                   <Form.Item
-                    name="property_type"
+                    name={FilterFormNames.PROPERTY_TYPE}
                     label={
                       <CustomText style={{ fontWeight: 500 }}>
                         {translate("propertyType")}

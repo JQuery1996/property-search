@@ -1,4 +1,6 @@
 export const FilterFormNames = {
+  TITLE: "title",
+  DESCRIPTION: "description",
   PROPERTY_PURPOSE: "property_purpose",
   PROPERTY_TYPE_CATEGORY: "property_type_category",
   PROPERTY_TYPE: "property_type",
@@ -10,8 +12,14 @@ export const FilterFormNames = {
   BATHROOMS: "bathrooms",
   MIN_SIZE: "min_size",
   MAX_SIZE: "max_size",
+  PROPERTY_SIZE: "size_value",
   SOURCE: "source",
   CITY: "city",
   MIN_YEARLY_PRICE: "min_yearly_price",
   MAX_YEARLY_PRICE: "max_yearly_price",
+  PROPERTY_PRICE: "price_value",
+  PROPERTY_LOCATION: "location",
+  PROPERTY_LOCATION_COORDINATES: "location_coordinates",
+  PROPERTY_LATITUDE: "latitude",
+  PROPERTY_LONGITUDE: "longitude",
 };
