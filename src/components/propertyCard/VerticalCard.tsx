@@ -264,7 +264,7 @@ export function VerticalCard({
         />
       </Flex>
       <Flex justify="space-between" gap={16} style={{ marginTop: 10 }}>
-        {showStatus && (
+        {listing.is_mine && (
           <>
             {listing.is_approved ? (
               <Tag color="success" style={{ fontWeight: "bold" }}>

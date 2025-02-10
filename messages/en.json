@@ -61,7 +61,9 @@
     "foundItems": "{count, plural, one {Found # item} other {Found # items}}"
   },
   "NotFoundPage": {
-    "title": "Page not found"
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "goBackToHomePage": "Go back to home page"
   },
   "Layout": {
     "Header": {

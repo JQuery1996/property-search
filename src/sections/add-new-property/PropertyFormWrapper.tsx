@@ -1,7 +1,7 @@
 "use server";
 import { filterLists, getListing } from "@/app/services";
 import { PropertyForm } from "@/sections";
-import NotFound from "next/dist/client/components/not-found-error";
+import { notFound } from "next/navigation";
 
 export async function PropertyFormWrapper({
   propertyId,
@@ -20,6 +20,6 @@ export async function PropertyFormWrapper({
     }),
   ]);
 
-  if (propertyId && !details) return NotFound();
+  if (propertyId && !details) return notFound();
   return <PropertyForm filterSettings={filterSettings} details={details} />;
 }
