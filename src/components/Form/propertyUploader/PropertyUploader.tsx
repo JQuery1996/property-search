@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   App,
   Upload,
@@ -17,6 +17,7 @@ type TPropertyUploader = {
   maxSize?: number;
   maxCount?: number;
   form: FormInstance<any>;
+  initialFileList: any[];
 };
 
 export function PropertyUploader({
@@ -24,13 +25,19 @@ export function PropertyUploader({
   acceptedExtensions = ["png", "jpg", "jpeg", "pdf"],
   maxSize = 2,
   maxCount = 10,
+  initialFileList = [],
 }: TPropertyUploader) {
+  console.log({ initialFileList });
   const { message } = App.useApp();
   const translate = useTranslations("Form");
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
 
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
+  const [fileList, setFileList] = useState<UploadFile[]>(initialFileList);
+
+  useEffect(() => {
+    setFileList(initialFileList);
+  }, [initialFileList]);
 
   function handleBeforeUpload(file: File) {
     const isAllowedExtension = acceptedExtensions.some((ext) =>
@@ -74,6 +81,7 @@ export function PropertyUploader({
         listType="picture-card"
         maxCount={maxCount}
         accept={acceptedExtensions.map((ext) => `.${ext}`).join(",")}
+        fileList={fileList}
         onPreview={handlePreview}
         onChange={handleChange}
       >

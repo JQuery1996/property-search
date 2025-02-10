@@ -5,3 +5,4 @@ export * from "./SavedItemSkeleton";
 export * from "./developerSkeletons";
 export * from "./projectSkeleton";
 export * from "./MyPropertiesSkeleton";
+export * from "./propertyFormSkeleton";

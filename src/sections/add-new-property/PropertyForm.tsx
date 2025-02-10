@@ -22,9 +22,9 @@ import {
   MapWithSearch,
   PropertyUploader,
 } from "@/components";
-import { TAddProperty, TFilterSettings } from "@/types";
+import { TAddProperty, TFilterSettings, TListing } from "@/types";
 import { axiosInstance } from "@/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "@/i18n/routing";
 const { useToken } = theme;
 
@@ -34,8 +34,10 @@ const ROW = {
 };
 export function PropertyForm({
   filterSettings,
+  details,
 }: {
   filterSettings: TFilterSettings;
+  details?: TListing | null;
 }) {
   const { message } = App.useApp();
   const [form] = Form.useForm();
@@ -45,6 +47,7 @@ export function PropertyForm({
   const commonTranslate = useTranslations("Common");
 
   const [loading, setLoading] = useState(false);
+  const [initialFileList, setInitialFileList] = useState<any[]>([]);
   const initialValues = {
     [FilterFormNames.PROPERTY_PURPOSE]:
       FilterConstants.PROPERTY_PURPOSES[0].value,
@@ -106,24 +109,88 @@ export function PropertyForm({
     // Append multiple images
     if (values.images && values.images.length > 0) {
       values.images.forEach((image: any) => {
-        formData.append(`images[]`, image.originFileObj);
+        if (image.originFileObj)
+          formData.append(`images[]`, image.originFileObj);
+        else formData.append("old_images_urls[]", image.url);
       });
     }
 
     try {
-      const response = await axiosInstance.post("/listing", formData, {
+      const api = details ? `/listing/${details.id}` : "/listing";
+      const response = await axiosInstance.post(api, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      message.success(translate("propertyHasBeenAddedSuccessfully"));
+      if (details)
+        message.success(commonTranslate("propertyHasBeenEditedSuccessfully"));
+      else message.success(commonTranslate("propertyHasBeenAddedSuccessfully"));
       push(`${PAGES.PROPERTIES}/${response.data.id}`);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error: any) {
-      message.error(translate("propertyAddedFailed"));
+      if (details) message.error(commonTranslate("propertyEditedFailed"));
+      else message.error(commonTranslate("propertyAddedFailed"));
     } finally {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    if (details) {
+      form.setFieldValue(
+        FilterFormNames.PROPERTY_PURPOSE,
+        details.property_purpose,
+      );
+      form.setFieldValue(FilterFormNames.TITLE, details.title);
+      form.setFieldValue(FilterFormNames.DESCRIPTION, details.description);
+      const selectedCategory = Object.entries(
+        filterSettings.property_types,
+      ).find(([, values]) => values.includes(details.property_type))?.[0]; // Get the key
+      if (selectedCategory)
+        form.setFieldValue(
+          FilterFormNames.PROPERTY_TYPE_CATEGORY,
+          selectedCategory,
+        );
+
+      if (selectedCategory) {
+        form.setFieldValue(
+          FilterFormNames.PROPERTY_TYPE,
+          details.property_type,
+        );
+      }
+
+      form.setFieldValue(FilterFormNames.PRICE_PERIOD, details.price_period);
+      form.setFieldValue(FilterFormNames.AMENITIES, details.amenities);
+      form.setFieldValue(FilterFormNames.BEDROOMS, details.bedrooms);
+      form.setFieldValue(FilterFormNames.BATHROOMS, details.bathrooms);
+      form.setFieldValue(FilterFormNames.PROPERTY_PRICE, details.price_value);
+      form.setFieldValue(FilterFormNames.PROPERTY_LOCATION, details.location);
+      form.setFieldValue(
+        FilterFormNames.COMPLETION_STATUS,
+        details.completion_status,
+      );
+      form.setFieldValue(FilterFormNames.PROPERTY_SIZE, details.size_value);
+      form.setFieldValue(FilterFormNames.PROPERTY_LOCATION_COORDINATES, {
+        lat: details.latitude,
+        lng: details.longitude,
+      });
+      // Handle images (if they exist)
+      if (details.image_urls && details.image_urls.length > 0) {
+        // Transform image URLs into the format expected by PropertyUploader
+        const transformedImages = details.image_urls.map(
+          (url: string, index: number) => ({
+            uid: `-${index + 1}`, // Unique ID for each image
+            name: `image-${index + 1}`, // Name for each image
+            status: "done", // Mark as uploaded
+            url: url, // URL of the image
+          }),
+        );
+        setInitialFileList(transformedImages);
+        // Set the transformed images in the form
+        form.setFieldValue("images", transformedImages);
+      }
+    }
+  }, [details]);
   return (
     <>
       <Form
@@ -590,6 +657,12 @@ export function PropertyForm({
                     },
                   });
                 }}
+                {...(details && {
+                  initialLocation: {
+                    lat: Number(details.latitude),
+                    lng: Number(details.longitude),
+                  },
+                })}
               />
             </Form.Item>
           </Col>
@@ -619,7 +692,7 @@ export function PropertyForm({
                 },
               ]}
             >
-              <PropertyUploader form={form} />
+              <PropertyUploader form={form} initialFileList={initialFileList} />
             </Form.Item>
           </Col>
           <Col xs={ROW.xs} style={{ margin: "20px 0" }}>
@@ -631,7 +704,7 @@ export function PropertyForm({
                 size="large"
                 loading={loading}
               >
-                {commonTranslate("add")}
+                {commonTranslate(details ? "edit" : "add")}
               </Button>
             </Form.Item>
           </Col>

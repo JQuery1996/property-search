@@ -1,5 +1,6 @@
 "use client";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { Spin } from "antd";
 
 const mapContainerStyle = {
   width: "100%",
@@ -12,7 +13,22 @@ export function Map({ position }: { position: { lat: number; lng: number } }) {
   });
 
   if (loadError) return <div>Error loading maps</div>;
-  if (!isLoaded) return <div>Loading Maps...</div>;
+  if (!isLoaded)
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          minHeight: 200,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+        }}
+      >
+        <Spin size="large" />
+      </div>
+    );
 
   return (
     <GoogleMap

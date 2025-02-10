@@ -106,6 +106,7 @@
     "logoutMessage": "Are you sure you want to logout?",
     "cancel": "Cancel",
     "add": "Add",
+    "edit": "Edit",
     "myAccount": "My Account",
     "operationFailed": "Operation Failed",
     "propertyAddedToYourFavorite": "Property has been added to your favorite",
@@ -116,6 +117,7 @@
     "email": "Email",
     "search": "Search",
     "addNewProperty": "Add New Property",
+    "editProperty": "Edit Property",
     "myProperties": "My Properties",
     "pending": "Pending",
     "approved": "Approved",
@@ -123,7 +125,9 @@
     "locationInformation": "Location Information",
     "propertyPhotos": "Property Photos",
     "propertyHasBeenAddedSuccessfully": "Property has been added successfully",
-    "propertyAddedFailed": "An error occurred while adding the property. Try again."
+    "propertyHasBeenEditedSuccessfully": "Property has been edited successfully",
+    "propertyAddedFailed": "An error occurred while adding the property. Try again.",
+    "propertyEditedFailed": "An error occurred while editing the property. Try again."
   },
   "LoginPage": {
     "action": "welcome back."

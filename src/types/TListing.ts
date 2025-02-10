@@ -29,4 +29,5 @@ export type TListing = {
   longitude: string;
   is_approved: boolean;
   is_saved: boolean;
+  is_mine: boolean;
 };

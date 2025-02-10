@@ -1,0 +1,8 @@
+/* VerticalCardSkeleton.module.css */
+
+/* Override Ant Design styles for Skeleton.Image */
+.skeletonWrapper :global(.ant-skeleton-element) {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}

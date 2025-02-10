@@ -1,6 +1,6 @@
 "use client";
 import { TListing } from "@/types";
-import { Button, Descriptions, Divider, Flex, Tag } from "antd";
+import { Button, Descriptions, Divider, Flex, Tag, theme } from "antd";
 import {
   Contact,
   CustomText,
@@ -15,8 +15,9 @@ import { useResponsive } from "antd-style";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { ImageViewer } from "./ImageViewer";
-import { HeartOutlined } from "@ant-design/icons";
-
+import { DeleteFilled, EditFilled, HeartOutlined } from "@ant-design/icons";
+import { usePathname, useRouter } from "@/i18n/routing";
+const { useToken } = theme;
 type TPropertyDetailsUI = {
   details: TListing;
 };
@@ -24,7 +25,9 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
   const { lg } = useResponsive();
   const translate = useTranslations("listing");
   const commonTranslate = useTranslations("Common");
-
+  const { push } = useRouter();
+  const pathname = usePathname();
+  const { token } = useToken();
   const propertyDetails = [
     {
       key: "1",
@@ -51,7 +54,7 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
   return (
     <Flex vertical gap={12} style={{ padding: "24px 48px" }}>
       <Flex gap={8} justify="end" wrap>
-        <Flex gap={8} justify="end" align="end">
+        <Flex gap={12} justify="end" align="end">
           <Button
             color="danger"
             variant="text"
@@ -80,6 +83,31 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
             target="_blank"
             icon={<EarthIcon width={24} height={24} />}
           />
+          {details.is_mine && (
+            <>
+              <Button
+                type="text"
+                color="danger"
+                icon={
+                  <EditFilled
+                    style={{ fontSize: 24, color: token.colorPrimary }}
+                  />
+                }
+                title="edit"
+                onClick={() => push(`${pathname}/edit`)}
+              />
+              <Button
+                type="text"
+                color="danger"
+                icon={
+                  <DeleteFilled
+                    style={{ fontSize: 24, color: token.colorPrimary }}
+                  />
+                }
+                title="delete"
+              />
+            </>
+          )}
         </Flex>
       </Flex>
       {/*<ThumbnailCarousel images={details.image_urls} />*/}
