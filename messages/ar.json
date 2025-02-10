@@ -14,7 +14,7 @@
       "findPropertiesThatSuitsYou": "ابحث عن العقارات التي تناسبك"
     },
     "developmentProjects": {
-      "title": "العقار المميز",
+      "title": "العقارات المميزة",
       "developmentProjects": "مشاريع التطوير"
     },
     "ourApplication": {
@@ -32,7 +32,7 @@
     },
     "subscribe": {
       "title": "انضم إلينا",
-      "description": "احصل على رؤى العقارات و <space></space>القوائم مباشرة إلى بريدك الإلكتروني",
+      "description": "احصل على رؤى العقارات و <space></space>قوائمها مباشرة إلى بريدك الإلكتروني",
       "subDescription": "اشترك لدينا للحصول على النشرة الإخبارية حول معلومات العقارات.",
       "insertEmail": "أدخل بريدك الإلكتروني هنا",
       "subscribe": "اشترك"
@@ -45,13 +45,13 @@
       "discover": "اكتشف راحة حياتك",
       "home": "الصفحة الرئيسية",
       "packages": "الباقات",
-      "contact": "اتصل",
+      "contact": "اتصل بنا",
       "categories": "الفئات",
       "blog": "المدونة",
-      "licensing": "التراخيص",
-      "copyRight": "حقوق الطبع والنشر",
+      "licensing": "الترخيص",
+      "copyRight": "حقوق النشر",
       "house": "منزل",
-      "office": "المكتب",
+      "office": "مكتب",
       "apartment": "شقة",
       "warehouse": "مستودع"
     }
@@ -69,7 +69,7 @@
         "home": "الرئيسية",
         "properties": "العقارات",
         "holidayHomes": "منازل العطلات",
-        "developers": "المطورين",
+        "developers": "المطورون",
         "contact": "اتصل بنا"
       }
     }
@@ -77,7 +77,7 @@
   "Common": {
     "Welcome": {
       "title": "مرحبًا بك في <span>Property</span> Search.",
-      "description": "يسرنا رؤيتك مرة أخرى في <span>Property Search</span> حيث يمكنك العثور على منزل أحلامك المستقبلي بأسعار تنافسية."
+      "description": "يسرنا رؤيتك مجددا في <span>Property Search</span> حيث يمكنك العثور على منزل أحلامك المستقبلي بأسعار تنافسية."
     },
     "Auth": {
       "startJourney": "ابدأ رحلتك مع Property Search.",
@@ -85,7 +85,7 @@
     },
     "contactUs": "اتصل بنا",
     "contactInformation": "معلومات الاتصال",
-    "youCanContactUsThroughTheFollowingNumbers": "يمكنك الاتصال بنا من خلال الأرقام التالية:",
+    "youCanContactUsThroughTheFollowingNumbers": "يمكنك الاتصال بنا عبر الأرقام التالية:",
     "whatsapp": "واتساب",
     "mobile": "الجوال",
     "website": "الموقع الإلكتروني",
@@ -94,8 +94,8 @@
     "notificationSettings": "إعدادات الإشعارات",
     "savedItems": "العناصر المحفوظة",
     "measurementSystem": "نظام القياس",
-    "imperialMeasure": "الإمبراطوري (قدم²، كم)",
-    "metricMeasure": "المتري (م²، ميل)",
+    "imperialMeasure": "إمبراطوري (قدم²، كم)",
+    "metricMeasure": "متري (م²، ميل)",
     "language": "اللغة",
     "english": "الإنجليزية",
     "arabic": "العربية",
@@ -105,6 +105,7 @@
     "logout": "تسجيل الخروج",
     "logoutMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
     "cancel": "إلغاء",
+    "add": "إضافة",
     "myAccount": "حسابي",
     "operationFailed": "فشلت العملية",
     "propertyAddedToYourFavorite": "تمت إضافة العقار إلى المفضلة",
@@ -117,7 +118,12 @@
     "addNewProperty": "إضافة عقار جديد",
     "myProperties": "عقاراتي",
     "pending": "قيد الانتظار",
-    "approved": "معتمد"
+    "approved": "معتمد",
+    "generalInformation": "المعلومات العامة",
+    "locationInformation": "معلومات الموقع",
+    "propertyPhotos": "صور العقار",
+    "propertyHasBeenAddedSuccessfully": "تمت إضافة العقار بنجاح",
+    "propertyAddedFailed": "حدث خطأ أثناء إضافة العقار. حاول مرة أخرى."
   },
   "LoginPage": {
     "action": "مرحبًا بعودتك."
@@ -133,6 +139,8 @@
     }
   },
   "Form": {
+    "title": "العنوان",
+    "description": "الوصف",
     "fullName": "الاسم الكامل",
     "phoneNumber": "رقم الهاتف",
     "email": "البريد الإلكتروني",
@@ -163,6 +171,7 @@
     "bathrooms": "الحمامات",
     "studio": "استوديو",
     "propertySize": "حجم العقار",
+    "propertyPrice": "سعر العقار",
     "minSize": "الحد الأدنى للحجم",
     "maxSize": "الحد الأقصى للحجم",
     "source": "المصدر",
@@ -178,6 +187,7 @@
     "login": "تسجيل الدخول",
     "createAsClient": "إنشاء كعميل",
     "createAsAgent": "إنشاء كوسيط",
+    "propertyLocation": "موقع العقار",
     "Validations": {
       "acceptedExtensions": "يمكنك فقط تحميل هذه الأنواع:",
       "fileSizeLessThan": "يجب أن يكون الملف أصغر من",
