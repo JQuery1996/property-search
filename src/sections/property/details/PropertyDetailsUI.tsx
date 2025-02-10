@@ -1,6 +1,15 @@
 "use client";
 import { TListing } from "@/types";
-import { Button, Descriptions, Divider, Flex, Tag, theme } from "antd";
+import {
+  App,
+  Button,
+  Descriptions,
+  Divider,
+  Flex,
+  Modal,
+  Tag,
+  theme,
+} from "antd";
 import {
   Contact,
   CustomText,
@@ -17,6 +26,9 @@ import Image from "next/image";
 import { ImageViewer } from "./ImageViewer";
 import { DeleteFilled, EditFilled, HeartOutlined } from "@ant-design/icons";
 import { usePathname, useRouter } from "@/i18n/routing";
+import { useState } from "react";
+import { axiosInstance } from "@/client";
+import { LISTING_URL, PAGES } from "@/constants";
 const { useToken } = theme;
 type TPropertyDetailsUI = {
   details: TListing;
@@ -25,9 +37,14 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
   const { lg } = useResponsive();
   const translate = useTranslations("listing");
   const commonTranslate = useTranslations("Common");
-  const { push } = useRouter();
+  const { push, replace } = useRouter();
   const pathname = usePathname();
   const { token } = useToken();
+  const { message } = App.useApp();
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  // State to control the visibility of the delete confirmation modal
+  const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
+
   const propertyDetails = [
     {
       key: "1",
@@ -51,9 +68,33 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
     },
   ];
 
+  // Function to handle the delete action
+  const handleDeleteProperty = async () => {
+    try {
+      setDeleteLoading(true);
+      await axiosInstance.delete(`${LISTING_URL}/${details.id}`);
+      message.success(commonTranslate("propertyHasBeenDeletedSuccessfully"));
+      replace(PAGES.MY_PROPERTIES);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error: any) {
+      message.error(commonTranslate("propertyDeletedFailed"));
+    } finally {
+      setDeleteLoading(false);
+      setIsDeleteModalVisible(false);
+    }
+  };
   return (
     <Flex vertical gap={12} style={{ padding: "24px 48px" }}>
-      <Flex gap={8} justify="end" wrap>
+      <Flex gap={8} justify="space-between" wrap>
+        {details.is_approved ? (
+          <Tag color="success" style={{ fontWeight: "bold" }}>
+            {commonTranslate("approved")}
+          </Tag>
+        ) : (
+          <Tag color="warning" style={{ fontWeight: "bold" }}>
+            {commonTranslate("pending")}
+          </Tag>
+        )}
         <Flex gap={12} justify="end" align="end">
           <Button
             color="danger"
@@ -105,6 +146,7 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
                   />
                 }
                 title="delete"
+                onClick={() => setIsDeleteModalVisible(true)} // Show the modal on click
               />
             </>
           )}
@@ -278,6 +320,28 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
         mobile={details.agent_number}
         whatsapp={details.whatsapp_number}
       />
+      {/* Delete Confirmation Modal */}
+      <Modal
+        title={commonTranslate("deleteProperty")}
+        open={isDeleteModalVisible}
+        onCancel={() => setIsDeleteModalVisible(false)} // Close the modal on cancel
+        footer={[
+          <Button key="cancel" onClick={() => setIsDeleteModalVisible(false)}>
+            {commonTranslate("cancel")}
+          </Button>,
+          <Button
+            key="delete"
+            type="primary"
+            danger
+            onClick={handleDeleteProperty} // Call the delete function on confirm
+            loading={deleteLoading}
+          >
+            {commonTranslate("delete")}
+          </Button>,
+        ]}
+      >
+        <p>{commonTranslate("deletePropertyMessage")}</p>
+      </Modal>
     </Flex>
   );
 }
