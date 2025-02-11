@@ -34,6 +34,7 @@ export function Profile() {
     updateMeasurement,
     updateCountry,
   } = useSettings();
+  console.log({ countries });
   const locale = useLocale();
   const { mobile } = useResponsive();
   const translate = useTranslations("Common"); // Use the appropriate namespace
@@ -73,7 +74,11 @@ export function Profile() {
       icon: "/images/icons/city.svg",
       children: countries.map((country) => ({
         key: `country-${country.id}`,
-        label: mobile ? country.code : (country as any)[`name_${locale}`],
+        label: mobile
+          ? country.code
+          : locale === "ar"
+            ? country.name_ar
+            : country.name_en,
         icon: `/images/icons/${country.code.toLowerCase()}.svg`,
       })),
       order: 5,
@@ -116,7 +121,7 @@ export function Profile() {
           disabled: isPending,
         },
         {
-          key: "language-ch",
+          key: "language-cn",
           label: translate("chinese"),
           icon: "/images/icons/language.svg",
           disabled: isPending,

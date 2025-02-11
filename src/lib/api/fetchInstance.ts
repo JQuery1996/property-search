@@ -2,7 +2,8 @@
 import { BASE_URL } from "@/constants";
 import { TFetchOptions } from "@/types";
 import { logger } from "@/lib"; // Import your logger
-import { cookies } from "next/headers"; // ✅ Import Next.js cookies
+import { cookies } from "next/headers";
+import { getLocale } from "next-intl/server"; // ✅ Import Next.js cookies
 
 type Interceptor = (options: TFetchOptions) => TFetchOptions;
 
@@ -25,6 +26,13 @@ export async function fetchInstance<T>(
 ): Promise<T> {
   // ✅ Get token from cookies (Server-side)
   const token = cookies().get("token")?.value;
+  const locale = await getLocale();
+  // Initialize options.params if it doesn't exist
+  if (!options.params) {
+    options.params = {};
+  }
+  // Add locale to the query parameters
+  options.params.language = locale;
   // Convert params object to query string
   const queryString = options.params
     ? `?${new URLSearchParams(
