@@ -209,7 +209,8 @@
       "fullNameRequired": "请输入您的全名",
       "licenseRequired": "许可证是必需的",
       "loginSuccess": "登录成功！",
-      "registerSuccess": "注册成功！"
+      "registerSuccess": "注册成功！",
+      "required": "此字段是必需的"
     }
   },
   "listing": {

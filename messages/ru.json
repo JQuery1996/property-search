@@ -209,7 +209,8 @@
       "fullNameRequired": "Пожалуйста, введите ваше полное имя",
       "licenseRequired": "Лицензия обязательна",
       "loginSuccess": "Успешный вход!",
-      "registerSuccess": "Успешная регистрация!"
+      "registerSuccess": "Успешная регистрация!",
+      "required": "Это поле обязательно к заполнению"
     }
   },
   "listing": {

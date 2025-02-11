@@ -209,7 +209,8 @@
       "fullNameRequired": "الرجاء إدخال الاسم الكامل",
       "licenseRequired": "الترخيص مطلوب",
       "loginSuccess": "تم تسجيل الدخول بنجاح!",
-      "registerSuccess": "تم التسجيل بنجاح!"
+      "registerSuccess": "تم التسجيل بنجاح!",
+      "required": "هذا الحقل إجباري"
     }
   },
   "listing": {

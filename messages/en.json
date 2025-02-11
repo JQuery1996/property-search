@@ -209,7 +209,8 @@
       "fullNameRequired": "Please enter your full name",
       "licenseRequired": "License is required",
       "loginSuccess": "Login successful!",
-      "registerSuccess": "register successful!"
+      "registerSuccess": "register successful!",
+      "required": "This field is required"
     }
   },
   "listing": {

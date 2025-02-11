@@ -306,7 +306,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "this field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -347,7 +347,7 @@ export function PropertyForm({
                     rules={[
                       {
                         required: true,
-                        message: "This field is required",
+                        message: translate("Validations.required"),
                       },
                     ]}
                   >
@@ -392,7 +392,7 @@ export function PropertyForm({
                     rules={[
                       {
                         required: true,
-                        message: "This field is required",
+                        message: translate("Validations.required"),
                       },
                     ]}
                   >
@@ -447,7 +447,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -503,7 +503,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -543,7 +543,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -572,7 +572,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -595,7 +595,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
@@ -644,7 +644,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
               style={{ marginTop: 10 }}
@@ -689,7 +689,7 @@ export function PropertyForm({
               rules={[
                 {
                   required: true,
-                  message: "This field is required",
+                  message: translate("Validations.required"),
                 },
               ]}
             >
