@@ -18,7 +18,7 @@ import { useResponsive } from "antd-style";
 import { useState, useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useParams } from "next/navigation";
-import { PAGES } from "@/constants";
+import { PAGES, ROLES } from "@/constants";
 const { useToken } = theme;
 
 export function Profile() {
@@ -166,7 +166,7 @@ export function Profile() {
   let profileItems = [...alwaysVisibleItems];
   if (isAuthenticated) {
     profileItems = [...profileItems, ...authenticatedItems] as any;
-    if (user?.account_role !== "user")
+    if (user?.account_role !== ROLES.user)
       profileItems = [...profileItems, ...roledItems] as any;
   }
 

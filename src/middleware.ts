@@ -1,6 +1,8 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 import { NextRequest, NextResponse } from "next/server";
+import { TUser } from "@/types";
+import { ROLES } from "@/constants";
 
 export default createMiddleware(routing);
 
@@ -9,6 +11,9 @@ const intlMiddleware = createMiddleware(routing);
 
 export function middleware(req: NextRequest) {
   const authToken = req.cookies.get("token")?.value;
+  const userCookie = req.cookies.get("user")?.value; // Safely get the user cookie value
+  const user: TUser | null = userCookie ? JSON.parse(userCookie) : null; // Parse or fallback to null
+
   const pathname = req.nextUrl.pathname;
 
   // If user is authenticated and trying to access login/register, redirect to dashboard
@@ -17,10 +22,21 @@ export function middleware(req: NextRequest) {
   }
 
   // check for authenticated pages
-  if (!authToken && /\/?(profile|favorite|notifications)/.test(pathname)) {
+  if (
+    !authToken &&
+    /\/?(profile|favorite|notifications|add-new-property|my-properties|properties\/\d+\/edit)/.test(
+      pathname,
+    )
+  ) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
+  if (
+    (!user || user?.account_role == ROLES.user) &&
+    /\/?(add-new-property|my-properties|properties\/\d+\/edit)/.test(pathname)
+  ) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
   return intlMiddleware(req);
 }
 
