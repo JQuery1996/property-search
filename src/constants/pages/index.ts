@@ -12,4 +12,6 @@ export const PAGES = {
   MY_PROPERTIES: "/my-properties",
   ADD_NEW_PROPERTY: "/add-new-property",
   NOTIFICATIONS: "/notifications",
+  MOST_SEARCH_AREA: "/most-search-area",
+  ABOUT_US: "/about-us",
 };

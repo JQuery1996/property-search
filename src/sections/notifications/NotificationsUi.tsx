@@ -65,6 +65,7 @@ export function NotificationsUi({
       {notifications.map((notify, index) => (
         <Card
           key={index}
+          style={{ marginBottom: 10 }}
           styles={{
             body: {
               padding: 10,

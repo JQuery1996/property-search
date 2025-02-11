@@ -34,6 +34,7 @@ export function ClientLayout({ children }: TClientLayout) {
   const direction = getDirectionFromLocale(locale);
   const antdLocale = getAntdLocale(locale);
   const { push } = useRouter();
+  const { md } = useResponsive();
 
   // Determine the selected menu item based on the current pathname
   const selectedKeys = MENU_ITEMS.filter((item) => {
@@ -99,9 +100,11 @@ export function ClientLayout({ children }: TClientLayout) {
                     gap: 30,
                   }}
                 >
-                  <AuthGuard>
-                    <Notifications />
-                  </AuthGuard>
+                  {md && (
+                    <AuthGuard>
+                      <Notifications />
+                    </AuthGuard>
+                  )}
                   <Profile />
                 </div>
               </Header>

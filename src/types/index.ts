@@ -14,3 +14,4 @@ export * from "./TUpdateProfile";
 export * from "./TProject";
 export * from "./TAddProperty";
 export * from "./TNotification";
+export * from "./TMostSearchArea";

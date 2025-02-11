@@ -72,7 +72,9 @@
         "properties": "Properties",
         "holidayHomes": "Holiday Homes",
         "developers": "Developers",
-        "contact": "Contact"
+        "contact": "Contact",
+        "mostSearchArea": "Most Search Area",
+        "about": "About"
       }
     }
   },
@@ -253,5 +255,13 @@
   "MyProperties": {
     "youDontAddAnyProperty": "You Don't Add Any Property Yet",
     "startAddingYourProperties": "Start Adding your properties to see them here!"
+  },
+  "MostSearchArea": {
+    "title": "Most Search Area",
+    "areaName": "Area Name",
+    "counter": "Counter"
+  },
+  "About": {
+    "title": "About Us"
   }
 }

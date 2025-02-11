@@ -5,6 +5,7 @@ import { CustomTitle, VerticalCard } from "@/components";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 import { PAGES } from "@/constants";
+import { useResponsive } from "antd-style";
 
 type TRecentAdditionsUI = {
   listings: TListing[];
@@ -12,6 +13,7 @@ type TRecentAdditionsUI = {
 export function RecentAdditionsUI({ listings }: TRecentAdditionsUI) {
   const translate = useTranslations("HomePage.RecentAdditions");
   const commonTranslate = useTranslations("Common");
+  const { mobile } = useResponsive();
   const { push } = useRouter();
   return (
     <Flex vertical gap={4} style={{ width: "90%" }}>
@@ -26,7 +28,7 @@ export function RecentAdditionsUI({ listings }: TRecentAdditionsUI) {
           alignContent: "center",
         }}
       >
-        <CustomTitle level={3} style={{ margin: 0 }}>
+        <CustomTitle level={mobile ? 5 : 3} style={{ margin: 0 }}>
           {translate("findPropertiesThatSuitsYou")}
         </CustomTitle>
         <Button

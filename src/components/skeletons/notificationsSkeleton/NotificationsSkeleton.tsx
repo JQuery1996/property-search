@@ -8,6 +8,7 @@ export function NotificationsSkeleton() {
       {Array.from({ length: 5 }).map((_, index) => (
         <Card
           key={index}
+          style={{ marginBottom: 10 }}
           styles={{
             body: {
               padding: 10,

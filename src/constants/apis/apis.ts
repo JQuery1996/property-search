@@ -7,3 +7,4 @@ export const MEASUREMENT_LIST = "/list/measurements";
 export const SAVED_ITEMS = "/saved-items";
 export const LISTING_URL = "/listing";
 export const NOTIFICATIONS_URL = "/notifications";
+export const MOST_SEARCH_AREA_URL = "/list/most-search-regions";

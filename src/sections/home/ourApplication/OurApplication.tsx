@@ -3,11 +3,13 @@ import { Button, Col, Flex, Row, theme } from "antd";
 import { CustomText, CustomTitle } from "@/components";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useResponsive } from "antd-style";
 const { useToken } = theme;
 
 export function OurApplication() {
   const { token } = useToken();
   const translate = useTranslations("HomePage.ourApplication");
+  const { lg } = useResponsive();
   return (
     <Row
       style={{
@@ -27,13 +29,15 @@ export function OurApplication() {
             flexDirection: "column",
             justifyContent: "center",
             height: "100%",
-            overflow: "hidden",
           }}
         >
           <CustomText style={{ color: "white" }}>
             {translate("title")}
           </CustomText>
-          <CustomTitle level={3} style={{ fontWeight: "bold", color: "white" }}>
+          <CustomTitle
+            level={lg ? 3 : 5}
+            style={{ fontWeight: "bold", color: "white" }}
+          >
             {translate("description")}
           </CustomTitle>
           <CustomText

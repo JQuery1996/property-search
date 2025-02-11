@@ -1,9 +1,8 @@
 import { PAGES } from "../pages";
 
 export const MENU_ITEMS = [
-  { key: "home", path: PAGES.HOME },
   { key: "properties", path: PAGES.PROPERTIES },
-  { key: "holidayHomes", path: PAGES.HOLIDAY_HOMES },
   { key: "developers", path: PAGES.DEVELOPERS },
-  { key: "contact", path: PAGES.CONTACT_US },
+  { key: "mostSearchArea", path: PAGES.MOST_SEARCH_AREA },
+  { key: "about", path: PAGES.ABOUT_US },
 ];

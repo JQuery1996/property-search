@@ -10,3 +10,4 @@ export * from "./developer";
 export * from "./myProperties";
 export * from "./add-new-property";
 export * from "./notifications";
+export * from "./most-search-area";

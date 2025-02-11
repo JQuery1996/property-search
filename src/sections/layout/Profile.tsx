@@ -140,6 +140,12 @@ export function Profile() {
       order: 4,
     },
     {
+      key: "notifications",
+      label: translate("notifications"),
+      icon: "/images/icons/header-notification.svg",
+      order: 4,
+    },
+    {
       key: "logout",
       label: translate("logout"),
       icon: "/images/icons/logout.svg",
@@ -201,6 +207,9 @@ export function Profile() {
         break;
       case "savedItems":
         router.push(PAGES.FAVORITE);
+        break;
+      case "notifications":
+        router.push(PAGES.NOTIFICATIONS);
         break;
       case "measurement":
         const measurement_id = e.key.split("-")[1];
