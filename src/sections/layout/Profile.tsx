@@ -89,7 +89,7 @@ export function Profile() {
       icon: "/images/icons/measurement.svg",
       children: measurements.map((measurement) => ({
         key: `measurement-${measurement.id}`,
-        label: (measurement as any)[`name_${locale}`],
+        label: locale === "ar" ? measurement.name_ar : measurement.name_en,
         icon: measurement.name_en.includes("Imperial")
           ? "/images/icons/imperial.svg"
           : "/images/icons/metric.svg",
