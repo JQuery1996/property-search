@@ -76,7 +76,7 @@ export function LoginForm() {
       >
         <PhoneInput
           enableSearch
-          placeholder="Phone Number"
+          placeholder={translate("phoneNumber")}
           autoComplete="username"
         />
       </Form.Item>
@@ -94,7 +94,7 @@ export function LoginForm() {
         <Input.Password
           prefix={<LockOutlined />}
           type="password"
-          placeholder="Password"
+          placeholder={translate("password")}
           autoComplete="current-password"
         />
       </Form.Item>
