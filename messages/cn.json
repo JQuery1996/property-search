@@ -18,13 +18,13 @@
       "developmentProjects": "开发项目"
     },
     "ourApplication": {
-      "title": "我们的应用程序",
-      "description": "通过在您的移动设备上安装我们的应用程序，打开房产发现之门。",
+      "title": "我们的应用",
+      "description": "通过在您的移动设备上安装我们的应用，开启房产发现之旅。",
       "miniDescription": "Lorem ipsum dolor sit amet consectetur. Integer sagittis quis urna eu cras tellus sed posuere magna.",
-      "downloadOnThe": "在",
-      "appleStore": "苹果商店下载",
-      "getItOn": "在",
-      "googlePlay": "Google Play 下载"
+      "downloadOnThe": "下载在",
+      "appleStore": "苹果商店",
+      "getItOn": "获取在",
+      "googlePlay": "Google Play"
     },
     "testimonials": {
       "title": "客户评价",
@@ -32,28 +32,14 @@
     },
     "subscribe": {
       "title": "加入我们",
-      "description": "直接通过电子邮件获取房地产洞察和 <space></space>列表",
-      "subDescription": "订阅我们获取关于房地产信息的新闻通讯。",
-      "insertEmail": "在此处插入您的电子邮件",
+      "description": "获取房产洞察和<space></space>列表直接发送到您的邮箱",
+      "subDescription": "订阅我们以获取房产信息的新闻通讯。",
+      "insertEmail": "在此输入您的邮箱",
       "subscribe": "订阅"
     },
     "category": {
       "propertyCategory": "房产类别",
       "chooseProperty": "按类别选择房产"
-    },
-    "Footer": {
-      "discover": "发现生活的舒适",
-      "home": "首页",
-      "packages": "套餐",
-      "contact": "联系我们",
-      "categories": "类别",
-      "blog": "博客",
-      "licensing": "许可",
-      "copyRight": "版权所有",
-      "house": "住宅",
-      "office": "办公室",
-      "apartment": "公寓",
-      "warehouse": "仓库"
     }
   },
   "PropertiesPage": {
@@ -61,7 +47,9 @@
     "foundItems": "{count, plural, one {找到 # 个项目} other {找到 # 个项目}}"
   },
   "NotFoundPage": {
-    "title": "页面未找到"
+    "title": "页面未找到",
+    "description": "您正在寻找的页面不存在。",
+    "goBackToHomePage": "返回首页"
   },
   "Layout": {
     "Header": {
@@ -70,7 +58,11 @@
         "properties": "房产",
         "holidayHomes": "度假屋",
         "developers": "开发商",
-        "contact": "联系我们"
+        "contact": "联系我们",
+        "mostSearchArea": "热门搜索区域",
+        "about": "关于我们",
+        "copyRight": "版权",
+        "discover": "发现生活的舒适"
       }
     }
   },
@@ -94,8 +86,8 @@
     "notificationSettings": "通知设置",
     "savedItems": "保存的项目",
     "measurementSystem": "测量系统",
-    "imperialMeasure": "英制 (平方英尺, 公里)",
-    "metricMeasure": "公制 (平方米, 英里)",
+    "imperialMeasure": "英制 (ft², km)",
+    "metricMeasure": "公制 (m², mi)",
     "language": "语言",
     "english": "英语",
     "arabic": "阿拉伯语",
@@ -106,16 +98,18 @@
     "logoutMessage": "您确定要退出吗？",
     "cancel": "取消",
     "add": "添加",
+    "edit": "编辑",
     "myAccount": "我的账户",
     "operationFailed": "操作失败",
-    "propertyAddedToYourFavorite": "房产已添加到您的收藏夹",
-    "propertyRemovedFromYourFavorite": "房产已从您的收藏夹中移除",
+    "propertyAddedToYourFavorite": "房产已添加到您的收藏",
+    "propertyRemovedFromYourFavorite": "房产已从您的收藏中移除",
     "eligibleProcess": "您没有资格执行此操作。请先登录。",
     "dontHaveAccount": "您没有账户",
     "account": "账户",
     "email": "电子邮件",
     "search": "搜索",
     "addNewProperty": "添加新房产",
+    "editProperty": "编辑房产",
     "myProperties": "我的房产",
     "pending": "待处理",
     "approved": "已批准",
@@ -123,7 +117,17 @@
     "locationInformation": "位置信息",
     "propertyPhotos": "房产照片",
     "propertyHasBeenAddedSuccessfully": "房产已成功添加",
-    "propertyAddedFailed": "添加房产时发生错误，请重试。"
+    "propertyHasBeenEditedSuccessfully": "房产已成功编辑",
+    "propertyAddedFailed": "添加房产时出错。请重试。",
+    "propertyEditedFailed": "编辑房产时出错。请重试。",
+    "deleteProperty": "删除房产",
+    "delete": "删除",
+    "deletePropertyMessage": "您确定要删除此房产吗？",
+    "propertyHasBeenDeletedSuccessfully": "房产已成功删除",
+    "propertyDeletedFailed": "删除此房产时出错。请重试。",
+    "viewAll": "查看全部",
+    "youHaveNoNotifications": "您没有通知。",
+    "notifications": "通知"
   },
   "LoginPage": {
     "action": "欢迎回来。"
@@ -133,9 +137,9 @@
       "action": "创建您的账户！"
     },
     "Agent": {
-      "action": "注册为代理商！",
-      "holidayHomesAgent": "度假屋代理商",
-      "realEstateAgent": "房地产代理商"
+      "action": "以代理身份注册！",
+      "holidayHomesAgent": "度假屋代理",
+      "realEstateAgent": "房地产代理"
     }
   },
   "Form": {
@@ -177,7 +181,7 @@
     "source": "来源",
     "address": "地址",
     "apply": "应用",
-    "clearAll": "清除所有",
+    "clearAll": "清除全部",
     "save": "保存",
     "reset": "重置",
     "country": "国家",
@@ -187,19 +191,22 @@
     "login": "登录",
     "createAsClient": "以客户身份创建",
     "createAsAgent": "以代理身份创建",
-    "propertyLocation": "物业位置",
+    "propertyLocation": "房产位置",
+    "waitForApprove": "您的账户正在等待批准，将在24小时内激活。感谢您的耐心等待！",
+    "companyType": "公司类型",
+    "holidayCompany": "度假公司",
     "Validations": {
       "acceptedExtensions": "您只能上传这些类型：",
       "fileSizeLessThan": "文件必须小于",
-      "loginFailed": "登录失败，请重试。",
-      "registerFailed": "注册失败，请重试。",
+      "loginFailed": "登录失败。请重试。",
+      "registerFailed": "注册失败。请重试。",
       "phoneNumberRequired": "请输入电话号码",
-      "emailRequired": "请输入电子邮件地址",
-      "passwordRequired": "请输入密码！",
-      "confirmPassword": "请确认密码！",
+      "emailRequired": "请输入邮箱地址",
+      "passwordRequired": "请输入您的密码！",
+      "confirmPassword": "请确认您的密码！",
       "confirmNotMatch": "您输入的新密码不匹配！",
       "fullNameRequired": "请输入您的全名",
-      "licenseRequired": "需要许可证",
+      "licenseRequired": "许可证是必需的",
       "loginSuccess": "登录成功！",
       "registerSuccess": "注册成功！"
     }
@@ -227,16 +234,111 @@
     "properties": "房产",
     "Banner": {
       "findDeveloper": "寻找开发商",
-      "vision": "在我们的住宅区预订您梦想中的公寓。<space></space>"
+      "vision": "在我们的住宅区预订您的梦想公寓<space></space>。"
     }
   },
   "Favorite": {
-    "savedItems": "保存的项目",
-    "youDontHaveAnySavedItems": "您没有任何保存的项目",
-    "startAddingYourFavorites": "开始添加您的最爱，以在此处查看它们！"
+    "savedItems": "收藏项目",
+    "youDontHaveAnySavedItems": "您没有任何收藏项目",
+    "startAddingYourFavorites": "开始添加您的收藏以在此查看！"
   },
   "MyProperties": {
-    "youDontAddAnyProperty": "您还没有添加任何房产",
-    "startAddingYourProperties": "开始添加您的房产以在此处查看！"
+    "youDontAddAnyProperty": "您尚未添加任何房产",
+    "startAddingYourProperties": "开始添加您的房产以在此查看！"
+  },
+  "MostSearchArea": {
+    "title": "热门搜索区域",
+    "areaName": "区域名称",
+    "counter": "计数"
+  },
+  "About": {
+    "title": "关于我们"
+  },
+  "Pages": {
+    "Login": {
+      "title": "登录",
+      "description": "访问您的房产搜索账户以管理您的列表、保存收藏房产并接收更新。安全登录以继续。"
+    },
+    "ClientRegister": {
+      "title": "注册",
+      "description": "在房产搜索上创建您的账户，开始探索最佳的出售和出租房产。立即注册以保存收藏并与代理商联系。"
+    },
+    "DeveloperRegister": {
+      "title": "开发商注册",
+      "description": "在房产搜索上注册为房地产开发商，展示您的项目、列出房产并接触潜在买家和投资者。"
+    },
+    "Home": {
+      "title": "首页",
+      "description": "在我们的房产搜索网站上探索最佳的出售和出租房产。轻松找到您的梦想家园、商业空间和开发项目。浏览最新添加、房产类别和满意客户的评价。"
+    },
+    "Properties": {
+      "title": "房产",
+      "description": "浏览广泛的出售和出租房产。轻松找到公寓、别墅、商业空间和开发项目。"
+    },
+    "Property": {
+      "title": "房产详情",
+      "description": "在房产搜索上探索此房产的详细信息。查看价格、功能、位置并联系卖家或代理商以获取更多详情。"
+    },
+    "About": {
+      "title": "关于",
+      "description": "房产搜索是您寻找最佳出售和出租房产的值得信赖的平台。无论您是购房者、投资者还是房地产代理商，我们都能为您提供顶级列表和机会。"
+    },
+    "Developers": {
+      "title": "开发商",
+      "description": "与房产搜索合作，向广大受众展示您的房地产项目。我们的平台帮助开发商推广房产、接触买家并最大化销售潜力。"
+    },
+    "Developer": {
+      "title": "开发商详情",
+      "description": "在房产搜索上探索此房地产开发商的详细信息。查看他们的项目、可用房产和联系信息。"
+    },
+    "AddNewProperty": {
+      "title": "添加新房产",
+      "description": "在房产搜索上列出您的房产，接触潜在买家和租户。我们的平台使代理商和房主能够轻松展示他们的列表。"
+    },
+    "EditProperty": {
+      "title": "编辑房产",
+      "description": "在房产搜索上更新您的房产详情。修改价格、图片、描述和其他信息以保持您的列表最新。"
+    },
+    "Favorite": {
+      "title": "收藏",
+      "description": "在房产搜索上保存您喜欢的房产并随时访问。轻松管理您的愿望清单并更快找到您的梦想家园。"
+    },
+    "MostSearchArea": {
+      "title": "热门搜索区域",
+      "description": "在房产搜索上发现购买和出租房产的最受欢迎区域。根据用户兴趣探索顶级位置并找到您的理想家园或投资。"
+    },
+    "MyProperties": {
+      "title": "我的房产",
+      "description": "在房产搜索上管理您列出的所有房产。无论您是代理商还是开发商，都可以轻松更新、跟踪和展示您的房地产列表。"
+    },
+    "Notifications": {
+      "title": "通知",
+      "description": "在房产搜索上获取最新提醒。获取有关新列表、价格变化、收藏房产和重要更新的通知。"
+    },
+    "Profile": {
+      "title": "我的个人资料",
+      "description": "在房产搜索上查看和更新您的个人信息。轻松管理您的账户详情、联系信息和偏好。"
+    },
+    "Keywords": {
+      "propertySearch": "房产搜索",
+      "realEstate": "房地产",
+      "buyProperty": "购买房产",
+      "rentProperty": "出租房产",
+      "homeForSale": "出售房屋",
+      "commercialProperty": "商业房产",
+      "developmentProjects": "开发项目",
+      "realEstateListings": "房地产列表",
+      "propertyWebsite": "房产网站",
+      "apartmentsForSale": "出售公寓",
+      "apartmentsForRent": "出租公寓",
+      "villa": "别墅",
+      "villas": "别墅",
+      "rent": "出租",
+      "buy": "购买",
+      "listing": "列表",
+      "listings": "列表",
+      "property": "房产",
+      "properties": "房产"
+    }
   }
 }

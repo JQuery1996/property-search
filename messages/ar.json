@@ -40,20 +40,6 @@
     "category": {
       "propertyCategory": "فئة العقار",
       "chooseProperty": "اختر العقار حسب الفئة"
-    },
-    "Footer": {
-      "discover": "اكتشف راحة حياتك",
-      "home": "الصفحة الرئيسية",
-      "packages": "الباقات",
-      "contact": "اتصل بنا",
-      "categories": "الفئات",
-      "blog": "المدونة",
-      "licensing": "الترخيص",
-      "copyRight": "حقوق النشر",
-      "house": "منزل",
-      "office": "مكتب",
-      "apartment": "شقة",
-      "warehouse": "مستودع"
     }
   },
   "PropertiesPage": {
@@ -61,7 +47,9 @@
     "foundItems": "{count, plural, one {تم العثور على عنصر واحد} other {تم العثور على # عناصر}}"
   },
   "NotFoundPage": {
-    "title": "الصفحة غير موجودة"
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة.",
+    "goBackToHomePage": "العودة إلى الصفحة الرئيسية"
   },
   "Layout": {
     "Header": {
@@ -70,7 +58,11 @@
         "properties": "العقارات",
         "holidayHomes": "منازل العطلات",
         "developers": "المطورون",
-        "contact": "اتصل بنا"
+        "contact": "اتصل بنا",
+        "mostSearchArea": "المناطق الأكثر بحثًا",
+        "about": "من نحن",
+        "copyRight": "حقوق النشر",
+        "discover": "اكتشف راحة حياتك"
       }
     }
   },
@@ -94,8 +86,8 @@
     "notificationSettings": "إعدادات الإشعارات",
     "savedItems": "العناصر المحفوظة",
     "measurementSystem": "نظام القياس",
-    "imperialMeasure": "إمبراطوري (قدم²، كم)",
-    "metricMeasure": "متري (م²، ميل)",
+    "imperialMeasure": "الإمبراطوري (قدم²، كم)",
+    "metricMeasure": "المتري (م²، ميل)",
     "language": "اللغة",
     "english": "الإنجليزية",
     "arabic": "العربية",
@@ -106,6 +98,7 @@
     "logoutMessage": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
     "cancel": "إلغاء",
     "add": "إضافة",
+    "edit": "تعديل",
     "myAccount": "حسابي",
     "operationFailed": "فشلت العملية",
     "propertyAddedToYourFavorite": "تمت إضافة العقار إلى المفضلة",
@@ -116,6 +109,7 @@
     "email": "البريد الإلكتروني",
     "search": "البحث",
     "addNewProperty": "إضافة عقار جديد",
+    "editProperty": "تعديل العقار",
     "myProperties": "عقاراتي",
     "pending": "قيد الانتظار",
     "approved": "معتمد",
@@ -123,7 +117,17 @@
     "locationInformation": "معلومات الموقع",
     "propertyPhotos": "صور العقار",
     "propertyHasBeenAddedSuccessfully": "تمت إضافة العقار بنجاح",
-    "propertyAddedFailed": "حدث خطأ أثناء إضافة العقار. حاول مرة أخرى."
+    "propertyHasBeenEditedSuccessfully": "تم تعديل العقار بنجاح",
+    "propertyAddedFailed": "حدث خطأ أثناء إضافة العقار. يرجى المحاولة مرة أخرى.",
+    "propertyEditedFailed": "حدث خطأ أثناء تعديل العقار. يرجى المحاولة مرة أخرى.",
+    "deleteProperty": "حذف العقار",
+    "delete": "حذف",
+    "deletePropertyMessage": "هل أنت متأكد تمامًا من رغبتك في حذف هذا العقار؟",
+    "propertyHasBeenDeletedSuccessfully": "تم حذف العقار بنجاح",
+    "propertyDeletedFailed": "حدث خطأ أثناء حذف العقار. يرجى المحاولة مرة أخرى.",
+    "viewAll": "عرض الكل",
+    "youHaveNoNotifications": "ليس لديك إشعارات.",
+    "notifications": "الإشعارات"
   },
   "LoginPage": {
     "action": "مرحبًا بعودتك."
@@ -148,10 +152,10 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "rememberMe": "تذكرني",
     "agree_terms": "أوافق على شروط العضوية",
-    "allowFastHome": "أسمح لـ Fast home بالاتصال بي عبر البريد الإلكتروني، الرسائل النصية، إلخ لأغراض التسويق والترويج.",
+    "allowFastHome": "أسمح لـ Fast home بالاتصال بي عبر البريد الإلكتروني، الرسائل القصيرة، إلخ لأغراض التسويق والترويج.",
     "createAnAccount": "إنشاء حساب",
     "alreadyMember": "هل أنت عضو بالفعل؟ <span>سجل الدخول</span> الآن!",
-    "tradeLicense": "رخصة تجارية",
+    "tradeLicense": "الترخيص التجاري",
     "signUp": "التسجيل",
     "remove": "إزالة",
     "propertyFilter": "تصفية العقارات",
@@ -160,20 +164,20 @@
     "offPlanPrimary": "الخطة الأولية",
     "offPlan&NewProjectsBy": "الخطة الأولية والمشاريع الجديدة بواسطة",
     "completed": "مكتمل",
-    "completedPrimary": "مكتمل أولي",
+    "completedPrimary": "مكتمل أساسي",
     "propertyTypeCategory": "فئة نوع العقار",
     "propertyType": "نوع العقار",
-    "amenities": "المرافق",
+    "amenities":"المرافق",
     "pricePeriod": "فترة السعر",
     "priceRange": "نطاق السعر (درهم إماراتي)",
     "completionStatus": "حالة الإكمال",
     "bedrooms": "غرف النوم",
     "bathrooms": "الحمامات",
     "studio": "استوديو",
-    "propertySize": "حجم العقار",
+    "propertySize": "مساحة العقار",
     "propertyPrice": "سعر العقار",
-    "minSize": "الحد الأدنى للحجم",
-    "maxSize": "الحد الأقصى للحجم",
+    "minSize": "الحد الأدنى للمساحة",
+    "maxSize": "الحد الأقصى للمساحة",
     "source": "المصدر",
     "address": "العنوان",
     "apply": "تطبيق",
@@ -188,17 +192,20 @@
     "createAsClient": "إنشاء كعميل",
     "createAsAgent": "إنشاء كوسيط",
     "propertyLocation": "موقع العقار",
+    "waitForApprove": "حسابك قيد الموافقة وسيتم تفعيله خلال 24 ساعة. شكرًا على صبرك!",
+    "companyType": "نوع الشركة",
+    "holidayCompany": "شركة العطلات",
     "Validations": {
       "acceptedExtensions": "يمكنك فقط تحميل هذه الأنواع:",
       "fileSizeLessThan": "يجب أن يكون الملف أصغر من",
       "loginFailed": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى.",
       "registerFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى.",
-      "phoneNumberRequired": "يرجى إدخال رقم الهاتف",
-      "emailRequired": "يرجى إدخال عنوان البريد الإلكتروني",
-      "passwordRequired": "يرجى إدخال كلمة المرور!",
-      "confirmPassword": "يرجى تأكيد كلمة المرور!",
+      "phoneNumberRequired": "الرجاء إدخال رقم الهاتف",
+      "emailRequired": "الرجاء إدخال البريد الإلكتروني",
+      "passwordRequired": "الرجاء إدخال كلمة المرور!",
+      "confirmPassword": "الرجاء تأكيد كلمة المرور!",
       "confirmNotMatch": "كلمة المرور الجديدة التي أدخلتها غير متطابقة!",
-      "fullNameRequired": "يرجى إدخال الاسم الكامل",
+      "fullNameRequired": "الرجاء إدخال الاسم الكامل",
       "licenseRequired": "الترخيص مطلوب",
       "loginSuccess": "تم تسجيل الدخول بنجاح!",
       "registerSuccess": "تم التسجيل بنجاح!"
@@ -211,14 +218,14 @@
     "propertyDetails": "تفاصيل العقار",
     "amenities": "المرافق",
     "propertyType": "نوع العقار",
-    "propertySize": "حجم العقار",
+    "propertySize": "مساحة العقار",
     "bathrooms": "الحمامات",
     "bedrooms": "غرف النوم",
     "locationAndNearby": "الموقع وما حوله"
   },
   "developers": {
     "verify": "تحقق",
-    "projectsUnderDevelopment": "المشاريع تحت التطوير",
+    "projectsUnderDevelopment": "المشاريع قيد التطوير",
     "projects": "المشاريع",
     "from": "من",
     "salesStarted": "المبيعات التي بدأت",
@@ -227,7 +234,7 @@
     "properties": "العقارات",
     "Banner": {
       "findDeveloper": "ابحث عن مطور",
-      "vision": "احجز شقة أحلامك <space></space>في مجمعاتنا السكنية."
+      "vision": "احجز شقة أحلامك <space></space> في مجمعاتنا السكنية."
     }
   },
   "Favorite": {
@@ -237,6 +244,101 @@
   },
   "MyProperties": {
     "youDontAddAnyProperty": "لم تقم بإضافة أي عقار بعد",
-    "startAddingYourProperties": "ابدأ في إضافة عقاراتك لرؤيتها هنا!"
+    "startAddingYourProperties": "ابدأ بإضافة عقاراتك لرؤيتها هنا!"
+  },
+  "MostSearchArea": {
+    "title": "المناطق الأكثر بحثًا",
+    "areaName": "اسم المنطقة",
+    "counter": "العداد"
+  },
+  "About": {
+    "title": "من نحن"
+  },
+  "Pages": {
+    "Login": {
+      "title": "تسجيل الدخول",
+      "description": "قم بالوصول إلى حسابك في بحث العقارات لإدارة قوائمك، وحفظ العقارات المفضلة، وتلقي التحديثات. سجل الدخول بأمان للمتابعة."
+    },
+    "ClientRegister": {
+      "title": "التسجيل",
+      "description": "أنشئ حسابك في بحث العقارات وابدأ في استكشاف أفضل العقارات للبيع والايجار. سجل الآن لحفظ المفضلات والاتصال بالوكلاء."
+    },
+    "DeveloperRegister": {
+      "title": "تسجيل المطور",
+      "description": "سجل كمطور عقاري في بحث العقارات لعرض مشاريعك، وإدراج العقارات، والوصول إلى المشترين والمستثمرين المحتملين."
+    },
+    "Home": {
+      "title": "الرئيسية",
+      "description": "استكشف أفضل العقارات للبيع والايجار على موقع بحث العقارات. ابحث عن منزل أحلامك، المساحات التجارية، ومشاريع التطوير بسهولة."
+    },
+    "Properties": {
+      "title": "العقارات",
+      "description": "تصفح مجموعة واسعة من العقارات للبيع والايجار. ابحث عن شقق، فلل، مساحات تجارية، ومشاريع تطويرية بسهولة."
+    },
+    "Property": {
+      "title": "تفاصيل العقار",
+      "description": "استكشف معلومات مفصلة عن هذا العقار في بحث العقارات. اعرض الأسعار، الميزات، الموقع، وتواصل مع البائع أو الوكيل لمزيد من التفاصيل."
+    },
+    "About": {
+      "title": "من نحن",
+      "description": "بحث العقارات هو منصتك الموثوقة للعثور على أفضل العقارات للبيع والايجار. سواء كنت مشتري منزل، مستثمر، أو وكيل عقاري، نحن نوصل لك بأفضل القوائم والفرص."
+    },
+    "Developers": {
+      "title": "المطورون",
+      "description": "شارك مع بحث العقارات لعرض مشاريعك العقارية على جمهور واسع. تساعد منصتنا المطورين على الترويج للعقارات، الوصول إلى المشترين، وتعظيم إمكانات المبيعات."
+    },
+    "Developer": {
+      "title": "تفاصيل المطور",
+      "description": "استكشف معلومات مفصلة عن هذا المطور العقاري في بحث العقارات. اعرض مشاريعه، العقارات المتاحة، ومعلومات الاتصال."
+    },
+    "AddNewProperty": {
+      "title": "إضافة عقار جديد",
+      "description": "أدرج عقارك في بحث العقارات للوصول إلى المشترين والمستأجرين المحتملين. تجعل منصتنا من السهل على الوكلاء وأصحاب العقارات عرض قوائمهم."
+    },
+    "EditProperty": {
+      "title": "تعديل العقار",
+      "description": "قم بتحديث تفاصيل عقارك في بحث العقارات. عدل الأسعار، الصور، الأوصاف، والمعلومات الأخرى للحفاظ على تحديث القائمة."
+    },
+    "Favorite": {
+      "title": "المفضلة",
+      "description": "احفظ عقاراتك المفضلة في بحث العقارات وادخل إليها في أي وقت. قم بإدارة قائمة أمنياتك بسهولة وابحث عن منزل أحلامك بسرعة."
+    },
+    "MostSearchArea": {
+      "title": "المناطق الأكثر بحثًا",
+      "description": "اكتشف المناطق الأكثر شعبية لشراء وايجار العقارات في بحث العقارات. استكشف أفضل المواقع بناءً على اهتمامات المستخدمين وابحث عن منزلك أو استثمارك المثالي."
+    },
+    "MyProperties": {
+      "title": "عقاراتي",
+      "description": "قم بإدارة جميع العقارات المدرجة الخاصة بك على Property Search. سواء كنت وكيلًا أو مطورًا، يمكنك بسهولة تحديث وتتبع وعرض قوائم العقارات الخاصة بك."
+    },
+    "Notifications": {
+      "title": "الإشعارات",
+      "description": "ابقَ على اطلاع دائم بأحدث التنبيهات على Property Search. احصل على إشعارات حول العقارات الجديدة، وتغيرات الأسعار، والعقارات المفضلة، والتحديثات الهامة."
+    },
+    "Profile": {
+      "title": "ملفي الشخصي",
+      "description": "عرض وتحديث معلوماتك الشخصية على Property Search. قم بإدارة تفاصيل حسابك، ومعلومات الاتصال، وتفضيلاتك بسهولة."
+    },
+    "Keywords": {
+      "propertySearch": "بحث عن العقارات",
+      "realEstate": "العقارات",
+      "buyProperty": "شراء عقار",
+      "rentProperty": "استئجار عقار",
+      "homeForSale": "منزل للبيع",
+      "commercialProperty": "عقار تجاري",
+      "developmentProjects": "مشاريع التطوير",
+      "realEstateListings": "قوائم العقارات",
+      "propertyWebsite": "موقع العقارات",
+      "apartmentsForSale": "شقق للبيع",
+      "apartmentsForRent": "شقق للإيجار",
+      "villa": "فيلا",
+      "villas": "فلل",
+      "rent": "إيجار",
+      "buy": "شراء",
+      "listing": "قائمة",
+      "listings": "قوائم",
+      "property": "عقار",
+      "properties": "عقارات"
+    }
   }
 }
