@@ -1,11 +1,11 @@
 "use client";
 import { theme, Layout, Row, Col, Flex, Button } from "antd";
-import { CustomText, CustomTitle, Logo } from "@/components";
-import { APP } from "@/constants";
+import { CustomText, CustomTitle, LogoWithBrand } from "@/components";
 import { Link } from "@/i18n/routing";
 import { useResponsive } from "antd-style";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { PAGES } from "@/constants";
 
 const { Footer } = Layout;
 const { useToken } = theme;
@@ -13,7 +13,7 @@ const { useToken } = theme;
 export function AppFooter() {
   const { token } = useToken();
   const { lg, mobile } = useResponsive();
-  const translate = useTranslations("HomePage.Footer");
+  const translate = useTranslations("Layout.Header.Items");
 
   return (
     <Footer
@@ -26,18 +26,12 @@ export function AppFooter() {
         {translate("discover")}
       </CustomTitle>
       <Row style={{ marginTop: 40 }} gutter={[16, 16]}>
-        <Col xs={24} md={12} lg={8}>
+        <Col xs={24} md={8} lg={8}>
           <Flex gap={8}>
-            <Logo style={{ width: "30px", height: "30px" }} />
-            <CustomTitle
-              level={5}
-              style={{ margin: 0, fontWeight: 400, color: "white" }}
-            >
-              {APP.name}
-            </CustomTitle>
+            <LogoWithBrand titleStyle={{ color: "white" }} />
           </Flex>
         </Col>
-        <Col xs={24} md={12} lg={8}>
+        <Col xs={24} md={16} lg={16}>
           <div
             style={{
               display: "grid",
@@ -47,7 +41,7 @@ export function AppFooter() {
               alignItems: "center",
             }}
           >
-            <Link href="">
+            <Link href={PAGES.HOME}>
               <CustomText
                 style={{
                   borderLeft: `1px solid ${token.colorPrimary}`,
@@ -59,7 +53,7 @@ export function AppFooter() {
                 {translate("home")}
               </CustomText>
             </Link>
-            <Link href="">
+            <Link href={PAGES.PROPERTIES}>
               <CustomText
                 style={{
                   borderLeft: `1px solid ${token.colorPrimary}`,
@@ -68,10 +62,10 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {translate("packages")}
+                {translate("properties")}
               </CustomText>
             </Link>
-            <Link href="">
+            <Link href={PAGES.DEVELOPERS}>
               <CustomText
                 style={{
                   borderLeft: `1px solid ${token.colorPrimary}`,
@@ -80,10 +74,10 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {translate("contact")}
+                {translate("developers")}
               </CustomText>
             </Link>
-            <Link href="">
+            <Link href={PAGES.MOST_SEARCH_AREA}>
               <CustomText
                 style={{
                   borderLeft: `1px solid ${token.colorPrimary}`,
@@ -92,10 +86,10 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {translate("categories")}
+                {translate("mostSearchArea")}
               </CustomText>
             </Link>
-            <Link href="">
+            <Link href={PAGES.ABOUT_US}>
               <CustomText
                 style={{
                   borderLeft: `1px solid ${token.colorPrimary}`,
@@ -104,58 +98,9 @@ export function AppFooter() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {translate("blog")}
+                {translate("about")}
               </CustomText>
             </Link>
-            <Link href="">
-              <CustomText
-                style={{
-                  borderLeft: `1px solid ${token.colorPrimary}`,
-                  color: "white",
-                  padding: "0 10px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {translate("licensing")}
-              </CustomText>
-            </Link>
-          </div>
-        </Col>
-
-        <Col xs={24} md={12} lg={8}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: lg ? "center" : "start",
-              alignContent: "center",
-              alignItems: "center",
-              borderLeft: `1px solid ${token.colorPrimary}`,
-            }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                rowGap: "20px",
-                columnGap: "0px",
-                alignItems: "center",
-                width: mobile ? "90%" : "50%",
-                padding: "0 10px",
-              }}
-            >
-              <CustomText style={{ color: "white" }}>
-                {translate("house")}
-              </CustomText>
-              <CustomText style={{ color: "white" }}>
-                {translate("office")}
-              </CustomText>
-              <CustomText style={{ color: "white" }}>
-                {translate("apartment")}
-              </CustomText>
-              <CustomText style={{ color: "white" }}>
-                {translate("warehouse")}
-              </CustomText>
-            </div>
           </div>
         </Col>
       </Row>

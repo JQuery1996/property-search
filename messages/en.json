@@ -40,20 +40,6 @@
     "category": {
       "propertyCategory": "Property Category",
       "chooseProperty": "Choose Property by Category"
-    },
-    "Footer": {
-      "discover": "Discover the Comfort of Your Life",
-      "home": "Home",
-      "packages": "Packages",
-      "contact": "Contact",
-      "categories": "Categories",
-      "blog": "Blog",
-      "licensing": "Licensing",
-      "copyRight": "CopyRight",
-      "house": "House",
-      "office": "office",
-      "apartment": "Apartment",
-      "warehouse": "Warehouse"
     }
   },
   "PropertiesPage": {
@@ -74,7 +60,9 @@
         "developers": "Developers",
         "contact": "Contact",
         "mostSearchArea": "Most Search Area",
-        "about": "About"
+        "about": "About",
+        "copyRight": "Copy Right",
+        "discover": "Discover the Comfort of Your Life"
       }
     }
   },
@@ -263,5 +251,92 @@
   },
   "About": {
     "title": "About Us"
+  },
+  "Pages": {
+    "Login": {
+      "title": "Login",
+      "description": "Access your Property Search account to manage your listings, save favorite properties, and receive updates. Sign in securely to continue."
+    },
+    "ClientRegister": {
+      "title": "Register",
+      "description": "Create your account on Property Search and start exploring the best properties for sale and rent. Sign up now to save favorites and connect with agents."
+    },
+    "DeveloperRegister": {
+      "title": "Developer Registration",
+      "description": "Register as a real estate developer on Property Search to showcase your projects, list properties, and reach potential buyers and investors."
+    },
+    "Home": {
+      "title": "Home",
+      "description": "Explore the best properties for sale and rent on our Property Search website. Find your dream home, commercial spaces, and development projects with ease. Browse recent additions, property categories, and testimonials from satisfied clients."
+    },
+    "Properties": {
+      "title": "Properties",
+      "description": "Browse a wide range of properties for sale and rent. Find apartments, villas, commercial spaces, and development projects with ease."
+    },
+    "Property": {
+      "title": "Property Details",
+      "description": "Explore detailed information about this property on Property Search. View pricing, features, location, and contact the seller or agent for more details."
+    },
+    "About": {
+      "title": "About",
+      "description": "Property Search is your trusted platform for finding the best properties for sale and rent. Whether you're a homebuyer, investor, or real estate agent, we connect you with top listings and opportunities"
+    },
+    "Developers": {
+      "title": "Developers",
+      "description": "Partner with Property Search to showcase your real estate projects to a wide audience. Our platform helps developers promote properties, reach buyers, and maximize sales potential."
+    },
+    "Developer": {
+      "title": "Developer Details",
+      "description": "Explore detailed information about this real estate developer on Property Search. View their projects, available properties, and contact details."
+    },
+    "AddNewProperty": {
+      "title": "Add New Property",
+      "description": "List your property on Property Search and reach potential buyers and renters. Our platform makes it easy for agents and property owners to showcase their listings."
+    },
+    "EditProperty": {
+      "title": "Edit Property",
+      "description": "Update your property details on Property Search. Modify pricing, images, descriptions, and other information to keep your listing up to date."
+    },
+    "Favorite": {
+      "title": "Favorites",
+      "description": "Save your favorite properties on Property Search and access them anytime. Easily manage your wishlist and find your dream home faster."
+    },
+    "MostSearchArea": {
+      "title": "Most Searched Areas",
+      "description": "Discover the most popular areas for buying and renting properties on Property Search. Explore top locations based on user interest and find your ideal home or investment."
+    },
+    "MyProperties": {
+      "title": "My Properties",
+      "description": "Manage all your listed properties on Property Search. Whether you're an agent or a developer, easily update, track, and showcase your real estate listings."
+    },
+    "Notifications": {
+      "title": "Notifications",
+      "description": "Stay updated with the latest alerts on Property Search. Get notified about new listings, price changes, favorite properties, and important updates."
+    },
+    "Profile": {
+      "title": "My Profile",
+      "description": "View and update your personal information on Property Search. Manage your account details, contact information, and preferences with ease."
+    },
+    "Keywords": {
+      "propertySearch": "property search",
+      "realEstate": "real estate",
+      "buyProperty": "buy property",
+      "rentProperty": "rent property",
+      "homeForSale": "home for sale",
+      "commercialProperty": "commercial property",
+      "developmentProjects": "development projects",
+      "realEstateListings": "real estate listings",
+      "propertyWebsite": "property website",
+      "apartmentsForSale":  "apartments for sale",
+      "apartmentsForRent":  "apartments for rent",
+      "villa" :  "villa",
+      "villas" :  "villas",
+      "rent":  "rent",
+      "buy":  "buy",
+      "listing":  "listings",
+      "listings":  "listings",
+      "property":  "property",
+      "properties":  "properties"
+    }
   }
 }
