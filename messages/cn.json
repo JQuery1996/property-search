@@ -49,8 +49,8 @@
       "categories": "类别",
       "blog": "博客",
       "licensing": "许可",
-      "copyRight": "版权",
-      "house": "房子",
+      "copyRight": "版权所有",
+      "house": "住宅",
       "office": "办公室",
       "apartment": "公寓",
       "warehouse": "仓库"
@@ -86,7 +86,7 @@
     "contactUs": "联系我们",
     "contactInformation": "联系信息",
     "youCanContactUsThroughTheFollowingNumbers": "您可以通过以下号码联系我们：",
-    "whatsapp": "Whatsapp",
+    "whatsapp": "WhatsApp",
     "mobile": "手机",
     "website": "网站",
     "profile": "个人资料",
@@ -105,6 +105,7 @@
     "logout": "退出",
     "logoutMessage": "您确定要退出吗？",
     "cancel": "取消",
+    "add": "添加",
     "myAccount": "我的账户",
     "operationFailed": "操作失败",
     "propertyAddedToYourFavorite": "房产已添加到您的收藏夹",
@@ -117,7 +118,12 @@
     "addNewProperty": "添加新房产",
     "myProperties": "我的房产",
     "pending": "待处理",
-    "approved": "已批准"
+    "approved": "已批准",
+    "generalInformation": "基本信息",
+    "locationInformation": "位置信息",
+    "propertyPhotos": "房产照片",
+    "propertyHasBeenAddedSuccessfully": "房产已成功添加",
+    "propertyAddedFailed": "添加房产时发生错误，请重试。"
   },
   "LoginPage": {
     "action": "欢迎回来。"
@@ -133,6 +139,8 @@
     }
   },
   "Form": {
+    "title": "标题",
+    "description": "描述",
     "fullName": "全名",
     "phoneNumber": "电话号码",
     "email": "电子邮件地址",
@@ -140,7 +148,7 @@
     "confirmPassword": "确认密码",
     "rememberMe": "记住我",
     "agree_terms": "我同意会员条款",
-    "allowFastHome": "我允许 Fast home 通过电子邮件、短信等方式联系我以进行营销和促销。",
+    "allowFastHome": "我允许 Fast Home 通过电子邮件、短信等联系我，以获取营销和推广信息。",
     "createAnAccount": "创建账户",
     "alreadyMember": "已经是会员？<span>立即登录</span>！",
     "tradeLicense": "商业许可证",
@@ -163,6 +171,7 @@
     "bathrooms": "浴室",
     "studio": "工作室",
     "propertySize": "房产面积",
+    "propertyPrice": "房产价格",
     "minSize": "最小面积",
     "maxSize": "最大面积",
     "source": "来源",
@@ -178,6 +187,7 @@
     "login": "登录",
     "createAsClient": "以客户身份创建",
     "createAsAgent": "以代理身份创建",
+    "propertyLocation": "物业位置",
     "Validations": {
       "acceptedExtensions": "您只能上传这些类型：",
       "fileSizeLessThan": "文件必须小于",
