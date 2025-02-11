@@ -27,4 +27,7 @@ export const FilterConstants = {
       value: "completed primary",
     },
   ],
+  COMPANY_TYPE: {
+    HOLIDAY_COMPANY: "holiday_company",
+  },
 };

@@ -18,5 +18,5 @@ export type TFilterParams = {
   min_yearly_price: string | number;
   max_yearly_price: string | number;
   per_page: string | number;
-  company_type: string;
+  company_type: string[];
 };

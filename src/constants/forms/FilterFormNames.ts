@@ -22,4 +22,5 @@ export const FilterFormNames = {
   PROPERTY_LOCATION_COORDINATES: "location_coordinates",
   PROPERTY_LATITUDE: "latitude",
   PROPERTY_LONGITUDE: "longitude",
+  COMPANY_TYPE: "company_type",
 };

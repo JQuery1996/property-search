@@ -56,6 +56,16 @@ export function FilterModal({
       initialValues.type = searchParams.get(FilterFormNames.PROPERTY_PURPOSE);
     }
 
+    if (searchParams.has(FilterFormNames.COMPANY_TYPE)) {
+      initialValues.company_type = [
+        searchParams.get(FilterFormNames.COMPANY_TYPE),
+      ];
+    }
+
+    if (searchParams.has(FilterFormNames.COMPANY_TYPE)) {
+      initialValues.type = searchParams.get(FilterFormNames.COMPANY_TYPE);
+    }
+
     if (
       searchParams.has(FilterFormNames.MIN_YEARLY_PRICE) ||
       searchParams.has(FilterFormNames.MAX_YEARLY_PRICE)
@@ -152,8 +162,6 @@ export function FilterModal({
   }
 
   const initialValues = {
-    [FilterFormNames.PROPERTY_PURPOSE]:
-      FilterConstants.PROPERTY_PURPOSES[0].value,
     [FilterFormNames.PRICE_RANGE]: [0, 1_000_000],
   };
 
@@ -173,7 +181,6 @@ export function FilterModal({
   ) {
     // Destructure the values object
     const { price_range, ...rest } = values;
-
     // Convert price_range to min_yearly_price and max_yearly_price
     const [min_yearly_price, max_yearly_price] = price_range;
 
@@ -253,6 +260,24 @@ export function FilterModal({
               </Radio.Button>
             ))}
           </Radio.Group>
+        </Form.Item>
+
+        <Form.Item
+          name={FilterFormNames.COMPANY_TYPE}
+          label={
+            <CustomText style={{ fontWeight: 500 }}>
+              {translate("companyType")}
+            </CustomText>
+          }
+        >
+          <Checkbox.Group
+            options={[
+              {
+                label: translate("holidayCompany"),
+                value: FilterConstants.COMPANY_TYPE.HOLIDAY_COMPANY,
+              },
+            ]}
+          />
         </Form.Item>
 
         {/* Property type single-select radio button */}
