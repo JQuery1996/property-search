@@ -5,7 +5,6 @@ import { getListings } from "@/app/services";
 
 export async function Results({
   searchParams,
-  companyType = "normal_company",
 }: {
   searchParams: ISearchParams;
   companyType?: string;
@@ -16,7 +15,6 @@ export async function Results({
       per_page: 12,
       order_by: "added_date",
       order_dir: "desc",
-      company_type: companyType,
     }, // Pass searchParams directly inside params
   });
 

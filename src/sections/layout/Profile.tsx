@@ -34,7 +34,6 @@ export function Profile() {
     updateMeasurement,
     updateCountry,
   } = useSettings();
-  console.log({ countries });
   const locale = useLocale();
   const { mobile } = useResponsive();
   const translate = useTranslations("Common"); // Use the appropriate namespace
