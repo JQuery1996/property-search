@@ -1,6 +1,6 @@
 "use client";
 import { Flex, theme } from "antd";
-import { CategoryList, CustomText, CustomTitle } from "@/components";
+import { CategoryList, CustomTitle } from "@/components";
 import { useResponsive } from "antd-style";
 import { useTranslations } from "next-intl";
 const { useToken } = theme;

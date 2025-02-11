@@ -1,8 +1,8 @@
 "use client";
-import { Card, Divider, Flex, Tooltip, App, Spin, Skeleton, Tag } from "antd";
+import { Card, Flex, Tooltip, App, Spin, Skeleton, Tag } from "antd";
 import { TListing } from "@/types";
 import Meta from "antd/es/card/Meta";
-import { CustomText, CustomTitle, Label } from "@/components";
+import { CustomText, Label } from "@/components";
 import Image from "next/image";
 import Slider from "react-slick";
 import { useTranslations } from "next-intl";
@@ -16,6 +16,7 @@ import { useAuth } from "@/contexts"; // Import useState for state management
 
 export function VerticalCard({
   listing,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   showStatus = false,
 }: {
   listing: TListing;

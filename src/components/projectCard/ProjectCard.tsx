@@ -9,6 +9,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 
 export function ProjectCard({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   developer,
   project,
 }: {

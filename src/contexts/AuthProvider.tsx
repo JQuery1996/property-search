@@ -1,16 +1,9 @@
 "use client";
 // context/AuthContext.tsx
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { TUpdateProfile, TUser } from "@/types";
 import Cookies from "js-cookie";
 import { axiosInstance } from "@/client";
-import { router } from "next/client";
 import { PAGES } from "@/constants";
 import { useRouter } from "@/i18n/routing";
 

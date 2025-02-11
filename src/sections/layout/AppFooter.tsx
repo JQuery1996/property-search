@@ -12,7 +12,7 @@ const { useToken } = theme;
 
 export function AppFooter() {
   const { token } = useToken();
-  const { lg, mobile } = useResponsive();
+  const { mobile } = useResponsive();
   const translate = useTranslations("Layout.Header.Items");
 
   return (

@@ -44,6 +44,7 @@ export function MapWithSearch({
   const mapRef = useRef<google.maps.Map | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (isLoaded && inputRef.current) {
       autocompleteRef.current = new google.maps.places.Autocomplete(
@@ -57,7 +58,7 @@ export function MapWithSearch({
     }
   }, [isLoaded]);
 
-  const onPlaceChanged = () => {
+  function onPlaceChanged() {
     if (autocompleteRef.current) {
       const place = autocompleteRef.current.getPlace();
       if (place.geometry?.location) {
@@ -73,7 +74,7 @@ export function MapWithSearch({
         }
       }
     }
-  };
+  }
 
   const onMapClick = (event: google.maps.MapMouseEvent) => {
     if (event.latLng) {

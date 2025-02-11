@@ -1,16 +1,7 @@
 "use client";
-import {
-  Button,
-  Col,
-  Empty,
-  Flex,
-  Pagination,
-  PaginationProps,
-  Row,
-} from "antd";
+import { Col, Empty, Flex, Pagination, PaginationProps, Row } from "antd";
 import { CustomText, CustomTitle, VerticalCard } from "@/components";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { TListing, TPaginationMetadata } from "@/types";
 import { APP } from "@/constants";
 import { usePathname, useRouter } from "@/i18n/routing"; // Add useSearchParams

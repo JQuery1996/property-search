@@ -135,6 +135,7 @@ export function PropertyForm({
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (details) {
       form.setFieldValue(

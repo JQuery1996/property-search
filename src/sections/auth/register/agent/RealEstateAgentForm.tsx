@@ -6,7 +6,6 @@ import PhoneInput from "antd-phone-input";
 import { CustomText, CustomUpload } from "@/components";
 import { Link, useRouter } from "@/i18n/routing";
 import { PAGES, ROLES } from "@/constants";
-import { useAuth } from "@/contexts";
 import { TPhone } from "@/types";
 import { phoneNumberFormation } from "@/helpers";
 import { axiosInstance } from "@/client";
@@ -14,7 +13,7 @@ import { useState } from "react";
 
 export function RealEstateAgentForm() {
   const [form] = Form.useForm();
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const { message } = App.useApp();
   const { replace } = useRouter();
   const [loading, setLoading] = useState(false);

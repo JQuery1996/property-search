@@ -50,7 +50,7 @@ export function ProfileForm() {
   useEffect(() => {
     form.setFieldValue("country_id", countryId);
     form.setFieldValue("measurement_id", measurementId);
-  }, [countryId, measurementId]);
+  }, [countryId, measurementId, form]);
   async function onFinish(values: TUpdateProfile) {
     setSubmitLoading(true);
     try {

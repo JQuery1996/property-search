@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, Input, theme, Badge } from "antd";
+import { Button, Flex, Input, Badge } from "antd";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
@@ -11,14 +11,11 @@ import { TFilterSettings } from "@/types";
 import { flattenFilters } from "@/helpers";
 import { PAGES } from "@/constants";
 
-const { useToken } = theme;
-
 export function Filter({
   filterSettings,
 }: {
   filterSettings: TFilterSettings;
 }) {
-  const { token } = useToken();
   const translate = useTranslations("HomePage.Filter");
   const { push } = useRouter();
   const searchParams = useSearchParams();

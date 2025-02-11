@@ -101,6 +101,7 @@ export function PropertyUploader({
             afterOpenChange: (visible) => !visible && setPreviewImage(""),
           }}
           src={previewImage}
+          alt="preview"
         />
       )}
     </>
