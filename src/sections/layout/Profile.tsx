@@ -11,8 +11,7 @@ import {
 } from "antd";
 import { useTranslations } from "next-intl"; // Import useTranslations
 import Image from "next/image";
-import { CustomText } from "@/components";
-import { PlusOutlined, UserOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { useAuth, useSettings } from "@/contexts";
 import { useLocale } from "use-intl";
 import { useResponsive } from "antd-style";
@@ -38,6 +37,7 @@ export function Profile() {
   const locale = useLocale();
   const { mobile } = useResponsive();
   const translate = useTranslations("Common"); // Use the appropriate namespace
+  const formTranslate = useTranslations("Form"); // Use the appropriate namespace
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
@@ -73,7 +73,7 @@ export function Profile() {
       icon: "/images/icons/city.svg",
       children: countries.map((country) => ({
         key: `country-${country.id}`,
-        label: (country as any)[`name_${locale}`],
+        label: mobile ? country.code : (country as any)[`name_${locale}`],
         icon: `/images/icons/${country.code.toLowerCase()}.svg`,
       })),
       order: 5,
@@ -178,8 +178,8 @@ export function Profile() {
   // Translate the labels and render icons for all items (including nested ones)
   const translatedItems = translateAndRenderIcons(profileItems);
 
-  function handleGoRegister() {
-    router.push(PAGES.REGISTER_CLIENT);
+  function handleGoLogin() {
+    router.push(PAGES.LOGIN);
     setOpen(false);
   }
   const handleMenuClick: MenuProps["onClick"] = async (e) => {
@@ -272,34 +272,39 @@ export function Profile() {
             <div>
               {menus}
               {!isAuthenticated && (
-                <Flex
-                  wrap
-                  gap={8}
-                  justify="center"
-                  style={{
-                    margin: 10,
-                    padding: 10,
-                    backgroundColor: token.pinkLighter,
-                    borderRadius: 5,
-                  }}
-                >
-                  <Image
-                    src="/images/icons/user-add.svg"
-                    alt="create account"
-                    width={20}
-                    height={20}
-                  />
-                  <CustomText>{translate("dontHaveAccount")}</CustomText>
-                  <Button
-                    type="primary"
-                    icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
-                    size="small"
-                    style={{ padding: 5, gap: 2 }}
-                    onClick={handleGoRegister}
-                  >
-                    <CustomText style={{ color: "white" }}>
-                      {translate("account")}
-                    </CustomText>
+                // <Flex
+                //   wrap
+                //   gap={8}
+                //   justify="center"
+                //   style={{
+                //     margin: 10,
+                //     padding: 10,
+                //     backgroundColor: token.pinkLighter,
+                //     borderRadius: 5,
+                //   }}
+                // >
+                //   <Image
+                //     src="/images/icons/user-add.svg"
+                //     alt="create account"
+                //     width={20}
+                //     height={20}
+                //   />
+                //   <CustomText>{translate("dontHaveAccount")}</CustomText>
+                //   <Button
+                //     type="primary"
+                //     icon={<PlusOutlined style={{ margin: 0, padding: 0 }} />}
+                //     size="small"
+                //     style={{ padding: 5, gap: 2 }}
+                //     onClick={handleGoRegister}
+                //   >
+                //     <CustomText style={{ color: "white" }}>
+                //       {translate("account")}
+                //     </CustomText>
+                //   </Button>
+                // </Flex>
+                <Flex style={{ padding: 10 }} justify="flex-end" align="center">
+                  <Button block onClick={handleGoLogin}>
+                    {formTranslate("login")}
                   </Button>
                 </Flex>
               )}

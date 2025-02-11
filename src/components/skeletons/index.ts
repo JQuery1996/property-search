@@ -6,3 +6,4 @@ export * from "./developerSkeletons";
 export * from "./projectSkeleton";
 export * from "./MyPropertiesSkeleton";
 export * from "./propertyFormSkeleton";
+export * from "./notificationsSkeleton";

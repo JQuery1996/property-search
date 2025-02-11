@@ -18,13 +18,9 @@ export function PropertyCategory() {
       style={{
         margin: "40px 0",
         backgroundColor: token.pinkLight,
-        borderRadius: "8px 8px 24px 24px",
         padding: 40,
       }}
     >
-      <CustomText type="primary" style={{ fontWeight: "500" }}>
-        {translate("propertyCategory")}
-      </CustomText>
       <CustomTitle level={1} style={{ fontWeight: "bold" }}>
         {translate("chooseProperty")}
       </CustomTitle>

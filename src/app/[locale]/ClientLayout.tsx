@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
-import { App, Badge, ConfigProvider, Layout, Menu, theme } from "antd";
+import { App, ConfigProvider, Layout, Menu, theme } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import { useTranslations } from "next-intl";
 import { MENU_ITEMS } from "@/constants";
@@ -10,13 +10,13 @@ import { getAntdLocale, getDirectionFromLocale } from "@/helpers";
 import { useLocale } from "use-intl";
 import { TLOCALE } from "@/types";
 import { useResponsive } from "antd-style";
-import { AppFooter, Profile } from "@/sections";
+import { AppFooter, Notifications, Profile } from "@/sections";
 import { usePathname, useRouter } from "@/i18n/routing";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-import Image from "next/image";
 import { AuthProvider, SettingsProvider } from "@/contexts";
+import { AuthGuard } from "@/Guards";
 
 type TClientLayout = {
   children: ReactNode;
@@ -90,7 +90,20 @@ export function ClientLayout({ children }: TClientLayout) {
                     backgroundColor: "transparent",
                   }}
                 />
-                <Profile />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignContent: "center",
+                    gap: 30,
+                  }}
+                >
+                  <AuthGuard>
+                    <Notifications />
+                  </AuthGuard>
+                  <Profile />
+                </div>
               </Header>
               <Content>
                 <div

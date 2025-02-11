@@ -41,7 +41,7 @@ export function ResultsUI({ listings, pagination }: TResultsUI) {
   };
 
   return (
-    <Flex vertical gap={4} style={{ width: "87%" }}>
+    <Flex vertical gap={4} style={{ width: "90%" }}>
       <div
         style={{
           display: "flex",
@@ -58,23 +58,6 @@ export function ResultsUI({ listings, pagination }: TResultsUI) {
             ({translate("foundItems", { count: pagination.total })})
           </CustomText>
         </Flex>
-        <Button
-          type="text"
-          styles={{
-            icon: {
-              width: 24,
-              height: 24,
-            },
-          }}
-          icon={
-            <Image
-              src="/images/icons/preview-property.svg"
-              alt="preview-property"
-              width={24}
-              height={24}
-            />
-          }
-        />
       </div>
       {listings.length > 0 ? (
         <>

@@ -4,7 +4,7 @@ import { VerticalCardSkeleton } from "@/components";
 
 export function PropertiesSkeleton() {
   return (
-    <Flex vertical gap={4} style={{ width: "87%" }}>
+    <Flex vertical gap={4} style={{ width: "90%" }}>
       {/* Header Section */}
       <div
         style={{

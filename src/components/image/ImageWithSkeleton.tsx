@@ -5,7 +5,8 @@ import { Skeleton } from "antd";
 import styles from "./styles.module.css";
 
 // Extend ImageProps with custom skeletonStyle prop
-type ImageWithSkeletonProps = ImageProps & {
+type ImageWithSkeletonProps = Omit<ImageProps, "src"> & {
+  src?: string | null | undefined;
   skeletonStyle?: React.CSSProperties;
 };
 
@@ -36,7 +37,7 @@ export function ImageWithSkeleton({
       {(isLoading || hasError) && (
         <div
           className={styles.skeletonImageWrapper}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%", ...skeletonStyle }}
         >
           <Skeleton.Image
             active
@@ -50,24 +51,26 @@ export function ImageWithSkeleton({
       )}
 
       {/* Render the image */}
-      <Image
-        src={src}
-        width={0}
-        height={0}
-        sizes="100vw"
-        priority
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "fill",
-          visibility: isLoading || hasError ? "hidden" : "visible", // Hide if loading or error
-          ...style,
-        }}
-        alt={alt}
-        onLoad={handleImageLoad} // Triggered when the image is successfully loaded
-        onError={handleImageError} // Triggered on image load error
-        {...rest} // Pass all other next/image props
-      />
+      {src && (
+        <Image
+          src={src}
+          width={0}
+          height={0}
+          sizes="100vw"
+          priority
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "fill",
+            visibility: isLoading || hasError ? "hidden" : "visible", // Hide if loading or error
+            ...style,
+          }}
+          alt={alt}
+          onLoad={handleImageLoad} // Triggered when the image is successfully loaded
+          onError={handleImageError} // Triggered on image load error
+          {...rest} // Pass all other next/image props
+        />
+      )}
     </>
   );
 }

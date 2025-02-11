@@ -45,15 +45,16 @@ export function RealEstateAgentForm() {
       formData.append("license", values.license[0].originFileObj);
     }
     try {
-      const response = await axiosInstance.post("/register", formData, {
+      await axiosInstance.post("/register", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      const { token: authToken, user } = response.data;
-      login(authToken, user);
+      // const { token: authToken, user } = response.data;
+      // login(authToken, user);
       message.success(translate("Validations.registerSuccess"));
-      replace("/");
+      message.warning(translate("waitForApprove"));
+      replace(PAGES.LOGIN);
     } catch (error: any) {
       message.error(
         error.response?.data?.message ||
@@ -68,6 +69,7 @@ export function RealEstateAgentForm() {
   }
   return (
     <Form
+      disabled={loading}
       form={form}
       layout="vertical"
       name="RealEstateAgentForm"

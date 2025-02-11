@@ -1,16 +1,20 @@
+"use client";
 import { TListing } from "@/types";
-import { Button, Col, Flex, Row } from "antd";
+import { Button, Col, Empty, Flex, Row } from "antd";
 import { CustomTitle, VerticalCard } from "@/components";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
+import { PAGES } from "@/constants";
 
 type TRecentAdditionsUI = {
   listings: TListing[];
 };
 export function RecentAdditionsUI({ listings }: TRecentAdditionsUI) {
   const translate = useTranslations("HomePage.RecentAdditions");
+  const commonTranslate = useTranslations("Common");
+  const { push } = useRouter();
   return (
-    <Flex vertical gap={4} style={{ width: "87%" }}>
+    <Flex vertical gap={4} style={{ width: "90%" }}>
       <CustomTitle type="primary" level={4} style={{ margin: 0 }}>
         {translate("title")}
       </CustomTitle>
@@ -27,29 +31,24 @@ export function RecentAdditionsUI({ listings }: TRecentAdditionsUI) {
         </CustomTitle>
         <Button
           type="text"
-          styles={{
-            icon: {
-              width: 24,
-              height: 24,
-            },
-          }}
-          icon={
-            <Image
-              src="/images/icons/preview-property.svg"
-              alt="preview-property"
-              width={24}
-              height={24}
-            />
-          }
-        />
+          color="danger"
+          style={{ fontSize: 16, fontWeight: "bold" }}
+          onClick={() => push(PAGES.PROPERTIES)}
+        >
+          {commonTranslate("viewAll")}
+        </Button>
       </div>
-      <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
-        {listings.map((listing) => (
-          <Col key={listing.id} xs={24} md={12} lg={8} xl={6}>
-            <VerticalCard listing={listing} />
-          </Col>
-        ))}
-      </Row>
+      {listings.length > 0 ? (
+        <Row gutter={[16, 16]} style={{ margin: "20px 0" }}>
+          {listings.map((listing) => (
+            <Col key={listing.id} xs={24} md={12} lg={8} xl={6}>
+              <VerticalCard listing={listing} />
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <Empty style={{ margin: "40px 0" }} />
+      )}
     </Flex>
   );
 }

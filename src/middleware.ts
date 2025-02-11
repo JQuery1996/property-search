@@ -17,7 +17,7 @@ export function middleware(req: NextRequest) {
   }
 
   // check for authenticated pages
-  if (!authToken && /\/?(profile|favorite)/.test(pathname)) {
+  if (!authToken && /\/?(profile|favorite|notifications)/.test(pathname)) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 

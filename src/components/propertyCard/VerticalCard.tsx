@@ -196,10 +196,6 @@ export function VerticalCard({
       }
       onClick={handlePropertyClick(listing.id)}
     >
-      <CustomTitle level={5}>
-        {translate("listing.source")} : {listing.source}
-      </CustomTitle>
-      <Divider style={{ margin: "10px 0" }} />
       <Meta
         title={<Tooltip title={listing.title}>{listing.title ?? "-"}</Tooltip>}
         description={

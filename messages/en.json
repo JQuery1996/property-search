@@ -134,7 +134,10 @@
     "delete": "Delete",
     "deletePropertyMessage": "Are you absolutely sure you want to delete this property?",
     "propertyHasBeenDeletedSuccessfully": "Property has been deleted successfully",
-    "propertyDeletedFailed": "An error occurred while delete this property. Please try again."
+    "propertyDeletedFailed": "An error occurred while delete this property. Please try again.",
+    "viewAll": "View All",
+    "youHaveNoNotifications": "You have no notifications.",
+    "notifications": "Notifications"
   },
   "LoginPage": {
     "action": "welcome back."
@@ -199,6 +202,7 @@
     "createAsClient": "Create as Client",
     "createAsAgent": "Create as Agent",
     "propertyLocation": "Property Location",
+    "waitForApprove": "Your account is pending approval and will be activated within 24 hours. Thank you for your patience!",
     "Validations": {
       "acceptedExtensions": "You can only upload these types:",
       "fileSizeLessThan": "File must smaller than",
