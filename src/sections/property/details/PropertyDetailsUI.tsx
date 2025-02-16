@@ -119,11 +119,17 @@ export function PropertyDetailsUI({ details }: TPropertyDetailsUI) {
     <Flex vertical gap={12} style={{ padding: "24px 48px" }}>
       <Flex gap={8} justify="space-between" wrap>
         {details.is_approved ? (
-          <Tag color="success" style={{ fontWeight: "bold" }}>
+          <Tag
+            color="success"
+            style={{ fontWeight: "bold", height: "fit-content" }}
+          >
             {commonTranslate("approved")}
           </Tag>
         ) : (
-          <Tag color="warning" style={{ fontWeight: "bold" }}>
+          <Tag
+            color="warning"
+            style={{ fontWeight: "bold", height: "fit-content" }}
+          >
             {commonTranslate("pending")}
           </Tag>
         )}

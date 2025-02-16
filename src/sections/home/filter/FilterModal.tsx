@@ -162,6 +162,8 @@ export function FilterModal({
   }
 
   const initialValues = {
+    [FilterFormNames.PROPERTY_PURPOSE]:
+      FilterConstants.PROPERTY_PURPOSES[0].value,
     [FilterFormNames.PRICE_RANGE]: [0, 1_000_000],
   };
 

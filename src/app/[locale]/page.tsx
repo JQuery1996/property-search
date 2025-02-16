@@ -9,7 +9,6 @@ import {
 } from "@/sections";
 import { getTranslations } from "next-intl/server";
 import { APP, KEY_WORDS } from "@/constants";
-
 export async function generateMetadata({
   params,
 }: {
