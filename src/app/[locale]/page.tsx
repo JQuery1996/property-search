@@ -74,9 +74,10 @@ export default function Home() {
           alignContent: "center",
         }}
       >
-        <RecentAdditions />
+        <DevelopmentProjects />
       </div>
       <PropertyCategory />
+
       <div
         style={{
           marginTop: 60,
@@ -86,9 +87,8 @@ export default function Home() {
           alignContent: "center",
         }}
       >
-        <DevelopmentProjects />
+        <RecentAdditions />
       </div>
-
       <OurApplication />
       <Testimonials />
       <Subscribe />
