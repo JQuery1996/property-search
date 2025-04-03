@@ -6,3 +6,4 @@ export * from "./apis";
 export * from "./forms/FilterConstants";
 export * from "./forms";
 export * from "./seo";
+export * from './assets';

@@ -1,6 +1,7 @@
 import {
   BannerWrapper,
   DevelopmentProjects,
+  ExternalCompanies,
   OurApplication,
   PropertyCategory,
   RecentAdditions,
@@ -9,6 +10,7 @@ import {
 } from "@/sections";
 import { getTranslations } from "next-intl/server";
 import { APP, KEY_WORDS } from "@/constants";
+
 export async function generateMetadata({
   params,
 }: {
@@ -45,10 +47,24 @@ export async function generateMetadata({
     },
   };
 }
+
 export default function Home() {
   return (
     <>
       <BannerWrapper />
+
+      <div
+        style={{
+          marginTop: 60,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+        }}
+      >
+        <ExternalCompanies />
+      </div>
+
       <div
         style={{
           marginTop: 60,
