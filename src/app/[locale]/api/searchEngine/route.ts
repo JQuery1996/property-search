@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const queryText = searchParams.get("query_text") || "";
 
-  const apiUrl = `https://engine.propertysearch.website/search?query_text=${encodeURIComponent(
+  const apiUrl = `https://engine.propertysearch.com/search?query_text=${encodeURIComponent(
     queryText,
   )}`;
 

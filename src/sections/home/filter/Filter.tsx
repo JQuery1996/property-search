@@ -52,6 +52,8 @@ export function Filter({
 
     const engineFilters = await response.json();
 
+    console.log({ engineFilters });
+
     // Step 2: Flatten the filters to remove null/undefined values
     const flattenedFilters = flattenFilters({
       query_text: value,
